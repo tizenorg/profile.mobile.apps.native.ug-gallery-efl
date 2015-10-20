@@ -15,13 +15,13 @@
 *
 */
 
-//#include <Ecore_X.h>
 #include "ge-ext-ug-load.h"
 #include "ge-debug.h"
 #include "ge-ui-util.h"
 #include "ge-util.h"
 #include "ge-albums.h"
 #include "ge-gridview.h"
+#include "ge-data.h"
 
 #define GE_IV_UG_NAME "image-viewer-efl"
 #define GE_IV_STR_LEN_MAX 32
@@ -512,7 +512,6 @@ static int _ge_ext_load_iv_selected_list(app_control_h service, void *data, ge_m
 	GE_CHECK_NULL(item);
 	ge_ugdata *ugd = (ge_ugdata *)data;
 	int i;
-	ge_item *gitem = NULL;
 	int count = _ge_data_get_sel_cnt(ugd);
 
 	char **value = NULL;
@@ -546,7 +545,7 @@ static int _ge_ext_load_iv_selected_list(app_control_h service, void *data, ge_m
 
 	if (count > 0) {
 		app_control_add_extra_data_array(service, "Selected index",
-				value, count);
+				(const char **)value, count);
 	}
 
 	if (value) {

@@ -549,7 +549,6 @@ static Evas_Object *__ge_split_albums_get_content(void *data, Evas_Object *obj, 
 	if (!g_strcmp0(part, "elm.swallow.name_layout")) {
 		GE_CHECK_NULL(album->cluster->display_name);
 		char cnt[GE_FILE_PATH_LEN_MAX] = { 0, };
-		int len;
 		char *i18n_name = NULL;
 		if (_ge_data_is_root_path(album->cluster->path)) {
 			i18n_name = GE_ALBUM_ROOT_NAME;
@@ -611,6 +610,7 @@ int __ge_split_albums_append(ge_ugdata *ugd, ge_cluster *album)
 	return 0;
 }
 
+#if 0
 static Eina_Bool __ge_albums_append_idler_cb(void *data)
 {
 	ge_dbg("Append album ---");
@@ -630,6 +630,7 @@ static Eina_Bool __ge_albums_append_idler_cb(void *data)
 	ge_dbg("Append album +++");
 	return ECORE_CALLBACK_CANCEL;
 }
+#endif
 
 Eina_Bool __ge_split_albums_append_idler_cb(void *data)
 {

@@ -27,6 +27,8 @@
 #include "ge-main-view.h"
 #include "ge-strings.h"
 #include "ge-tile.h"
+#include "ge-albums.h"
+#include <notification.h>
 #include <string.h>
 
 int a = 0;
