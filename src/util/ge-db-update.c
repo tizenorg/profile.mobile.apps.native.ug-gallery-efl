@@ -20,6 +20,7 @@
 #include "ge-data.h"
 #include "ge-local-data.h"
 #include "ge-debug.h"
+#include "ge-util.h"
 
 #define GE_MONITOE_TIME_DELAY 1.0f
 

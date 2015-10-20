@@ -21,6 +21,7 @@
 #include "ge-util.h"
 #include "ge-albums.h"
 #include "ge-gridview.h"
+#include "ge-data.h"
 
 #define GE_IV_UG_NAME "image-viewer-efl"
 #define GE_IV_STR_LEN_MAX 32
@@ -544,7 +545,7 @@ static int _ge_ext_load_iv_selected_list(app_control_h service, void *data, ge_m
 
 	if (count > 0) {
 		app_control_add_extra_data_array(service, "Selected index",
-				value, count);
+				(const char **)value, count);
 	}
 
 	if (value) {
