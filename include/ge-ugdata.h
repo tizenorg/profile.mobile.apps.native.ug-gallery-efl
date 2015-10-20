@@ -24,7 +24,6 @@
 #include <string.h>
 #include <ui-gadget-module.h>
 #include <Eina.h>
-//#include <Ecore_X.h>
 #include <app.h>
 
 #ifdef __cplusplus

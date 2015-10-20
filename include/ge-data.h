@@ -80,6 +80,7 @@ int _ge_data_cancel_thumb(ge_media_s *item);
 int _ge_data_restore_selected(Eina_List *sel_ids, ge_item *gitem);
 int _ge_data_init(ge_ugdata* ugd);
 int _ge_data_finalize(ge_ugdata* ugd);
+int _ge_data_remove_sel_album(ge_ugdata *ugd, ge_sel_album_s *salbum);
 
 #ifdef _cplusplus
 }

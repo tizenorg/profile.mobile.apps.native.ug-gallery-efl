@@ -347,7 +347,6 @@ static int _ge_parse_param(ge_ugdata *ugd, app_control_h service)
 	char *launch_type = NULL;
 	char *select_mode = NULL;
 	char *operation = NULL;
-	int ret = 0;
 
 	app_control_get_operation(service, &operation);
 	ge_sdbg("operation [%s]", operation);
@@ -356,6 +355,7 @@ static int _ge_parse_param(ge_ugdata *ugd, app_control_h service)
 			       &select_mode);
 	ugd->limitsize = -1;
 #if 0//Tizen3.0 Build error
+	int ret = 0;
 	char *max_size = NULL;
 	ret = app_control_get_extra_data(service, APP_CONTROL_DATA_TOTAL_SIZE, &(max_size));
 
@@ -490,16 +490,6 @@ static int __ge_get_rotate_value(ge_ugdata *ugd)
 		break;
 	}
 	return ugd->rotate_mode;
-}
-
-void TestMe(ui_gadget_h ug)
-{
-	app_control_h service;
-	app_control_create(&service);
-	app_control_add_extra_data_array(service, "Selected index", NULL, 0);
-	//ug_send_result(gGetUGHandle(), service);
-	ug_send_result_full(ug, service, APP_CONTROL_RESULT_SUCCEEDED);
-	app_control_destroy(service);
 }
 
 /**

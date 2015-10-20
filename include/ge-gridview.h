@@ -32,6 +32,9 @@ int _ge_grid_get_store_type(ge_ugdata *ugd);
 int _ge_grid_create_main_view(ge_ugdata *ugd);
 void _ge_grid_change_selection_mode(ge_ugdata *ugd, bool state);
 int _ge_grid_sel_one(ge_ugdata *ugd, char *file_url);
+int __ge_grid_append_sel_item(ge_ugdata *ugd, ge_item *gitem);
+int __ge_grid_remove_sel_item(ge_ugdata *ugd, ge_item *gitem);
+void _ge_add_remove_done_button_cb(void *btn, void *data, bool add);
 
 #endif //_GE_GRIDVIEW_H_
 
