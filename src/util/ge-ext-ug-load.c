@@ -15,7 +15,6 @@
 *
 */
 
-//#include <Ecore_X.h>
 #include "ge-ext-ug-load.h"
 #include "ge-debug.h"
 #include "ge-ui-util.h"
@@ -512,7 +511,6 @@ static int _ge_ext_load_iv_selected_list(app_control_h service, void *data, ge_m
 	GE_CHECK_NULL(item);
 	ge_ugdata *ugd = (ge_ugdata *)data;
 	int i;
-	ge_item *gitem = NULL;
 	int count = _ge_data_get_sel_cnt(ugd);
 
 	char **value = NULL;
