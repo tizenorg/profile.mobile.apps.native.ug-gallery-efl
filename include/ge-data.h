@@ -81,6 +81,7 @@ int _ge_data_restore_selected(Eina_List *sel_ids, ge_item *gitem);
 int _ge_data_init(ge_ugdata* ugd);
 int _ge_data_finalize(ge_ugdata* ugd);
 int _ge_data_remove_sel_album(ge_ugdata *ugd, ge_sel_album_s *salbum);
+void _ge_data_get_sel_item(ge_ugdata *ugd, Eina_List **list);
 
 #ifdef _cplusplus
 }

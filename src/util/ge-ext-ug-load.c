@@ -56,7 +56,7 @@ static void __ge_appcontrol_select_result_cb(app_control_h request, app_control_
 			if (!data || !data->item) {
 				continue;
 			}
-			if(!strcmp(data->item->thumb_url, DEFAULT_THUMB)){
+			if (!strcmp(data->item->thumb_url, DEFAULT_THUMB)) {
 				continue;
 			}
 			in_list = false;
@@ -109,11 +109,11 @@ static void __ge_appcontrol_select_result_cb(app_control_h request, app_control_
 	elm_check_state_set(ck, ugd->ck_state);
 
 	_ge_ui_update_label_text(ugd->thumbs_d->nf_it, count,
-					 ugd->albums_view_title);
+	                         ugd->albums_view_title);
 
 	if (count > 0) {
 		Evas_Object *btn = NULL;
-		btn = elm_object_item_part_content_get (ugd->thumbs_d->nf_it , GE_NAVIFRAME_TITLE_RIGHT_BTN);
+		btn = elm_object_item_part_content_get(ugd->thumbs_d->nf_it , GE_NAVIFRAME_TITLE_RIGHT_BTN);
 		if (btn == NULL) {
 			ge_dbgE("Failed to get part information");
 			return;
@@ -122,7 +122,7 @@ static void __ge_appcontrol_select_result_cb(app_control_h request, app_control_
 		_ge_add_remove_done_button_cb(btn, ugd, true);
 	} else {
 		Evas_Object *btn = NULL;
-		btn = elm_object_item_part_content_get (ugd->thumbs_d->nf_it , GE_NAVIFRAME_TITLE_RIGHT_BTN);
+		btn = elm_object_item_part_content_get(ugd->thumbs_d->nf_it , GE_NAVIFRAME_TITLE_RIGHT_BTN);
 		if (btn == NULL) {
 			ge_dbgE("Failed to get part information");
 			return;
@@ -136,7 +136,7 @@ static void __ge_appcontrol_select_result_cb(app_control_h request, app_control_
 	if (select_result) {
 		for (i = 0; i < count; i++) {
 			if (select_result[i]) {
-				free (select_result[i]);
+				free(select_result[i]);
 			}
 		}
 		free(select_result);
@@ -160,8 +160,9 @@ static void _ge_ext_destroy_me(ge_ugdata *ugd)
 		ge_dbg("ug_called_by_me does not exist!");
 	}
 
-	if (ugd->file_select_mode == GE_FILE_SELECT_T_SLIDESHOW)
+	if (ugd->file_select_mode == GE_FILE_SELECT_T_SLIDESHOW) {
 		ugd->b_destroy_me = false;
+	}
 
 	if (!ugd->b_destroy_me) {
 		ge_dbg("gallery ug is still alive");
@@ -171,21 +172,21 @@ static void _ge_ext_destroy_me(ge_ugdata *ugd)
 		if (ugd->file_setas_image_path) {
 			ge_dbg("GE_SETAS_IMAGE_PATH:%s", ugd->file_setas_image_path);
 			app_control_add_extra_data(ugd->service,
-					       GE_SETAS_IMAGE_PATH,
-					       ugd->file_setas_image_path);
+			                           GE_SETAS_IMAGE_PATH,
+			                           ugd->file_setas_image_path);
 
 			GE_FREE(ugd->file_setas_image_path);
 			send_result = true;
 		}
 
 		if (ugd->file_setas_crop_image_path &&
-		   (ugd->file_select_setas_mode == GE_SETAS_T_CALLERID ||
-		    ugd->file_select_setas_mode == GE_SETAS_T_CROP_WALLPAPER)) {
+		        (ugd->file_select_setas_mode == GE_SETAS_T_CALLERID ||
+		         ugd->file_select_setas_mode == GE_SETAS_T_CROP_WALLPAPER)) {
 			ge_dbg("GE_SETAS_CALLERID_CROP_IMAGE_PATH:%s",
 			       ugd->file_setas_crop_image_path);
 			app_control_add_extra_data(ugd->service,
-					       APP_CONTROL_DATA_SELECTED,
-					       ugd->file_setas_crop_image_path);
+			                           APP_CONTROL_DATA_SELECTED,
+			                           ugd->file_setas_crop_image_path);
 
 			GE_FREE(ugd->file_setas_crop_image_path);
 			send_result = true;
@@ -242,10 +243,10 @@ static void _ge_ext_iv_result_cb(ui_gadget_h ug, app_control_h result, void *pri
 		/*If set wallpaper success, homescreen_path should not be null.
 		And if setting wallpaper was canceled in IV, gallery-efl doesn't exit immediately*/
 		app_control_get_extra_data(result, GE_BUNDLE_HOMESCREEN_PATH,
-				       &path);
+		                           &path);
 		if (NULL == path)
 			app_control_get_extra_data(result, GE_BUNDLE_LOCKSCREEN_PATH,
-					       &path);
+			                           &path);
 		ge_dbg("SETAS_IMAGE_PATH");
 		app_control_get_extra_data(result, "Result", &status);
 		ugd->file_select_setas_mode = 0;
@@ -263,10 +264,10 @@ static void _ge_ext_iv_result_cb(ui_gadget_h ug, app_control_h result, void *pri
 		/*If has got homescreen_path, setats_mode should not be callerid and
 		crop wallpaper*/
 		if (path == NULL &&
-		    (ugd->file_select_setas_mode == GE_SETAS_T_CALLERID ||
-		    ugd->file_select_setas_mode == GE_SETAS_T_CROP_WALLPAPER)) {
+		        (ugd->file_select_setas_mode == GE_SETAS_T_CALLERID ||
+		         ugd->file_select_setas_mode == GE_SETAS_T_CROP_WALLPAPER)) {
 			app_control_get_extra_data(result, APP_CONTROL_DATA_SELECTED,
-					       &path);
+			                           &path);
 			ge_dbg("CALLERID_CROP_IMAGE_PATH");
 			if (path) {
 				ge_dbg(":%s", path);
@@ -280,7 +281,7 @@ static void _ge_ext_iv_result_cb(ui_gadget_h ug, app_control_h result, void *pri
 
 	char *error_state = NULL;
 	app_control_get_extra_data(result, GE_IMAGEVIEWER_RETURN_ERROR,
-			       &error_state);
+	                           &error_state);
 	if (error_state) {
 		ge_dbg("error string : %s", error_state);
 
@@ -316,11 +317,13 @@ static void __ge_ext_iv_end_cb(ui_gadget_h ug, void *priv)
 	GE_CHECK(priv);
 	ge_ugdata *ugd = (ge_ugdata *)priv;
 
-	if (ugd->file_select_setas_mode == 1)
+	if (ugd->file_select_setas_mode == 1) {
 		_ge_grid_sel_one(ugd, ugd->file_select_setas_path);
+	}
 
-	if (ugd->b_hide_indicator)
+	if (ugd->b_hide_indicator) {
 		_ge_ui_hide_indicator((ge_ugdata *)priv);
+	}
 }
 
 static char **__ge_ext_get_select_index(ge_ugdata *ugd, int *size)
@@ -352,16 +355,17 @@ static char **__ge_ext_get_select_index(ge_ugdata *ugd, int *size)
 			GE_FREE(media_index);
 			return NULL;
 		}
-		ge_dbg("Sequence: %d", git->sequence-1);
-		snprintf(index, GE_IV_STR_LEN_MAX, "%d", git->sequence-1);
+		ge_dbg("Sequence: %d", git->sequence - 1);
+		snprintf(index, GE_IV_STR_LEN_MAX, "%d", git->sequence - 1);
 		media_index[i++] = index;
 		index = NULL;
 		git = NULL;
 	}
 
 
-	if (size)
+	if (size) {
 		*size = sel_cnt;
+	}
 
 	return media_index;
 }
@@ -385,7 +389,7 @@ static int __ge_ext_slideshow_selected(ge_ugdata *ugd, app_control_h service)
 	ge_dbg("Set selected medias, media_index[%p], size[%d]", media_index,
 	       media_size);
 	app_control_add_extra_data_array(service, GE_SELECTED_FILES,
-				     (const char **)media_index, media_size);
+	                                 (const char **)media_index, media_size);
 	/*free space of the medias index*/
 	int i = 0;
 	for (i = 0; i < media_size; ++i) {
@@ -400,7 +404,7 @@ static int __ge_ext_slideshow_selected(ge_ugdata *ugd, app_control_h service)
 }
 
 static int __ge_ext_set_slideshow_data(ge_ugdata *ugd, char *file_url,
-				       app_control_h service)
+                                       app_control_h service)
 {
 	GE_CHECK_VAL(service, -1);
 	GE_CHECK_VAL(file_url, -1);
@@ -409,12 +413,13 @@ static int __ge_ext_set_slideshow_data(ge_ugdata *ugd, char *file_url,
 	app_control_add_extra_data(service, GE_PATH, file_url);
 	app_control_add_extra_data(service, GE_VIEW_MODE, "SLIDESHOW");
 	app_control_add_extra_data(service, "Sort By", "DateDesc");
-	if (ugd->file_type_mode == GE_FILE_T_IMAGE)
+	if (ugd->file_type_mode == GE_FILE_T_IMAGE) {
 		app_control_add_extra_data(service, GE_MEDIA_TYPE, "Image");
-	else if (ugd->file_type_mode == GE_FILE_T_VIDEO)
+	} else if (ugd->file_type_mode == GE_FILE_T_VIDEO) {
 		app_control_add_extra_data(service, GE_MEDIA_TYPE, "Video");
-	else
+	} else {
 		app_control_add_extra_data(service, GE_MEDIA_TYPE, "All");
+	}
 	if (__ge_ext_slideshow_selected(ugd, service) != 0) {
 		ge_dbgE("Create UG failed!");
 		return -1;
@@ -428,10 +433,11 @@ static int __ge_ext_set_slideshow_data(ge_ugdata *ugd, char *file_url,
 			return -1;
 		}
 		app_control_add_extra_data(service, "Album index", ugd->slideshow_album_id);
-		if (!g_strcmp0(ugd->slideshow_album_id, GE_ALBUM_ALL_ID))
+		if (!g_strcmp0(ugd->slideshow_album_id, GE_ALBUM_ALL_ID)) {
 			app_control_add_extra_data(service, GE_VIEW_BY, "All");
-		else
+		} else {
 			app_control_add_extra_data(service, GE_VIEW_BY, "By Folder");
+		}
 		break;
 	default:
 		return -1;
@@ -440,7 +446,7 @@ static int __ge_ext_set_slideshow_data(ge_ugdata *ugd, char *file_url,
 }
 
 static int __ge_ext_set_setas_data(ge_ugdata *ugd, char *file_url,
-				   app_control_h service)
+                                   app_control_h service)
 {
 	GE_CHECK_VAL(service, -1);
 	GE_CHECK_VAL(file_url, -1);
@@ -463,10 +469,11 @@ static int __ge_ext_set_setas_data(ge_ugdata *ugd, char *file_url,
 		app_control_add_extra_data(service, GE_SETAS_TYPE, "Wallpaper Crop");
 		app_control_add_extra_data(service, "Fixed ratio", "TRUE");
 
+		int x = 0;
+		int y = 0;
 		int w = 0;
 		int h = 0;
-		ecore_x_window_size_get(ecore_x_window_root_first_get(),
-					&w, &h);
+		elm_win_screen_size_get((Evas_Object *)ug_get_window(), &x, &y, &w, &h);
 		char *reso_str = (char *)calloc(1, GE_IV_STR_LEN_MAX);
 		if (reso_str == NULL) {
 			ge_dbgE("Calloc failed!");
@@ -488,8 +495,8 @@ static int __ge_ext_albums_set_iv_select_mode(void *data, app_control_h service,
 	GE_CHECK_VAL(data, GE_UG_FAIL);
 	ge_ugdata *ugd = (ge_ugdata *)data;
 	ge_cluster *cur_album = ugd->album_item;
-	GE_CHECK_NULL(ugd->album_item);
-	GE_CHECK_NULL(ugd->thumbs_d);
+	GE_CHECK_VAL(ugd->album_item, GE_UG_FAIL);
+	GE_CHECK_VAL(ugd->thumbs_d, GE_UG_FAIL);
 	ge_dbg("type: %d", type);
 
 	/* 2.0, Local file */
@@ -500,7 +507,7 @@ static int __ge_ext_albums_set_iv_select_mode(void *data, app_control_h service,
 	if ((cur_album && cur_album->cluster && cur_album->cluster->uuid) || ugd->thumbs_d->selected_uuid) {
 		app_control_add_extra_data(service, GE_VIEW_BY, GE_ARGV_IV_VIEW_BY_FOLER);
 		app_control_add_extra_data(service, GE_ARGV_IV_ALBUM_INDEX,
-				ugd->thumbs_d->selected_uuid);
+		                           ugd->thumbs_d->selected_uuid);
 	}
 	return GE_UG_SUCCESS;
 }
@@ -509,7 +516,7 @@ static int _ge_ext_load_iv_selected_list(app_control_h service, void *data, ge_m
 {
 	GE_CHECK_VAL(data, GE_UG_FAIL);
 	GE_CHECK_VAL(service, GE_UG_FAIL);
-	GE_CHECK_NULL(item);
+	GE_CHECK_VAL(item, GE_UG_FAIL);
 	ge_ugdata *ugd = (ge_ugdata *)data;
 	int i;
 	int count = _ge_data_get_sel_cnt(ugd);
@@ -545,7 +552,7 @@ static int _ge_ext_load_iv_selected_list(app_control_h service, void *data, ge_m
 
 	if (count > 0) {
 		app_control_add_extra_data_array(service, "Selected index",
-				(const char **)value, count);
+		                                 (const char **)value, count);
 	}
 
 	if (value) {

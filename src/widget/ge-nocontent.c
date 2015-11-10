@@ -27,6 +27,7 @@ Evas_Object *_ge_nocontents_create(ge_ugdata *ugd)
 	/* Full view nocontents */
 	noc_lay = elm_layout_add(ugd->naviframe);
 	GE_CHECK_NULL(noc_lay);
+
 	elm_layout_theme_set(noc_lay, "layout", "nocontents", "text");
 	_ge_ui_set_translate_str(noc_lay, GE_STR_NO_ITEMS);
 

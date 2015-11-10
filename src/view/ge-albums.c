@@ -29,11 +29,11 @@
 
 /* Only for local medias */
 static void __ge_albums_create_thumb_cb(media_content_error_e error,
-					const char *path, void *user_data)
+                                        const char *path, void *user_data)
 {
 	if (GE_FILE_EXISTS(path) && error == MEDIA_CONTENT_ERROR_NONE) {
 		GE_CHECK(user_data);
-		ge_cluster *album= (ge_cluster *)user_data;
+		ge_cluster *album = (ge_cluster *)user_data;
 		album->cover->item->b_create_thumb = false;
 		GE_CHECK(album->griditem);
 		elm_gengrid_item_update(album->griditem);
@@ -52,7 +52,7 @@ static int __ge_albums_create_thumb(ge_item *gitem, ge_cluster *album)
 
 	if (GE_FILE_EXISTS(gitem->item->file_url)) {
 		_ge_data_create_thumb(gitem->item, __ge_albums_create_thumb_cb,
-				      album);
+		                      album);
 		return 0;
 	}
 	return -1;
@@ -82,14 +82,14 @@ static void __ge_split_albums_realized(void *data, Evas_Object *obj, void *ei)
 	_ge_data_get_album_sel_cnt(ugd, album->cluster->uuid, &sel_cnt);
 	if (sel_cnt > 0) {
 		elm_object_item_signal_emit((Elm_Object_Item *)ei,
-				"elm,state,elm.text.badge,visible",
-				"elm");
+		                            "elm,state,elm.text.badge,visible",
+		                            "elm");
 		album->sel_cnt = sel_cnt;
 	} else {
 		album->sel_cnt = 0;
 		elm_object_item_signal_emit((Elm_Object_Item *)ei,
-				"elm,state,elm.text.badge,hidden",
-				"elm");
+		                            "elm,state,elm.text.badge,hidden",
+		                            "elm");
 	}
 }
 
@@ -105,23 +105,24 @@ static void __ge_albums_realized(void *data, Evas_Object *obj, void *ei)
 
 	ge_dbg("realized");
 	if (!GE_FILE_EXISTS(album->cover->item->thumb_url) &&
-	    GE_FILE_EXISTS(album->cover->item->file_url) &&
-	    (album->cluster->type == GE_PHONE ||
-	     album->cluster->type == GE_MMC ||
-	     album->cluster->type == GE_ALL))
+	        GE_FILE_EXISTS(album->cover->item->file_url) &&
+	        (album->cluster->type == GE_PHONE ||
+	         album->cluster->type == GE_MMC ||
+	         album->cluster->type == GE_ALL)) {
 		__ge_albums_create_thumb(album->cover, album);
+	}
 
 	GE_CHECK(album->ugd);
 	ge_ugdata *ugd = album->ugd;
 	if (ugd->b_multifile) {
 		if (album->sel_cnt > 0)
 			elm_object_item_signal_emit(album->griditem,
-						    "elm,state,elm.text.badge,visible",
-						    "elm");
+			                            "elm,state,elm.text.badge,visible",
+			                            "elm");
 		else
 			elm_object_item_signal_emit(album->griditem,
-						    "elm,state,elm.text.badge,hidden",
-						    "elm");
+			                            "elm,state,elm.text.badge,hidden",
+			                            "elm");
 	}
 }
 
@@ -138,8 +139,8 @@ static void __ge_albums_unrealized(void *data, Evas_Object *obj, void *ei)
 
 	/* Checking for local files only */
 	if (album->cluster->type == GE_PHONE ||
-	    album->cluster->type == GE_MMC ||
-	    album->cluster->type == GE_ALL) {
+	        album->cluster->type == GE_MMC ||
+	        album->cluster->type == GE_ALL) {
 		if (album->cover->item->b_create_thumb) {
 			_ge_data_cancel_thumb(album->cover->item);
 
@@ -166,8 +167,8 @@ static int __ge_albums_open_album(ge_cluster *album)
 	if (ugd->album_select_mode == GE_ALBUM_SELECT_T_ONE) {
 		ge_dbg("One album selected, return album id");
 		app_control_add_extra_data(ugd->service,
-				       GE_ALBUM_SELECT_RETURN_PATH,
-				       album->cluster->path);
+		                           GE_ALBUM_SELECT_RETURN_PATH,
+		                           album->cluster->path);
 		ge_dbg("return folder-path: %s", album->cluster->path);
 		ug_send_result_full(ugd->ug, ugd->service, APP_CONTROL_RESULT_SUCCEEDED);
 		if (!ugd->is_attach_panel) {
@@ -217,7 +218,7 @@ static Eina_Bool __ge_albums_sel_idler_cb(void *data)
 
 	__ge_albums_open_album(album_item);
 
- GE_ALBUMS_DONE:
+GE_ALBUMS_DONE:
 
 	ecore_idler_del(ugd->sel_album_idler);
 	ugd->sel_album_idler = NULL;
@@ -243,7 +244,7 @@ static Eina_Bool __ge_split_albums_sel_idler_cb(void *data)
 	}
 	__ge_split_albums_open_album(album_item);
 
- GE_ALBUMS_DONE:
+GE_ALBUMS_DONE:
 	ecore_idler_del(ugd->sel_album_idler);
 	ugd->sel_album_idler = NULL;
 	ge_dbg("Select album +++");
@@ -319,7 +320,7 @@ static char *__ge_albums_get_text(void *data, Evas_Object *obj, const char *part
 			snprintf(buf, sizeof(buf), "%s", GE_ALBUM_ROOT_NAME);
 			buf[strlen(buf)] = '\0';
 		} else if (album->cluster->display_name &&
-			  strlen(album->cluster->display_name)) {
+		           strlen(album->cluster->display_name)) {
 			char *new_name = _ge_ui_get_i18n_album_name(album->cluster);
 			snprintf(buf, sizeof(buf), "%s", new_name);
 			buf[strlen(buf)] = '\0';
@@ -328,11 +329,11 @@ static char *__ge_albums_get_text(void *data, Evas_Object *obj, const char *part
 		/* Show blue folder name */
 		if (!g_strcmp0(album->cluster->uuid, GE_ALBUM_ALL_ID)) {
 			Elm_Object_Item *grid_it = album->griditem;
-		    	Evas_Object *it_obj = NULL;
+			Evas_Object *it_obj = NULL;
 			it_obj = elm_object_item_widget_get(grid_it);
 			GE_CHECK_NULL(it_obj);
 			edje_object_signal_emit(it_obj, "elm,name,show,blue",
-						"elm");
+			                        "elm");
 			edje_object_message_signal_process(it_obj);
 		}
 	} else if (!g_strcmp0(part, "elm.text.date")) {
@@ -343,7 +344,7 @@ static char *__ge_albums_get_text(void *data, Evas_Object *obj, const char *part
 
 		ge_item *item = NULL;
 		_ge_data_get_album_cover(ugd, album, &item,
-					 MEDIA_CONTENT_ORDER_DESC);
+		                         MEDIA_CONTENT_ORDER_DESC);
 		if (item == NULL || item->item == NULL) {
 			album->cover_thumbs_cnt = 0;
 			_ge_data_util_free_item(item);
@@ -389,7 +390,7 @@ static char *__ge_split_albums_get_text(void *data, Evas_Object *obj, const char
 
 		ge_item *item = NULL;
 		_ge_data_get_album_cover(ugd, album, &item,
-				MEDIA_CONTENT_ORDER_DESC);
+		                         MEDIA_CONTENT_ORDER_DESC);
 		if (item == NULL || item->item == NULL) {
 			album->cover_thumbs_cnt = 0;
 			_ge_data_util_free_item(item);
@@ -408,15 +409,15 @@ static char *__ge_split_albums_get_text(void *data, Evas_Object *obj, const char
 		ge_dbg("count :%d", sel_cnt);
 		if (sel_cnt > 0) {
 			elm_object_item_signal_emit(album->griditem,
-					"elm,state,elm.text.badge,visible",
-					"elm");
+			                            "elm,state,elm.text.badge,visible",
+			                            "elm");
 			album->sel_cnt = sel_cnt;
 			snprintf(buf, sizeof(buf), "%d", sel_cnt);
 		} else {
 			album->sel_cnt = 0;
 			elm_object_item_signal_emit(album->griditem,
-					"elm,state,elm.text.badge,hidden",
-					"elm");
+			                            "elm,state,elm.text.badge,hidden",
+			                            "elm");
 		}
 	}
 	return strdup(buf);
@@ -425,7 +426,7 @@ static char *__ge_split_albums_get_text(void *data, Evas_Object *obj, const char
 static ge_icon_type __ge_albums_set_bg_file(Evas_Object *bg, void *data)
 {
 	GE_CHECK_VAL(data, -1);
-	ge_item *git =  (ge_item *)data;
+	ge_item *git = (ge_item *)data;
 	GE_CHECK_VAL(git->album, -1);
 	ge_cluster *album = git->album;
 	char *bg_path = GE_ICON_NO_THUMBNAIL;
@@ -436,17 +437,18 @@ static ge_icon_type __ge_albums_set_bg_file(Evas_Object *bg, void *data)
 		goto GE_ALBUMS_FAILED;
 	}
 
-	ret_val= GE_ICON_NORMAL;
-	if (GE_FILE_EXISTS(git->item->thumb_url))
+	ret_val = GE_ICON_NORMAL;
+	if (GE_FILE_EXISTS(git->item->thumb_url)) {
 		bg_path = git->item->thumb_url;
-	else if (album && (album->cluster->type == GE_MMC ||
-		 album->cluster->type == GE_PHONE ||
-		 album->cluster->type == GE_ALL))
+	} else if (album && (album->cluster->type == GE_MMC ||
+	                     album->cluster->type == GE_PHONE ||
+	                     album->cluster->type == GE_ALL)) {
 		__ge_albums_create_thumb(git, album);
-	else
+	} else {
 		ret_val = -1;
+	}
 
- GE_ALBUMS_FAILED:
+GE_ALBUMS_FAILED:
 
 #ifdef _USE_ROTATE_BG_GE
 	_ge_rotate_bg_set_image_file(bg, bg_path);
@@ -466,13 +468,13 @@ static Evas_Object *__ge_albums_get_type_icon(Evas_Object *obj, ge_cluster *albu
 
 	if (_ge_data_is_camera_album(album->cluster))
 		_obj = _ge_tile_show_part_type_icon(obj,
-						    GE_TILE_TYPE_CAMERA);
+		                                    GE_TILE_TYPE_CAMERA);
 	else if (_ge_data_is_default_album(GE_ALBUM_DOWNLOADS_NAME, album->cluster))
 		_obj = _ge_tile_show_part_type_icon(obj,
-						    GE_TILE_TYPE_DOWNLOAD);
+		                                    GE_TILE_TYPE_DOWNLOAD);
 	else
 		_obj = _ge_tile_show_part_type_icon(obj,
-						    GE_TILE_TYPE_FOLDER);
+		                                    GE_TILE_TYPE_FOLDER);
 	return _obj;
 }
 
@@ -484,7 +486,7 @@ static Evas_Object *__ge_albums_get_sd_icon(Evas_Object *obj, ge_cluster *album)
 	Evas_Object *_obj = NULL;
 
 	_obj = _ge_tile_show_part_type_icon(obj,
-							GE_TILE_TYPE_MMC);
+	                                    GE_TILE_TYPE_MMC);
 	return _obj;
 }
 
@@ -500,13 +502,12 @@ static Evas_Object *__ge_albums_get_content(void *data, Evas_Object *obj, const 
 	Evas_Object *_obj = NULL;
 	if (!g_strcmp0(part, GE_TILE_ICON)) {
 		_obj = _ge_tile_show_part_icon(obj, part,
-					       album->cover_thumbs_cnt,
-					       __ge_albums_set_bg_file,
-					       (void *)album->cover);
+		                               album->cover_thumbs_cnt,
+		                               __ge_albums_set_bg_file,
+		                               (void *)album->cover);
 	} else if (!g_strcmp0(part, GE_TILE_TYPE_ICON)) {
 		_obj = __ge_albums_get_type_icon(obj, album);
-	}
-	else if (!g_strcmp0(part, GE_SD_CARD_TYPE_ICON)) {
+	} else if (!g_strcmp0(part, GE_SD_CARD_TYPE_ICON)) {
 		if (album->cluster->type == GE_MMC) {
 			_obj = __ge_albums_get_sd_icon(obj, album);
 		}
@@ -521,8 +522,7 @@ _ge_count_set(Evas_Object *layout, const char *text)
 	Edje_Message_Float *msg;
 	if (text) {
 		elm_layout_text_set(layout, "elm.sub.text", text);
-	}
-	else {
+	} else {
 		elm_layout_text_set(layout, "elm.sub.text", "");
 	}
 	edje = elm_layout_edje_get(layout);
@@ -553,7 +553,7 @@ static Evas_Object *__ge_split_albums_get_content(void *data, Evas_Object *obj, 
 		if (_ge_data_is_root_path(album->cluster->path)) {
 			i18n_name = GE_ALBUM_ROOT_NAME;
 		} else if (album->cluster->display_name &&
-				strlen(album->cluster->display_name)) {
+		           strlen(album->cluster->display_name)) {
 			i18n_name = _ge_ui_get_i18n_album_name(album->cluster);
 		}
 		_ge_data_update_items_cnt(ugd, album);
@@ -565,9 +565,9 @@ static Evas_Object *__ge_split_albums_get_content(void *data, Evas_Object *obj, 
 		return layout;
 	} else if (!g_strcmp0(part, GE_TILE_ICON)) {
 		_obj = _ge_tile_show_part_icon(obj, part,
-				album->cover_thumbs_cnt,
-				__ge_albums_set_bg_file,
-				(void *)album->cover);
+		                               album->cover_thumbs_cnt,
+		                               __ge_albums_set_bg_file,
+		                               (void *)album->cover);
 	} else if (!g_strcmp0(part, GE_SD_CARD_TYPE_ICON)) {
 		if (album->cluster->type == GE_MMC) {
 			_obj = __ge_albums_get_sd_icon(obj, album);
@@ -583,12 +583,12 @@ static int __ge_albums_append(ge_ugdata *ugd, ge_cluster *album)
 	GE_CHECK_VAL(ugd, -1);
 
 	album->griditem = elm_gengrid_item_append(ugd->albums_view,
-						  ugd->album_gic, album,
-						  __ge_albums_sel_cb, album);
+	                  ugd->album_gic, album,
+	                  __ge_albums_sel_cb, album);
 	ge_sdbg("Append [%s], id[%s]", album->cluster->display_name,
-	       album->cluster->uuid);
+	        album->cluster->uuid);
 	_ge_tile_update_item_size(ugd, ugd->albums_view, ugd->rotate_mode,
-				  false);
+	                          false);
 	album->index = elm_gengrid_items_count(ugd->albums_view);
 	return 0;
 }
@@ -600,12 +600,12 @@ int __ge_split_albums_append(ge_ugdata *ugd, ge_cluster *album)
 	GE_CHECK_VAL(ugd, -1);
 
 	album->griditem = elm_gengrid_item_append(ugd->albums_view,
-			ugd->album_gic, album,
-			__ge_split_albums_sel_cb, album);
+	                  ugd->album_gic, album,
+	                  __ge_split_albums_sel_cb, album);
 	ge_sdbg("Append [%s], id[%s]", album->cluster->display_name,
-			album->cluster->uuid);
+	        album->cluster->uuid);
 	_ge_tile_update_item_size(ugd, ugd->albums_view, ugd->rotate_mode,
-			false);
+	                          false);
 	album->index = elm_gengrid_items_count(ugd->albums_view);
 	return 0;
 }
@@ -624,7 +624,7 @@ static Eina_Bool __ge_albums_append_idler_cb(void *data)
 	int new_cnt = eina_list_count(ugd->cluster_list->clist);
 	if (old_cnt != new_cnt)
 		_ge_tile_update_item_size(ugd, ugd->albums_view,
-					  ugd->rotate_mode, false);
+		                          ugd->rotate_mode, false);
 	ecore_idler_del(ugd->album_idler);
 	ugd->album_idler = NULL;
 	ge_dbg("Append album +++");
@@ -711,16 +711,19 @@ int __ge_split_view_append_albums(ge_ugdata *ugd, Evas_Object *parent, bool is_u
 		_ge_ui_save_scroller_pos(parent);
 		elm_gengrid_clear(parent);
 	}
-	if (is_update)
+	if (is_update) {
 		_ge_data_get_clusters(ugd, GE_ALBUM_DATA_LOCAL);
-	if (ugd->cluster_list && ugd->cluster_list->clist)
+	}
+	if (ugd->cluster_list && ugd->cluster_list->clist) {
 		length = eina_list_count(ugd->cluster_list->clist);
-	else
+	} else {
 		return -1;
+	}
 	ge_dbg("Albums list length: %d", length);
 
-	if (ugd->th)
+	if (ugd->th) {
 		elm_object_theme_set(parent, ugd->th);
+	}
 
 	int grid_cnt = 0;
 	Elm_Gengrid_Item_Class *gic = elm_gengrid_item_class_new();
@@ -750,10 +753,10 @@ int __ge_split_view_append_albums(ge_ugdata *ugd, Evas_Object *parent, bool is_u
 		}
 
 		album->griditem = elm_gengrid_item_append(parent,
-				gic,
-				album,
-				__ge_split_albums_sel_cb,
-				album);
+		                  gic,
+		                  album,
+		                  __ge_split_albums_sel_cb,
+		                  album);
 
 		if (ugd->selected_album == NULL && !strcmp(album->cluster->uuid, ugd->album_item->cluster->uuid)) {
 			album->select = true;
@@ -774,7 +777,7 @@ int __ge_split_view_append_albums(ge_ugdata *ugd, Evas_Object *parent, bool is_u
 		album->index = grid_cnt;
 		grid_cnt++;
 		ge_sdbg("Append [%s], id=%s.", album->cluster->display_name,
-				album->cluster->uuid);
+		        album->cluster->uuid);
 	}
 	/* Restore previous position of scroller */
 	_ge_ui_restore_scroller_pos(parent);
@@ -785,7 +788,7 @@ int __ge_split_view_append_albums(ge_ugdata *ugd, Evas_Object *parent, bool is_u
 	}
 	/* NOT jsut for updating view, but for updating view and data together */
 	if (ugd->cluster_list->data_type == GE_ALBUM_DATA_LOCAL ||
-			ugd->cluster_list->data_type == GE_ALBUM_DATA_WEB) {
+	        ugd->cluster_list->data_type == GE_ALBUM_DATA_WEB) {
 		if (ugd->album_idler) {
 			ecore_idler_del(ugd->album_idler);
 			ugd->album_idler = NULL;
@@ -814,20 +817,23 @@ static int __ge_albums_append_albums(ge_ugdata *ugd, Evas_Object *parent, bool i
 		_ge_ui_save_scroller_pos(parent);
 		elm_gengrid_clear(parent);
 	}
-	if (is_update)
+	if (is_update) {
 		_ge_data_get_clusters(ugd, GE_ALBUM_DATA_LOCAL);
-	if (ugd->cluster_list && ugd->cluster_list->clist)
+	}
+	if (ugd->cluster_list && ugd->cluster_list->clist) {
 		length = eina_list_count(ugd->cluster_list->clist);
-	else
+	} else {
 		return -1;
+	}
 	ge_dbg("Albums list length: %d", length);
 
-	if (ugd->th)
+	if (ugd->th) {
 		elm_object_theme_set(parent, ugd->th);
+	}
 
 	/* Jus for updating view, not updating data and view together */
 	if (ugd->cluster_list->data_type == GE_ALBUM_DATA_NONE &&
-	    length > GE_ALBUMS_FIRST_COUNT + 1) {
+	        length > GE_ALBUMS_FIRST_COUNT + 1) {
 		length = GE_ALBUMS_FIRST_COUNT + 1;
 		if (ugd->album_idler) {
 			ecore_idler_del(ugd->album_idler);
@@ -845,25 +851,26 @@ static int __ge_albums_append_albums(ge_ugdata *ugd, Evas_Object *parent, bool i
 		GE_CHECK_VAL(album->cluster, -1);
 		GE_CHECK_VAL(album->cluster->display_name, -1);
 
-		if (album->cluster->type == GE_ALL)
+		if (album->cluster->type == GE_ALL) {
 			continue;
+		}
 
 		album->griditem = elm_gengrid_item_append(parent,
-							  ugd->album_gic,
-							  album,
-							  __ge_albums_sel_cb,
-							  album);
+		                  ugd->album_gic,
+		                  album,
+		                  __ge_albums_sel_cb,
+		                  album);
 		album->index = grid_cnt;
 		grid_cnt++;
 		ge_sdbg("Append [%s], id=%s.", album->cluster->display_name,
-		       album->cluster->uuid);
+		        album->cluster->uuid);
 	}
 	/* Restore previous position of scroller */
 	_ge_ui_restore_scroller_pos(parent);
 
 	/* NOT jsut for updating view, but for updating view and data together */
 	if (ugd->cluster_list->data_type == GE_ALBUM_DATA_LOCAL ||
-	    ugd->cluster_list->data_type == GE_ALBUM_DATA_WEB) {
+	        ugd->cluster_list->data_type == GE_ALBUM_DATA_WEB) {
 		if (ugd->album_idler) {
 			ecore_idler_del(ugd->album_idler);
 			ugd->album_idler = NULL;
@@ -883,13 +890,14 @@ static int __ge_albums_append_albums(ge_ugdata *ugd, Evas_Object *parent, bool i
 
 static int __ge_albums_del_cbs(Evas_Object *view)
 {
-	if (view == NULL)
+	if (view == NULL) {
 		return -1;
+	}
 	ge_dbg("Delete albums callbacks!");
 	evas_object_smart_callback_del(view, "realized",
-				       __ge_albums_realized);
+	                               __ge_albums_realized);
 	evas_object_smart_callback_del(view, "unrealized",
-				       __ge_albums_unrealized);
+	                               __ge_albums_unrealized);
 	return 0;
 }
 
@@ -897,7 +905,7 @@ static int __ge_albums_rotate_view(ge_ugdata *ugd)
 {
 	if (ugd->albums_view && ugd->albums_view != ugd->nocontents) {
 		_ge_tile_update_item_size(ugd, ugd->albums_view,
-					  ugd->rotate_mode, false);
+		                          ugd->rotate_mode, false);
 		return 0;
 	}
 	return -1;
@@ -905,11 +913,11 @@ static int __ge_albums_rotate_view(ge_ugdata *ugd)
 
 /* Free data after layout deleted */
 static void __ge_albums_del_layout_cb(void *data, Evas *e, Evas_Object *obj,
-					 void *ei)
+                                      void *ei)
 {
 	ge_dbg("Delete layout ---");
-/*	evas_object_event_callback_del(obj, EVAS_CALLBACK_DEL,
-				       __ge_albums_del_layout_cb);*/
+	/*	evas_object_event_callback_del(obj, EVAS_CALLBACK_DEL,
+					       __ge_albums_del_layout_cb);*/
 	GE_CHECK(data);
 	ge_ugdata *ugd = (ge_ugdata *)data;
 
@@ -933,7 +941,7 @@ static void __ge_albums_del_layout_cb(void *data, Evas *e, Evas_Object *obj,
 		ugd->album_gic = NULL;
 	}
 	ugd->rotate_cbs = eina_list_remove(ugd->rotate_cbs,
-					   __ge_albums_rotate_view);
+	                                   __ge_albums_rotate_view);
 	/* Clear view data */
 	_ge_data_free_sel_albums(ugd);
 	_ge_data_free_clusters(data);
@@ -961,6 +969,7 @@ static void _ge_grid_move_stop_cb(void *data, Evas_Object *obj, void *ei)
 	}
 	app_control_destroy(app_control);
 }
+
 Evas_Object* __ge_add_albums_split_view(ge_ugdata *ugd, Evas_Object *parent)
 {
 	ge_dbg("");
@@ -973,11 +982,11 @@ Evas_Object* __ge_add_albums_split_view(ge_ugdata *ugd, Evas_Object *parent)
 	elm_gengrid_horizontal_set(grid, EINA_FALSE);
 	elm_scroller_bounce_set(grid, EINA_FALSE, EINA_TRUE);
 	elm_scroller_policy_set(grid, ELM_SCROLLER_POLICY_OFF,
-			ELM_SCROLLER_POLICY_AUTO);
+	                        ELM_SCROLLER_POLICY_AUTO);
 	elm_gengrid_multi_select_set(grid, EINA_TRUE);
 	evas_object_size_hint_weight_set(grid, EVAS_HINT_EXPAND, EVAS_HINT_EXPAND);
 	evas_object_smart_callback_add(grid, "realized", __ge_split_albums_realized,
-			ugd);
+	                               ugd);
 	if (__ge_split_view_append_albums(ugd, grid, false) != 0) {
 		ge_dbgW("Failed to append album items!");
 		__ge_albums_del_cbs(grid);
@@ -1012,21 +1021,21 @@ static Evas_Object* __ge_albums_add_view(ge_ugdata *ugd, Evas_Object *parent)
 	elm_scroller_bounce_set(grid, EINA_FALSE, EINA_TRUE);
 #endif
 	elm_scroller_policy_set(grid, ELM_SCROLLER_POLICY_OFF,
-				ELM_SCROLLER_POLICY_AUTO);
+	                        ELM_SCROLLER_POLICY_AUTO);
 	elm_gengrid_multi_select_set(grid, EINA_TRUE);
 	evas_object_size_hint_weight_set(grid, EVAS_HINT_EXPAND, EVAS_HINT_EXPAND);
 	evas_object_smart_callback_add(grid, "unrealized",
-				       __ge_albums_unrealized, ugd);
+	                               __ge_albums_unrealized, ugd);
 	evas_object_smart_callback_add(grid, "realized", __ge_albums_realized,
-				       ugd);
+	                               ugd);
 	if (ugd->is_attach_panel && (ugd->attach_panel_display_mode != ATTACH_PANEL_FULL_MODE)) {
 		elm_scroller_movement_block_set(grid, ELM_SCROLLER_MOVEMENT_BLOCK_VERTICAL);
 	}
 	if (ugd->is_attach_panel) {
 		evas_object_smart_callback_add(grid, "scroll,anim,stop",
-				_ge_grid_move_stop_cb, ugd);
+		                               _ge_grid_move_stop_cb, ugd);
 		evas_object_smart_callback_add(grid, "scroll,drag,stop",
-				_ge_grid_move_stop_cb, ugd);
+		                               _ge_grid_move_stop_cb, ugd);
 	}
 
 	if (__ge_albums_append_albums(ugd, grid, false) != 0) {
@@ -1058,9 +1067,9 @@ static Eina_Bool __ge_main_back_cb(void *data, Elm_Object_Item *it)
 	ge_ugdata *ugd = (ge_ugdata *)data;
 
 	void *pop_cb = evas_object_data_get(ugd->naviframe,
-					    GE_NAVIFRAME_POP_CB_KEY);
+	                                    GE_NAVIFRAME_POP_CB_KEY);
 	if (pop_cb) {
-		Eina_Bool (*_pop_cb) (void *ugd);
+		Eina_Bool(*_pop_cb)(void * ugd);
 		_pop_cb = pop_cb;
 
 		if (_pop_cb(ugd)) {
@@ -1093,38 +1102,40 @@ int _ge_albums_create_view(ge_ugdata *ugd)
 	ugd->cluster_list->append_cb = __ge_albums_append;
 
 	ugd->album_gic = elm_gengrid_item_class_new();
-	if (ugd->album_gic == NULL)
+	if (ugd->album_gic == NULL) {
 		goto GE_ALBUMS_FAILED;
+	}
 	ugd->album_gic->item_style = "gallery_efl/albums_view";
 	ugd->album_gic->func.text_get = __ge_albums_get_text;
 	ugd->album_gic->func.content_get = __ge_albums_get_content;
 
 	/* Register delete callback */
 	evas_object_event_callback_add(ugd->albums_view_ly,
-				       EVAS_CALLBACK_DEL,
-				       __ge_albums_del_layout_cb, ugd);
+	                               EVAS_CALLBACK_DEL,
+	                               __ge_albums_del_layout_cb, ugd);
 	/* Create albums view */
 	ugd->albums_view = __ge_albums_add_view(ugd, ugd->albums_view_ly);
-	if (ugd->albums_view == NULL)
+	if (ugd->albums_view == NULL) {
 		goto GE_ALBUMS_FAILED;
+	}
 
 	ge_dbgE("!!!!! album view !!!!!!!! is pushed in the naviframe instead of content set");
 	ugd->nf_it = elm_naviframe_item_push(ugd->naviframe, GE_ALBUM_NAME, NULL, NULL, ugd->albums_view, NULL);
 
-		if (ugd->nf_it != NULL) {
-			ge_dbgE("!!!! album view !!!!! is push successfully in the nf");
-		}
-		else
-			ge_dbgE("!!!!!! album view !!!!!1111 failed to push in nf ");
+	if (ugd->nf_it != NULL) {
+		ge_dbgE("!!!! album view !!!!! is push successfully in the nf");
+	} else {
+		ge_dbgE("!!!!!! album view !!!!!1111 failed to push in nf ");
+	}
 
 
 	elm_naviframe_item_pop_cb_set(ugd->nf_it, __ge_main_back_cb, ugd);
 
 	ugd->rotate_cbs = eina_list_append(ugd->rotate_cbs,
-					   __ge_albums_rotate_view);
+	                                   __ge_albums_rotate_view);
 	return 0;
 
- GE_ALBUMS_FAILED:
+GE_ALBUMS_FAILED:
 
 	GE_IF_DEL_OBJ(ugd->albums_view_ly);
 	if (ugd->album_gic) {
@@ -1145,13 +1156,13 @@ int _ge_albums_update_view(ge_ugdata *ugd)
 	_ge_set_view_mode(ugd, GE_VIEW_ALBUMS);
 	/* Changed to show no contents if needed */
 	if (!ugd->cluster_list->clist ||
-			(eina_list_count(ugd->cluster_list->clist) == 0)) {
+	        (eina_list_count(ugd->cluster_list->clist) == 0)) {
 		_ge_data_get_clusters(ugd, GE_ALBUM_DATA_LOCAL);
 		ugd->cluster_list->append_cb = __ge_albums_append;
 		if (!ugd->cluster_list->clist ||
-					(eina_list_count(ugd->cluster_list->clist) == 0)) {
-		ge_dbgW("Clusters list is empty!");
-		goto ALBUMS_FAILED;
+		        (eina_list_count(ugd->cluster_list->clist) == 0)) {
+			ge_dbgW("Clusters list is empty!");
+			goto ALBUMS_FAILED;
 		}
 	}
 
@@ -1163,24 +1174,24 @@ int _ge_albums_update_view(ge_ugdata *ugd)
 		ugd->albums_view = __ge_albums_add_view(ugd, ugd->naviframe);
 		GE_CHECK_VAL(ugd->albums_view, -1);
 		Evas_Object *tmp = NULL;
-		tmp=elm_object_part_content_get(ugd->albums_view_ly, "contents");
-		if (tmp!=NULL) {
+		tmp = elm_object_part_content_get(ugd->albums_view_ly, "contents");
+		if (tmp != NULL) {
 			ge_dbgE("tmp was not empty");
 			elm_object_part_content_unset(ugd->albums_view_ly, "contents");
 			evas_object_hide(tmp);
 		}
 
 		elm_object_part_content_set(ugd->albums_view_ly, "contents",
-				ugd->albums_view);
+		                            ugd->albums_view);
 
 		ge_dbgE("!!!!! album view !!!!!!!! is pushed in the naviframe instead of content set");
-		ugd->nf_it = elm_naviframe_item_push(ugd->naviframe, GE_ALBUM_NAME, NULL, NULL, ugd->albums_view, NULL );
+		ugd->nf_it = elm_naviframe_item_push(ugd->naviframe, GE_ALBUM_NAME, NULL, NULL, ugd->albums_view, NULL);
 
 		if (ugd->nf_it != NULL) {
 			ge_dbgE("!!!! album view !!!!! is push successfully in the nf");
-		}
-		else
+		} else {
 			ge_dbgE("!!!!!! album view !!!!!1111 failed to push in nf ");
+		}
 
 
 
@@ -1193,30 +1204,33 @@ int _ge_albums_update_view(ge_ugdata *ugd)
 
 	sel_cnt = _ge_data_get_sel_cnt(ugd);
 	if (ugd->done_it != NULL) {
-		if (sel_cnt > 0 && (ugd->max_count < 0 || sel_cnt <= ugd->max_count))
+		if (sel_cnt > 0 && (ugd->max_count < 0 || sel_cnt <= ugd->max_count)) {
 			_ge_ui_disable_item(ugd->done_it, false);
-		else
+		} else {
 			_ge_ui_disable_item(ugd->done_it, true);
+		}
 	} else {
 		ge_dbgW("done item is NULL");
 	}
 
 	return 0;
 
-	ALBUMS_FAILED:
+ALBUMS_FAILED:
 
 	sel_cnt = _ge_data_get_sel_cnt(ugd);
 	if (ugd->done_it != NULL) {
-		if (sel_cnt > 0 && (ugd->max_count < 0 || sel_cnt <= ugd->max_count))
+		if (sel_cnt > 0 && (ugd->max_count < 0 || sel_cnt <= ugd->max_count)) {
 			_ge_ui_disable_item(ugd->done_it, false);
-		else
+		} else {
 			_ge_ui_disable_item(ugd->done_it, true);
+		}
 	} else {
 		ge_dbgW("done item is NULL");
 	}
 
-	if (ugd->albums_view && ugd->albums_view != ugd->nocontents)
+	if (ugd->albums_view && ugd->albums_view != ugd->nocontents) {
 		__ge_albums_del_cbs(ugd->albums_view);
+	}
 
 	evas_object_del(ugd->albums_view);
 
@@ -1227,17 +1241,17 @@ int _ge_albums_update_view(ge_ugdata *ugd)
 	evas_object_show(ugd->albums_view);
 
 	elm_object_part_content_set(ugd->albums_view_ly, "contents",
-			ugd->albums_view);
+	                            ugd->albums_view);
 
 
 	ge_dbgE("!!!!! album view !!!!!!!! is pushed in the naviframe instead of content set");
-	ugd->nf_it = elm_naviframe_item_push(ugd->naviframe, GE_ALBUM_NAME, NULL, NULL,ugd->albums_view, NULL );
+	ugd->nf_it = elm_naviframe_item_push(ugd->naviframe, GE_ALBUM_NAME, NULL, NULL, ugd->albums_view, NULL);
 
 	if (ugd->nf_it != NULL) {
 		ge_dbgE("!!!! album view !!!!! is push successfully in the nf");
-	}
-	else
+	} else {
 		ge_dbgE("!!!!!! album view !!!!!1111 failed to push in nf ");
+	}
 
 	return -1;
 }

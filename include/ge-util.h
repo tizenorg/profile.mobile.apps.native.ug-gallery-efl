@@ -26,7 +26,7 @@
 	(path && (1 == ge_file_exists(path)) && (ge_file_size(path) > 0))
 
 #define GE_ICON_SET_FILE(icon, img) \
-		elm_image_file_set(icon, GE_IMAGES_EDJ_FILE, img)
+	elm_image_file_set(icon, GE_IMAGES_EDJ_FILE, img)
 
 
 void _ge_set_current_item(ge_item* gitem);

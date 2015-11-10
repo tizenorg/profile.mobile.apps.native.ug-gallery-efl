@@ -21,22 +21,19 @@
 #include <ui-gadget.h>
 #include "gallery-efl.h"
 
-typedef enum
-{
+typedef enum {
 	GE_UG_FAIL,
 	GE_UG_SUCCESS
 } ge_ug_load_status;
 
-typedef enum
-{
+typedef enum {
 	GE_UG_IMAGEVIEWER,
 	GE_UG_GALLERY_SETTING_SLIDESHOW,
 	GE_UG_GALLERY_SETTING,
 	GE_UG_CNT,
 } ge_ext_ug_type;
 
-typedef enum
-{
+typedef enum {
 	GE_UG_IV,
 	/*Invoke imageviewer to slideshow on local album */
 	GE_UG_IV_SLIDESHOW,
