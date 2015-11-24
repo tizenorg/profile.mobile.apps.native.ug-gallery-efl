@@ -108,13 +108,13 @@
 		<label xml:lang="hi-in">गैलरी</label>
 		<label xml:lang="en-ph">Gallery</label>
 		<label xml:lang="fr-ca">Galerie</label>
-		<application-service>
+		<app-control>
 			<operation name="http://tizen.org/appcontrol/operation/pick"/>
-		</application-service>
-		<application-service>
+		</app-control>
+		<app-control>
 			<operation name="http://tizen.org/appcontrol/operation/pick"/>
 			<mime name="image/*"/>
 			<mime name="video/*"/>
-		</application-service>
+		</app-control>
 	</ui-application>
 </manifest>
