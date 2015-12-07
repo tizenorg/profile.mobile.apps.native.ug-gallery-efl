@@ -57,6 +57,7 @@ pkg_check_modules(pkgs REQUIRED
 	notification
 	appsvc
 	storage
+	libtzplatform-config
 )
 
 FOREACH(flag ${pkgs_CFLAGS})
@@ -100,17 +101,17 @@ ADD_CUSTOM_COMMAND(OUTPUT gallery-efl-images.edj
 ADD_CUSTOM_TARGET(gallery_efl_edj_build DEPENDS gallery-efl.edj gallery-efl-images.edj)
 ADD_DEPENDENCIES(${PROJECT_NAME} gallery_efl_edj_build)
 
-INSTALL(FILES ${CMAKE_BINARY_DIR}/gallery-efl.edj DESTINATION /usr/ug/res/edje/gallery-efl)
-INSTALL(FILES ${CMAKE_BINARY_DIR}/gallery-efl-images.edj DESTINATION /usr/ug/res/edje/gallery-efl)
+INSTALL(FILES ${CMAKE_BINARY_DIR}/gallery-efl.edj DESTINATION ${RESDIR}/edje/gallery-efl)
+INSTALL(FILES ${CMAKE_BINARY_DIR}/gallery-efl-images.edj DESTINATION ${RESDIR}/edje/gallery-efl)
 
-INSTALL(DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/res/${GE_IMG_C_DIR} DESTINATION /usr/ug/res/images/gallery-efl)
-INSTALL(TARGETS ${PROJECT_NAME} DESTINATION /usr/ug/lib)
+INSTALL(DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/res/${GE_IMG_C_DIR} DESTINATION ${RESDIR}/images/gallery-efl)
+INSTALL(TARGETS ${PROJECT_NAME} DESTINATION ${LIBDIR})
 
-INSTALL(FILES ${PROJECT_NAME}.xml DESTINATION /usr/share/packages)
+INSTALL(FILES ${PROJECT_NAME}.xml DESTINATION ${TZ_SYS_RO_PACKAGES})
 
 # i18n
 ADD_SUBDIRECTORY(res/po)
 
 # Install appcontrol icon
-INSTALL(FILES ${CMAKE_CURRENT_SOURCE_DIR}/res/icon/ug-gallery-efl.png DESTINATION /usr/ug/res/images/gallery-efl)
+INSTALL(FILES ${CMAKE_CURRENT_SOURCE_DIR}/res/icon/ug-gallery-efl.png DESTINATION ${RESDIR}/images/gallery-efl)
 
