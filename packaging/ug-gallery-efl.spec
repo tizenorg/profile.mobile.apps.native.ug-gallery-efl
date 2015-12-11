@@ -73,10 +73,9 @@ ln -sf /usr/bin/ug-client %{TZ_SYS_RO_UG}/bin/gallery-efl
 %manifest ug-gallery-efl.manifest
 %defattr(-,root,root,-)
 %{TZ_SYS_RO_UG}/lib/libug-gallery-efl.so*
-%{TZ_SYS_RO_UG}/res/edje/gallery-efl/*
-%{TZ_SYS_RO_UG}/res/images/gallery-efl/*
+%{TZ_SYS_RO_UG}/res/edje/ug-gallery-efl/*
+%{TZ_SYS_RO_UG}/res/images/ug-gallery-efl/*
 %{TZ_SYS_RO_UG}/res/locale/*/*/ug-gallery-efl.mo
 %{TZ_SYS_RO_PACKAGES}/ug-gallery-efl.xml
-%{TZ_SYS_RO_UG}/res/images/gallery-efl/ug-gallery-efl.png
+%{TZ_SYS_RO_UG}/res/images/ug-gallery-efl/ug-gallery-efl.png
 %{TZ_SYS_SHARE}/license/ug-gallery-efl
-
