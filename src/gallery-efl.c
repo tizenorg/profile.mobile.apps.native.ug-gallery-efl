@@ -159,7 +159,6 @@ static int _ge_create_view(ge_ugdata *ugd)
 	ugd->th = elm_theme_new();
 	GE_CHECK_VAL(ugd->th, -1);
 	elm_theme_ref_set(ugd->th, NULL);
-	elm_theme_set(ugd->th, "tizen-HD-dark");
 	elm_theme_extension_add(ugd->th, GE_EDJ_FILE);
 
 	if (_ge_init_view(ugd) != 0) {
