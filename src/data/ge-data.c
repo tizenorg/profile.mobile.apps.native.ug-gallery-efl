@@ -177,11 +177,11 @@ int _ge_data_get_album_sel_cnt(ge_ugdata *ugd, char *uuid, int *cnt)
 	GE_CHECK_VAL(cnt, -1);
 	GE_CHECK_VAL(uuid, -1);
 	GE_CHECK_VAL(ugd, -1);
+	*cnt = 0;
 	if (ugd->selected_elist == NULL) {
 		ge_dbgW("Empty selected list!");
 		return -1;
 	}
-	*cnt = 0;
 
 	ge_sel_album_s *salbum = NULL;
 	Eina_List *l = NULL;
