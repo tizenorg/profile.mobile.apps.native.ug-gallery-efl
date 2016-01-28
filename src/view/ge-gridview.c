@@ -1544,11 +1544,10 @@ static Evas_Object *__ge_grid_add_view(ge_ugdata *ugd, Evas_Object *parent)
 	/* Register delete callback */
 	evas_object_event_callback_add(parent, EVAS_CALLBACK_DEL,
 	                               __ge_grid_delete_layout_cb, ugd);
-	/*	evas_object_smart_callback_add(grid, "unrealized",
-					       __ge_grid_unrealized, ugd);
+/*	evas_object_smart_callback_add(grid, "unrealized",
+					       __ge_grid_unrealized, ugd);*/
 		evas_object_smart_callback_add(grid, "realized",
 				__ge_grid_realized, ugd);
-	*/
 
 	if (ugd->is_attach_panel && (ugd->attach_panel_display_mode != ATTACH_PANEL_FULL_MODE)) {
 		elm_scroller_movement_block_set(grid, ELM_SCROLLER_MOVEMENT_BLOCK_VERTICAL);
@@ -1748,7 +1747,7 @@ void _gl_get_update_unsupported_file_cnt(ge_ugdata *ugd)
 			ge_dbgE("Invalid gitem!");
 			continue;
 		}
-		if (!strcmp(gitem->item->thumb_url, DEFAULT_THUMB)) {
+		if (gitem->item->thumb_url && !strcmp(DEFAULT_THUMB, gitem->item->thumb_url)) {
 			ugd->thumbs_d->unsupported_cnt = ugd->thumbs_d->unsupported_cnt + 1;
 		}
 	}
