@@ -351,7 +351,6 @@ static int _ge_parse_param(ge_ugdata *ugd, app_control_h service)
 	app_control_get_extra_data(service, APPSVC_DATA_SELECTION_MODE,
 	                           &select_mode);
 	ugd->limitsize = -1;
-#if 0//Tizen3.0 Build error
 	int ret = 0;
 	char *max_size = NULL;
 	ret = app_control_get_extra_data(service, APP_CONTROL_DATA_TOTAL_SIZE, &(max_size));
@@ -360,7 +359,6 @@ static int _ge_parse_param(ge_ugdata *ugd, app_control_h service)
 		ugd->limitsize = _ge_atoi(max_size);
 		GE_FREE(max_size);
 	}
-#endif
 	if (select_mode) {
 		if (!strcasecmp(select_mode, GE_BUNDLE_SELECTION_MODE_SINGLE)) {
 			launch_type = strdup(GE_LAUNCH_SELECT_ONE);
@@ -439,7 +437,6 @@ static int _ge_parse_param(ge_ugdata *ugd, app_control_h service)
 		          sizeof(ugd->albums_view_title));
 		/* Get maximum number */
 		ugd->max_count = -1;
-#if 0//Tizen3.0 Build error
 		char *max_cnt = NULL;
 		app_control_get_extra_data(service, APP_CONTROL_DATA_TOTAL_COUNT, &max_cnt);
 		if (max_cnt) {
@@ -447,7 +444,6 @@ static int _ge_parse_param(ge_ugdata *ugd, app_control_h service)
 			GE_FREE(max_cnt);
 		}
 		ge_sdbg("max count: %d", ugd->max_count);
-#endif
 	}
 
 	if (!ugd->overlap_mode) {
