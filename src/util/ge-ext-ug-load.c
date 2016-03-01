@@ -26,6 +26,7 @@
 #define GE_IV_UG_NAME "image-viewer-efl"
 #define GE_IV_STR_LEN_MAX 32
 #define GE_VIEW_MODE "View Mode"
+#define GE_SELECT_SIZE "Select Size"
 #define GE_SETAS_TYPE "Setas type"
 #define GE_VIEW_BY "View By"
 #define GE_MEDIA_TYPE "Media type"
@@ -48,6 +49,7 @@ static void __ge_appcontrol_select_result_cb(app_control_h request, app_control_
 	Eina_List *l = NULL;
 	ge_item *data = NULL;
 	int sel_count = 0;
+	struct stat stFileInfo;
 	app_control_get_extra_data_array(reply, "Selected index", &select_result, &count);
 	ge_dbg("current selection count = %d", count);
 
@@ -61,8 +63,10 @@ static void __ge_appcontrol_select_result_cb(app_control_h request, app_control_
 			}
 			in_list = false;
 			for (i = 0; i < count; i++) {
+				stat(data->item->file_url,&stFileInfo);
 				if (!strcmp(select_result[i], data->item->file_url)) {
 					if (!data->checked) {
+						ugd->selsize = ugd->selsize + stFileInfo.st_size;
 						__ge_grid_append_sel_item(ugd, data);
 						data->checked = true;
 					}
@@ -73,6 +77,7 @@ static void __ge_appcontrol_select_result_cb(app_control_h request, app_control_
 			}
 			if (!in_list) {
 				if (data->checked) {
+					ugd->selsize = ugd->selsize - stFileInfo.st_size;
 					__ge_grid_remove_sel_item(ugd, data);
 					data->checked = false;
 				}
@@ -619,6 +624,12 @@ int _ge_ext_load_iv_ug_select_mode(void *data, ge_media_s *item, ge_ext_iv_type 
 	if (ret != APP_CONTROL_ERROR_NONE) {
 		ge_dbgE("Setting the Media type failed");
 	}
+
+	app_control_add_extra_data(service,APP_CONTROL_DATA_TOTAL_SIZE,ugd->limitsize);
+	app_control_add_extra_data(service,GE_SELECT_SIZE,ugd->selsize);
+	app_control_add_extra_data(service,APP_CONTROL_DATA_TOTAL_COUNT,ugd->max_count);
+
+
 	ret = app_control_send_launch_request(service, __ge_appcontrol_select_result_cb, (void *)ugd);
 
 	app_control_destroy(service);
