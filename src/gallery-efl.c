@@ -353,6 +353,9 @@ static int _ge_parse_param(ge_ugdata *ugd, app_control_h service)
 	int ret = 0;
 	char *max_size = NULL;
 	ret = app_control_get_extra_data(service, APP_CONTROL_DATA_TOTAL_SIZE, &(max_size));
+	if (ret != APP_CONTROL_ERROR_NONE) {
+		ge_dbg("failed in app_control_get_extra_data");
+	}
 
 	if (max_size) {
 		ugd->limitsize = _ge_atoi(max_size);

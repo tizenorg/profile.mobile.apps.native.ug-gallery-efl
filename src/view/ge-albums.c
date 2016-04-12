@@ -888,7 +888,7 @@ static int __ge_albums_append_albums(ge_ugdata *ugd, Evas_Object *parent, bool i
 	}
 }
 
-static int __ge_albums_del_cbs(Evas_Object *view)
+int __ge_albums_del_cbs(Evas_Object *view)
 {
 	if (view == NULL) {
 		return -1;

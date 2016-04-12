@@ -24,6 +24,7 @@ int _ge_albums_create_view(ge_ugdata *ugd);
 int _ge_albums_update_view(ge_ugdata *ugd);
 Evas_Object* __ge_add_albums_split_view(ge_ugdata *ugd, Evas_Object *parent);
 int __ge_split_view_append_albums(ge_ugdata *ugd, Evas_Object *parent, bool is_update);
+int __ge_albums_del_cbs(Evas_Object *view);
 
 #endif /* _GE_ALBUMS_H_ */
 

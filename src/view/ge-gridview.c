@@ -380,8 +380,7 @@ static int __ge_grid_change_check(void *data, Elm_Object_Item *it)
 
 	if (!strcmp(gitem->item->thumb_url, DEFAULT_THUMB)) {
 		char *warning_str = g_strdup_printf(
-		                        GE_STR_UNSUPPORTED_FILE,
-		                        NULL);
+		                        GE_STR_UNSUPPORTED_FILE);
 		notification_status_message_post(warning_str);
 		GE_FREE(warning_str);
 		return -1;
@@ -391,7 +390,8 @@ static int __ge_grid_change_check(void *data, Elm_Object_Item *it)
 		int sel_cnt = _ge_data_get_sel_cnt(ugd);
 		if (ugd->max_count > 0 && sel_cnt + 1 > ugd->max_count) {
 			char *noti = NULL;
-			noti = g_strdup_printf(GE_STR_MAXIMUM_COUNT, ugd->max_count);
+			char *noti_str = GE_STR_MAXIMUM_COUNT;
+			noti = g_strdup_printf(noti_str, ugd->max_count);
 			_ge_ui_create_notiinfo(noti);
 			GE_GFREEIF(noti);
 			return -1;
@@ -490,8 +490,7 @@ static void __ge_grid_check_changed(void *data, Evas_Object *obj, void *ei)
 	if (!strcmp(gitem->item->thumb_url, DEFAULT_THUMB)) {
 		elm_check_state_set(obj, EINA_FALSE);
 		char *warning_str = g_strdup_printf(
-		                        GE_STR_UNSUPPORTED_FILE,
-		                        NULL);
+		                        GE_STR_UNSUPPORTED_FILE);
 		notification_status_message_post(warning_str);
 		GE_FREE(warning_str);
 		return;
@@ -501,7 +500,8 @@ static void __ge_grid_check_changed(void *data, Evas_Object *obj, void *ei)
 		int sel_cnt = _ge_data_get_sel_cnt(ugd);
 		if (ugd->max_count > 0 && sel_cnt + 1 > ugd->max_count) {
 			char *noti = NULL;
-			noti = g_strdup_printf(GE_STR_MAXIMUM_COUNT, ugd->max_count);
+			char *noti_str = GE_STR_MAXIMUM_COUNT;
+			noti = g_strdup_printf(noti_str, ugd->max_count);
 			_ge_ui_create_notiinfo(noti);
 			GE_GFREEIF(noti);
 			elm_check_state_set(obj, EINA_FALSE);
@@ -1050,7 +1050,8 @@ static void __ge_grid_selall_cb(void *data, Evas_Object *obj, void *ei)
 	if (!ugd->thumbs_d->b_mainview && ugd->ck_state == true) {
 		if (ugd->max_count > 0 && ((total_sel_cnt + (ugd->thumbs_d->medias_cnt - local_sel_cnt)) > ugd->max_count)) {
 			char *noti = NULL;
-			noti = g_strdup_printf(GE_STR_MAXIMUM_COUNT, ugd->max_count);
+			char *noti_str = GE_STR_MAXIMUM_COUNT;
+			noti = g_strdup_printf(noti_str, ugd->max_count);
 			_ge_ui_create_notiinfo(noti);
 			GE_GFREEIF(noti);
 			ugd->ck_state = EINA_FALSE;
@@ -1218,7 +1219,8 @@ static void __ge_grid_done_cb(void *data, Evas_Object *obj, void *ei)
 		sel_cnt = _ge_data_get_sel_cnt(ugd);
 		if (ugd->max_count > 0 && sel_cnt > ugd->max_count) {
 			char *noti = NULL;
-			noti = g_strdup_printf(GE_STR_MAXIMUM_COUNT, ugd->max_count);
+			char *noti_str = GE_STR_MAXIMUM_COUNT;
+			noti = g_strdup_printf(noti_str, ugd->max_count);
 			_ge_ui_create_notiinfo(noti);
 			GE_GFREEIF(noti);
 			b_disabled = true;
