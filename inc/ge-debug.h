@@ -49,9 +49,9 @@ typedef enum {
 
 #ifdef _USE_DLOG_
 
-#define ge_dbg(fmt, arg...)		LOGD(FONT_COLOR_BLUE fmt FONT_COLOR_RESET, ##arg)
-#define ge_dbgW(fmt, arg...)		LOGW(FONT_COLOR_GREEN fmt FONT_COLOR_RESET, ##arg)
-#define ge_dbgE(fmt, arg...)		LOGE(FONT_COLOR_RED fmt FONT_COLOR_RESET, ##arg)
+#define ge_dbg(fmt, arg...)			dlog_print(DLOG_DEBUG, LOG_TAG, "[%s][%d] : "fmt"\n", __func__, __LINE__, ##arg)
+#define ge_dbgW(fmt, arg...)		dlog_print(DLOG_INFO, LOG_TAG, "[%s][%d] : "fmt"\n", __func__, __LINE__, ##arg)
+#define ge_dbgE(fmt, arg...)		dlog_print(DLOG_ERROR, LOG_TAG, "[%s][%d] : "fmt"\n", __func__, __LINE__, ##arg)
 
 #else
 
@@ -61,9 +61,9 @@ typedef enum {
 #endif
 
 #ifdef _USE_SECURE_LOG_
-#define ge_sdbg(fmt, arg...)  SECURE_LOGD(FONT_COLOR_BLUE fmt FONT_COLOR_RESET, ##arg)
-#define ge_sdbgW(fmt, arg...) SECURE_LOGI(FONT_COLOR_GREEN fmt FONT_COLOR_RESET, ##arg)
-#define ge_sdbgE(fmt, arg...) SECURE_LOGE(FONT_COLOR_RED fmt FONT_COLOR_RESET, ##arg)
+#define ge_sdbg(fmt, arg...)  dlog_print(DLOG_DEBUG, LOG_TAG, "[%s][%d] : "fmt"\n", __func__, __LINE__, ##arg)
+#define ge_sdbgW(fmt, arg...) dlog_print(DLOG_INFO, LOG_TAG, "[%s][%d] : "fmt"\n", __func__, __LINE__, ##arg)
+#define ge_sdbgE(fmt, arg...) dlog_print(DLOG_ERROR, LOG_TAG, "[%s][%d] : "fmt"\n", __func__, __LINE__, ##arg)
 #endif
 
 #define ge_warn_if(expr, fmt, arg...) do { \

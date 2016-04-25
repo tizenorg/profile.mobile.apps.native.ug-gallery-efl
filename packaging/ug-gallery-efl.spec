@@ -1,9 +1,9 @@
 
-Name:       ug-gallery-efl
+Name:       org.tizen.ug-gallery-efl
 Summary:    Gallery UX
 Version:    1.3.21
 Release:    1
-Group:      Applications
+Group:      Applications/Multimedia Applications
 License:    Apache-2.0
 Source0:    %{name}-%{version}.tar.gz
 
@@ -16,10 +16,8 @@ BuildRequires:  gettext-tools
 BuildRequires:  edje-tools
 BuildRequires:  prelink
 BuildRequires:  libicu-devel
-
 BuildRequires: pkgconfig(elementary)
 BuildRequires: pkgconfig(evas)
-BuildRequires: pkgconfig(ui-gadget-1)
 BuildRequires: pkgconfig(dlog)
 BuildRequires: pkgconfig(glib-2.0)
 BuildRequires: pkgconfig(notification)
@@ -33,49 +31,61 @@ BuildRequires: pkgconfig(libtzplatform-config)
 %description
 Description: gallery UG
 
+%define PREFIX    	 %{TZ_SYS_RO_APP}/%{name}
+%define MANIFESTDIR      %{TZ_SYS_RO_PACKAGES}
+%define ICONDIR          %{TZ_SYS_RO_ICONS}/default/small
+
+%define RESDIR           %{PREFIX}/res
+%define EDJDIR           %{RESDIR}/edje
+%define IMGDIR           %{EDJDIR}/images
+%define BINDIR           %{PREFIX}/bin
+%define LIBDIR           %{PREFIX}/lib
+%define LOCALEDIR        %{RESDIR}/locale
+%define IMGDIRRES	 %{RESDIR}/res
+
 %prep
 %setup -q
 
 %build
-
-%define _app_license_dir          %{TZ_SYS_SHARE}/license
-
-%if 0%{?tizen_build_binary_release_type_eng}
-export CFLAGS="$CFLAGS -DTIZEN_ENGINEER_MODE"
-export CXXFLAGS="$CXXFLAGS -DTIZEN_ENGINEER_MODE"
-export FFLAGS="$FFLAGS -DTIZEN_ENGINEER_MODE"
+%if 0%{?sec_build_binary_debug_enable}
+export CFLAGS="$CFLAGS -DTIZEN_DEBUG_ENABLE"
+export CXXFLAGS="$CXXFLAGS -DTIZEN_DEBUG_ENABLE"
+export FFLAGS="$FFLAGS -DTIZEN_DEBUG_ENABLE"
 %endif
 
-%ifarch %{arm}
-CXXFLAGS+=" -D_ARCH_ARM_ -mfpu=neon"
-%endif
-
-cmake . -DCMAKE_INSTALL_PREFIX=%{TZ_SYS_RO_UG} \
-	-DARCH=%{ARCH} \
-	-DTZ_SYS_RO_PACKAGES=%{TZ_SYS_RO_PACKAGES}
+cmake . \
+    -DPREFIX=%{PREFIX}   \
+    -DPKGDIR=%{name}     \
+    -DIMGDIR=%{IMGDIR}   \
+    -DEDJDIR=%{EDJDIR}   \
+    -DPKGNAME=%{name}    \
+    -DBINDIR=%{BINDIR}   \
+    -DMANIFESTDIR=%{MANIFESTDIR}   \
+    -DEDJIMGDIR=%{EDJIMGDIR}   \
+    -DLIBDIR=%{LIBDIR}   \
+    -DICONDIR=%{ICONDIR}   \
+    -DLOCALEDIR=%{LOCALEDIR} \
+    -DRESDIR=%{RESDIR}
 
 make %{?jobs:-j%jobs}
 
 %install
 rm -rf %{buildroot}
-
 %make_install
-
-mkdir -p %{buildroot}%{_app_license_dir}
-cp LICENSE %{buildroot}%{_app_license_dir}/ug-gallery-efl
+mkdir -p %{buildroot}/%{LIBDIR}
 
 %post
-mkdir -p /usr/ug/bin/
-ln -sf /usr/bin/ug-client %{TZ_SYS_RO_UG}/bin/gallery-efl
-%postun
+GOPTION="-g 6514"
 
 %files
-%manifest ug-gallery-efl.manifest
+%manifest %{name}.manifest
 %defattr(-,root,root,-)
-%{TZ_SYS_RO_UG}/lib/libug-gallery-efl.so*
-%{TZ_SYS_RO_UG}/res/edje/ug-gallery-efl/*
-%{TZ_SYS_RO_UG}/res/images/ug-gallery-efl/*
-%{TZ_SYS_RO_UG}/res/locale/*/*/ug-gallery-efl.mo
-%{TZ_SYS_RO_PACKAGES}/ug-gallery-efl.xml
-%{TZ_SYS_RO_UG}/res/images/ug-gallery-efl/ug-gallery-efl.png
-%{TZ_SYS_SHARE}/license/ug-gallery-efl
+%dir
+%{LIBDIR}
+%{BINDIR}/*
+%{MANIFESTDIR}/*.xml
+%{ICONDIR}/*
+%{RESDIR}/*
+%{ICONDIR}/*
+#%{IMGDIR}/*
+#%{LOCALEDIR}/*

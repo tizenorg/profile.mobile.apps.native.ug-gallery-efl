@@ -147,10 +147,10 @@ static void _ge_ext_destroy_me(ge_ugdata *ugd)
 {
 	ge_dbg("");
 	GE_CHECK(ugd);
+
+#ifdef _UG_UI_CONVERSION
 	GE_CHECK(ugd->ug_called_by_me);
 	GE_CHECK(ugd->ug);
-	GE_CHECK(ugd->service);
-	bool send_result = false;
 
 	if (ugd->ug_called_by_me) {
 		ge_dbg("Destroy ug_called_by_me");
@@ -158,6 +158,16 @@ static void _ge_ext_destroy_me(ge_ugdata *ugd)
 		ugd->ug_called_by_me = NULL;
 	} else {
 		ge_dbg("ug_called_by_me does not exist!");
+	}
+#endif
+
+	GE_CHECK(ugd->service);
+	bool send_result = false;
+	app_control_h reply = NULL;
+	app_control_create(&reply);
+	if (!reply) {
+		ge_dbg("reply handle not created");
+		return;
 	}
 
 	if (ugd->file_select_mode == GE_FILE_SELECT_T_SLIDESHOW) {
@@ -171,7 +181,7 @@ static void _ge_ext_destroy_me(ge_ugdata *ugd)
 	if (ugd->file_select_mode == GE_FILE_SELECT_T_SETAS) {
 		if (ugd->file_setas_image_path) {
 			ge_dbg("GE_SETAS_IMAGE_PATH:%s", ugd->file_setas_image_path);
-			app_control_add_extra_data(ugd->service,
+			app_control_add_extra_data(reply,
 			                           GE_SETAS_IMAGE_PATH,
 			                           ugd->file_setas_image_path);
 
@@ -184,7 +194,7 @@ static void _ge_ext_destroy_me(ge_ugdata *ugd)
 		         ugd->file_select_setas_mode == GE_SETAS_T_CROP_WALLPAPER)) {
 			ge_dbg("GE_SETAS_CALLERID_CROP_IMAGE_PATH:%s",
 			       ugd->file_setas_crop_image_path);
-			app_control_add_extra_data(ugd->service,
+			app_control_add_extra_data(reply,
 			                           APP_CONTROL_DATA_SELECTED,
 			                           ugd->file_setas_crop_image_path);
 
@@ -194,22 +204,36 @@ static void _ge_ext_destroy_me(ge_ugdata *ugd)
 
 		if (send_result) {
 			ge_dbg("Call ug_send_result_full() to send result.");
+			bool reply_requested = false;
+
+#ifdef _UG_UI_CONVERSION
 			ug_send_result_full(ugd->ug, ugd->service, APP_CONTROL_RESULT_SUCCEEDED);
+#endif
+			app_control_is_reply_requested(ugd->service, &reply_requested);
+			if (reply_requested) {
+				ge_sdbg("send reply to caller");
+				app_control_reply_to_launch_request(reply, ugd->service, APP_CONTROL_RESULT_SUCCEEDED);
+				app_control_destroy(reply);
+			}
 		}
 	}
 
 	if (ugd->b_destroy_me) {
 		ge_dbg("Setting is appllied, destroy gallery UG.");
 		ugd->b_destroy_me = false;
+		app_control_destroy(ugd->service);
 		/* Destroy self */
+#ifdef _UG_UI_CONVERSION
 		if (!ugd->is_attach_panel) {
 			ug_destroy_me(ugd->ug);
 		}
+#endif
 	} else {
 		ge_dbg("Cancel button tapped, back to thumbnails view.");
 	}
 }
 
+#if _UG_UI_CONVERSION
 static void _ge_ext_iv_layout_cb(ui_gadget_h ug, enum ug_mode mode, void* priv)
 {
 	ge_dbg("");
@@ -219,7 +243,8 @@ static void _ge_ext_iv_layout_cb(ui_gadget_h ug, enum ug_mode mode, void* priv)
 	Evas_Object *base = (Evas_Object *)ug_get_layout(ug);
 	if (!base) {
 		ge_dbgE("ug_get_layout failed!");
-		ug_destroy(ug);
+		app_control_destroy(); //to do passing parameter
+//		ug_destroy(ug);
 		return;
 	}
 
@@ -325,6 +350,8 @@ static void __ge_ext_iv_end_cb(ui_gadget_h ug, void *priv)
 		_ge_ui_hide_indicator((ge_ugdata *)priv);
 	}
 }
+
+#endif
 
 static char **__ge_ext_get_select_index(ge_ugdata *ugd, int *size)
 {
@@ -473,7 +500,11 @@ static int __ge_ext_set_setas_data(ge_ugdata *ugd, char *file_url,
 		int y = 0;
 		int w = 0;
 		int h = 0;
+
+#ifdef _UG_UI_CONVERSION
 		elm_win_screen_size_get((Evas_Object *)ug_get_window(), &x, &y, &w, &h);
+#endif
+		elm_win_screen_size_get(ugd->win, &x, &y, &w, &h);
 		char *reso_str = (char *)calloc(1, GE_IV_STR_LEN_MAX);
 		if (reso_str == NULL) {
 			ge_dbgE("Calloc failed!");
@@ -633,14 +664,90 @@ int _ge_ext_load_iv_ug_select_mode(void *data, ge_media_s *item, ge_ext_iv_type 
 	}
 }
 
+static void
+__ge_gallery_ug_result_cb(app_control_h request, app_control_h result, app_control_result_e reply, void *data)
+{
+
+	ge_dbg("");
+	GE_CHECK(data);
+	GE_CHECK(result);
+	ge_ugdata *ugd = (ge_ugdata *)data;
+	char *path = NULL;
+	char *status = NULL;
+
+	if (ugd->file_select_mode == GE_FILE_SELECT_T_SETAS) {
+		/*If set wallpaper success, homescreen_path should not be null.
+		And if setting wallpaper was canceled in IV, gallery-efl doesn't exit immediately*/
+		app_control_get_extra_data(result, GE_BUNDLE_HOMESCREEN_PATH,
+		                           &path);
+		if (NULL == path)
+			app_control_get_extra_data(result, GE_BUNDLE_LOCKSCREEN_PATH,
+			                           &path);
+		ge_dbg("SETAS_IMAGE_PATH");
+		app_control_get_extra_data(result, "Result", &status);
+		ugd->file_select_setas_mode = 0;
+		if (strcmp(status, "Cancel")) {
+			ugd->file_select_setas_mode = 1;
+		}
+
+		if (path) {
+			ge_dbg(":%s", path);
+			ugd->b_destroy_me = true;
+			ugd->file_setas_image_path = path;
+		} else {
+			ugd->b_destroy_me = false;
+		}
+		/*If has got homescreen_path, setats_mode should not be callerid and
+		crop wallpaper*/
+		if (path == NULL &&
+		        (ugd->file_select_setas_mode == GE_SETAS_T_CALLERID ||
+		         ugd->file_select_setas_mode == GE_SETAS_T_CROP_WALLPAPER)) {
+			app_control_get_extra_data(result, APP_CONTROL_DATA_SELECTED,
+			                           &path);
+			ge_dbg("CALLERID_CROP_IMAGE_PATH");
+			if (path) {
+				ge_dbg(":%s", path);
+				ugd->b_destroy_me = true;
+				ugd->file_setas_crop_image_path = path;
+			} else {
+				ugd->b_destroy_me = false;
+			}
+		}
+	}
+
+	char *error_state = NULL;
+	app_control_get_extra_data(result, GE_IMAGEVIEWER_RETURN_ERROR,
+	                           &error_state);
+	if (error_state) {
+		ge_dbg("error string : %s", error_state);
+
+		if (!g_strcmp0(error_state, "not_supported_file_type")) {
+			ugd->b_destroy_me = false;
+			if (ugd->ug_path == NULL) {
+				ge_dbgE("current item is NULL");
+				GE_FREE(error_state);
+				return;
+			}
+			app_control_h service;
+			app_control_create(&service);
+			GE_CHECK(service);
+			app_control_set_operation(service, APP_CONTROL_OPERATION_VIEW);
+			app_control_set_uri(service, ugd->ug_path);
+			app_control_send_launch_request(service, NULL, NULL);
+			app_control_destroy(service);
+		}
+		GE_FREE(error_state);
+	}
+	_ge_ext_destroy_me((ge_ugdata *)data);
+}
+
 int _ge_ext_load_iv_ug(ge_ugdata *ugd, char *file_url, char *album_index, int image_index)
 {
 	GE_CHECK_VAL(file_url, -1);
 	GE_CHECK_VAL(ugd, -1);
+#ifdef _UG_UI_CONVERSION
 	struct ug_cbs cbs;
 	ui_gadget_h ug = NULL;
-	app_control_h service = NULL;
-
 	if (ugd->ug_called_by_me) {
 		ge_dbgW("Already exits some UG called by me!");
 		return -1;
@@ -652,6 +759,8 @@ int _ge_ext_load_iv_ug(ge_ugdata *ugd, char *file_url, char *album_index, int im
 	cbs.destroy_cb = _ge_ext_iv_destroy_cb;
 	cbs.end_cb = __ge_ext_iv_end_cb;
 	cbs.priv = ugd;
+#endif
+	app_control_h service = NULL;
 
 	app_control_create(&service);
 	GE_CHECK_VAL(service, -1);
@@ -680,10 +789,11 @@ int _ge_ext_load_iv_ug(ge_ugdata *ugd, char *file_url, char *album_index, int im
 	app_control_add_extra_data(service, "Index", image_index_str);
 
 	app_control_set_app_id(service, GE_IV_UG_NAME);
+
+#ifdef _UG_UI_CONVERSION
 	ug = ug_create(ugd->ug, GE_IV_UG_NAME, UG_MODE_FULLVIEW, service, &cbs);
 	ugd->ug_called_by_me = ug;
 
-	app_control_destroy(service);
 	if (!ug) {
 		ge_dbgE("Create UG failed!");
 		return -1;
@@ -691,15 +801,26 @@ int _ge_ext_load_iv_ug(ge_ugdata *ugd, char *file_url, char *album_index, int im
 		ge_dbg("Create UG successully");
 		return 0;
 	}
+#endif
 
+	int ret = app_control_send_launch_request(service, __ge_gallery_ug_result_cb, ugd);
+	app_control_destroy(service);
+	if (ret == 0) {
+		ge_dbg("Launched ug-image-viewer-efl successfully.");
+		return 0;
+	} else {
+		ge_dbgE("Launching ug-image-viewer-efl Failed.");
+		return -1;
+	}
 }
 
 int _ge_ext_load_iv_ug_for_help(ge_ugdata *ugd, const char *uri)
 {
 	GE_CHECK_VAL(ugd, -1);
+
+#ifdef _UG_UI_CONVERSION
 	struct ug_cbs cbs;
 	ui_gadget_h ug = NULL;
-	app_control_h service = NULL;
 
 	if (ugd->ug_called_by_me) {
 		ge_dbgW("Already exits some UG called by me!");
@@ -712,7 +833,9 @@ int _ge_ext_load_iv_ug_for_help(ge_ugdata *ugd, const char *uri)
 	cbs.destroy_cb = _ge_ext_iv_destroy_cb;
 	cbs.end_cb = __ge_ext_iv_end_cb;
 	cbs.priv = ugd;
+#endif
 
+	app_control_h service = NULL;
 	app_control_create(&service);
 	GE_CHECK_VAL(service, -1);
 
@@ -722,9 +845,21 @@ int _ge_ext_load_iv_ug_for_help(ge_ugdata *ugd, const char *uri)
 	/* Set help uri to file path */
 	app_control_add_extra_data(service, GE_PATH, uri);
 
+
+	app_control_set_app_id(service,  GE_IV_UG_NAME);
+	int ret = app_control_send_launch_request(service, __ge_gallery_ug_result_cb, ugd);
+	app_control_destroy(service);
+	if (ret == 0) {
+		ge_dbg("Launched ug-image-viewer-efl successfully.");
+		return 0;
+	} else {
+		ge_dbgE("Launching ug-image-viewer-efl Failed.");
+		return -1;
+	}
+
+#ifdef _UG_UI_CONVERSION
 	ug = ug_create(ugd->ug, GE_IV_UG_NAME, UG_MODE_FULLVIEW, service, &cbs);
 	ugd->ug_called_by_me = ug;
-	app_control_destroy(service);
 	if (ug != NULL) {
 		ge_dbg("Create UG successully");
 		return 0;
@@ -732,4 +867,5 @@ int _ge_ext_load_iv_ug_for_help(ge_ugdata *ugd, const char *uri)
 		ge_dbgE("Create UG failed!");
 		return -1;
 	}
+#endif
 }

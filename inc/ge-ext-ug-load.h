@@ -18,7 +18,7 @@
 #ifndef _GE_EXT_UG_LOAD_H_
 #define _GE_EXT_UG_LOAD_H_
 
-#include <ui-gadget.h>
+//#include <ui-gadget.h>
 #include "gallery-efl.h"
 
 typedef enum {

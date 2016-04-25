@@ -22,7 +22,7 @@
 #include <Elementary.h>
 #include <stdio.h>
 #include <string.h>
-#include <ui-gadget-module.h>
+//#include <ui-gadget-module.h>
 #include <Eina.h>
 #include <app.h>
 
@@ -234,8 +234,8 @@ struct _ge_ugdata {
 	int popup_mode;
 
 	ge_cluster_list* cluster_list;
-	ui_gadget_h ug_called_by_me;
-	ui_gadget_h ug;
+//	ui_gadget_h ug_called_by_me;
+//	ui_gadget_h ug;
 	char *ug_path;
 	app_control_h service;		/*added for "ug_send_result"*/
 	bool b_destroy_me;

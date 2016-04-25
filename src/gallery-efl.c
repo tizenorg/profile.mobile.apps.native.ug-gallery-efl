@@ -86,8 +86,7 @@ static void __ge_win_rot_changed_cb(void *data, Evas_Object *obj,
 	ge_ugdata *ugd = (ge_ugdata *)data;
 
 	/* changed_ang value is 0 90 180 270 */
-	int changed_ang = elm_win_rotation_get(obj);
-	/* Send event to UG */
+#if _UG_UI_CONVERSION
 	enum ug_event evt = UG_EVENT_NONE;
 	switch (changed_ang) {
 	case APP_DEVICE_ORIENTATION_0:
@@ -103,12 +102,13 @@ static void __ge_win_rot_changed_cb(void *data, Evas_Object *obj,
 		evt = GE_ROTATE_LANDSCAPE;
 		break;
 	}
-
-	ge_dbg("New angle: %d, old angle: %d", evt, ugd->rotate_mode);
-	if (evt == ugd->rotate_mode) {
+#endif
+	int changed_ang = elm_win_rotation_get(obj);
+	ge_dbg("New angle: %d, old angle: %d", changed_ang, ugd->rotate_mode);
+	if (changed_ang == ugd->rotate_mode) {
 		return;
 	} else {
-		ugd->rotate_mode = evt;
+		ugd->rotate_mode = changed_ang;
 	}
 
 	/* Update rotate mode and view */
@@ -128,12 +128,12 @@ static int _ge_init_view(ge_ugdata *ugd)
 	GE_CHECK_VAL(ugd, -1);
 
 	/* Base Layout */
-	ugd->ly_main = ge_ui_create_main_ly(ugd->ly_parent);
+	ugd->ly_main = ge_ui_create_main_ly(ugd->win);
 	GE_CHECK_VAL(ugd->ly_main, -1);
 
 	/* Background */
-	ugd->bg = _ge_create_bg(ugd->ly_main);
-	GE_CHECK_VAL(ugd->bg, -1);
+//	ugd->bg = _ge_create_bg(ugd->ly_main);
+//	GE_CHECK_VAL(ugd->bg, -1);
 
 	/* Navigation Bar */
 	ugd->naviframe = ge_ui_create_naviframe(ugd, ugd->ly_main);
@@ -191,11 +191,14 @@ static int _ge_close_view(ge_ugdata *ugd)
 
 	/************* Destroy UI objects **************/
 	/* Destroy UG called by me */
+
+#ifdef _UG_UI_CONVERSION
 	if (ugd->ug_called_by_me) {
 		ge_dbg("Destroy ug_called_by_me");
 		ug_destroy(ugd->ug_called_by_me);
 		ugd->ug_called_by_me = NULL;
 	}
+#endif
 	GE_IF_DEL_OBJ(ugd->popup)
 	GE_IF_DEL_OBJ(ugd->ly_main)
 	if (ugd->th) {
@@ -499,28 +502,40 @@ static int __ge_get_rotate_value(ge_ugdata *ugd)
 *
 * @return
 */
-static void * _ge_create(ui_gadget_h ug, enum ug_mode mode, app_control_h service, void *priv)
+void _ge_create(void *priv)
 {
 	ge_dbg("Enter...");
 	ge_ugdata *ugd = NULL;
-	GE_CHECK_NULL(priv);
-	GE_CHECK_NULL(service);
-	GE_CHECK_NULL(ug);
+	GE_CHECK(priv);
 	ge_dbgW("Gallery UG start...");
 
 	ugd = (ge_ugdata *)priv;
-	ugd->ug = ug;
+		//	ugd->ug = ug;
 	ugd->attach_panel_display_mode = ATTACH_PANEL_NONE;
 	/* Get window */
-	ugd->win = (Evas_Object *)ug_get_window();
-	GE_CHECK_NULL(ugd->win);
+	
+	ugd->win = elm_win_util_standard_add("ug-gallery-efl", "ug-gallery-efl");
+
+	GE_CHECK(ugd->win);
+	elm_win_conformant_set(ugd->win, EINA_TRUE);
+	elm_win_autodel_set(ugd->win, EINA_TRUE);
+
 	/* Get conformant */
-	ugd->conform = ug_get_conformant();
-	GE_CHECK_NULL(ugd->conform);
+	Evas_Object *parent = elm_conformant_add(ugd->win);
+	if (!parent) {
+		return ;
+	}
+	evas_object_size_hint_weight_set(parent, EVAS_HINT_EXPAND, EVAS_HINT_EXPAND);
+	evas_object_show(parent);
+	evas_object_show(ugd->win);
+	ugd->conform = parent;
+
 	/* Get caller layout */
-	ugd->ly_parent = (Evas_Object *)ug_get_parent_layout(ug);
-	GE_CHECK_NULL(ugd->ly_parent);
+//	ugd->ly_parent = elm_layout_add(ugd->win);
+//	GE_CHECK(ugd->ly_parent);
 	/* Bind text domain for internalization */
+	char * path = app_get_resource_path();
+	ge_dbgW("Gallery UG start...and resource path is : %s", path);
 	bindtextdomain("ug-gallery-efl" , "/usr/ug/res/locale");
 	/* Reset inited flag, it would be set as TRUE if albums view created */
 	_ge_ui_get_indicator_state(ugd);
@@ -529,22 +544,17 @@ static void * _ge_create(ui_gadget_h ug, enum ug_mode mode, app_control_h servic
 #endif
 	/* Add window rotation callback to rotate view as fast as possible */
 	evas_object_smart_callback_add(ugd->win, "wm,rotation,changed",
-	                               __ge_win_rot_changed_cb, (void *)ugd);
+			__ge_win_rot_changed_cb, (void *)ugd);
 	__ge_get_rotate_value(ugd);
 
-	app_control_clone(&(ugd->service), service);
-	/* Connect DB first */
+		/* Connect DB first */
 	if (_ge_data_init(ugd) != 0) {
 		ge_dbgE("_ge_data_init failed!");
 	}
 	/*Register db udpate callback*/
 	_ge_db_update_reg_cb(ugd);
 	/* Parse parameters passed from parent */
-	if (_ge_parse_param(ugd, service) != 0) {
-		ge_dbgE("Failed to parse parameters!");
-		ug_send_result_full(ugd->ug, ugd->service, APP_CONTROL_RESULT_FAILED);
-		return NULL;
-	}
+
 	ugd->is_attach_panel = false;
 
 	if (ugd->overlap_mode) {
@@ -554,19 +564,9 @@ static void * _ge_create(ui_gadget_h ug, enum ug_mode mode, app_control_h servic
 	} else {
 		ge_dbg("Normal mode");
 	}
-	if ((ugd->file_select_mode != GE_FILE_SELECT_T_NONE) ||
-	        (ugd->album_select_mode != GE_ALBUM_SELECT_T_NONE)) {
-		/* create gallery UG */
-		if (_ge_create_view(ugd) != 0) {
-			ge_dbgE("Failed to create Gallery UG view!");
-			return NULL;
-		}
-	} else {
-		ge_dbgE("Wrong file_select_mode[%d] or album_select_mode[%d]",
-		        ugd->file_select_mode, ugd->album_select_mode);
-	}
 
-	return ugd->ly_main;
+
+
 }
 
 /**
@@ -576,9 +576,11 @@ static void * _ge_create(ui_gadget_h ug, enum ug_mode mode, app_control_h servic
 * @param data
 * @param priv
 */
-static void _ge_start(ui_gadget_h ug, app_control_h service, void *priv)
+#ifdef _UG_UI_CONVERSION
+static void _ge_start(void *priv)
 {
 }
+#endif
 
 /**
 * @brief
@@ -587,7 +589,7 @@ static void _ge_start(ui_gadget_h ug, app_control_h service, void *priv)
 * @param data
 * @param priv
 */
-static void _ge_pause(ui_gadget_h ug, app_control_h service, void *priv)
+void _ge_pause(void *priv)
 {
 	ge_dbg("");
 }
@@ -599,15 +601,14 @@ static void _ge_pause(ui_gadget_h ug, app_control_h service, void *priv)
 * @param data
 * @param priv
 */
-static void _ge_resume(ui_gadget_h ug, app_control_h service, void *priv)
+void _ge_resume(void *priv)
 {
 	ge_dbg("");
 	GE_CHECK(priv);
 	ge_ugdata *ugd = (ge_ugdata *)priv;
 	/*update*/
-	if (ugd->ug_called_by_me == NULL &&
-	        ugd->file_select_mode != GE_FILE_SELECT_T_SLIDESHOW) {
-		ge_update_view(ugd);
+	if (ugd->file_select_mode != GE_FILE_SELECT_T_SLIDESHOW) {
+//		ge_update_view(ugd);
 	}
 }
 
@@ -618,10 +619,9 @@ static void _ge_resume(ui_gadget_h ug, app_control_h service, void *priv)
 * @param data
 * @param priv
 */
-static void _ge_destroy(ui_gadget_h ug, app_control_h service, void *priv)
+void _ge_destroy(void *priv)
 {
 	ge_dbgW("");
-	GE_CHECK(ug);
 	GE_CHECK(priv);
 	_ge_close_view((ge_ugdata *)priv);
 	ge_dbgW("Destroy gallery UG done!");
@@ -635,6 +635,8 @@ static void _ge_destroy(ui_gadget_h ug, app_control_h service, void *priv)
 * @param data
 * @param priv
 */
+
+#ifdef _UG_UI_CONVERSION
 static void _ge_message(ui_gadget_h ug, app_control_h msg, app_control_h service, void *priv)
 {
 	ge_dbg("");
@@ -665,6 +667,7 @@ static void _ge_message(ui_gadget_h ug, app_control_h msg, app_control_h service
 		}
 	}
 }
+#endif
 
 /**
 * @brief
@@ -674,6 +677,8 @@ static void _ge_message(ui_gadget_h ug, app_control_h msg, app_control_h service
 * @param data
 * @param priv
 */
+
+#ifdef _UG_UI_CONVERSION
 static void _ge_event(ui_gadget_h ug, enum ug_event event, app_control_h service, void *priv)
 {
 	GE_CHECK(priv);
@@ -725,6 +730,7 @@ UG_ROTATE_EVENT:
 	ge_dbg("rotate_mode: %d", ugd->rotate_mode);
 }
 
+
 static void _ge_key_event(ui_gadget_h ug, enum ug_key_event event, app_control_h service, void *priv)
 {
 	ge_dbg("");
@@ -734,44 +740,49 @@ static void _ge_key_event(ui_gadget_h ug, enum ug_key_event event, app_control_h
 	switch (event) {
 	case UG_KEY_EVENT_END:
 		ge_dbg("Receive key end event");
-		if (!ugd->is_attach_panel) {
-			ug_destroy_me(ugd->ug);
-		}
+		app_control_destroy(ugd->service);
 		break;
 
 	default:
 		break;
 	}
 }
+#endif
 
-/**
-* @brief
-*
-* @param ops
-*
-* @return
-*/
-UG_MODULE_API int UG_MODULE_INIT(struct ug_module_ops *ops)
+void __ge_get_app_control_data( app_control_h app_control,void *data)
 {
-	ge_dbgW("UG_MODULE_INIT");
 	ge_ugdata *ugd = NULL;
-	GE_CHECK_VAL(ops, -1);
+	GE_CHECK(data);
+	ugd = (ge_ugdata *)data;
+	app_control_clone(&(ugd->service), app_control);
 
-	ugd = calloc(1, sizeof(ge_ugdata));
-	GE_CHECK_VAL(ugd, -1);
+	if (_ge_parse_param(ugd, app_control) != 0) {
+			ge_dbgE("Failed to parse parameters!");
+			bool reply_requested = false;
+			app_control_is_reply_requested(ugd->service, &reply_requested);
+			if (reply_requested) {
+				ge_sdbg("send reply to caller");
+				app_control_h reply = NULL;
+				app_control_create(&reply);
+				app_control_reply_to_launch_request(reply, ugd->service, APP_CONTROL_RESULT_FAILED);
+				app_control_destroy(reply);
+			}
+			app_control_destroy(ugd->service);
+			return;
+		}
+		if ((ugd->file_select_mode != GE_FILE_SELECT_T_NONE) ||
+		        (ugd->album_select_mode != GE_ALBUM_SELECT_T_NONE)) {
+			/* create gallery UG */
+			if (_ge_create_view(ugd) != 0) {
+				ge_dbgE("Failed to create Gallery UG view!");
+				return;
+			}
+		} else {
+			ge_dbgE("Wrong file_select_mode[%d] or album_select_mode[%d]",
+			        ugd->file_select_mode, ugd->album_select_mode);
+		}
+		elm_win_resize_object_add(ugd->win, ugd->ly_main);
 
-	ops->create = _ge_create;
-	ops->start = _ge_start;
-	ops->pause = _ge_pause;
-	ops->resume = _ge_resume;
-	ops->destroy = _ge_destroy;
-	ops->message = _ge_message;
-	ops->event = _ge_event;
-	ops->key_event = _ge_key_event;
-	ops->priv = ugd;
-	ops->opt = UG_OPT_INDICATOR_ENABLE;
-
-	return 0;
 }
 
 /**
@@ -781,10 +792,51 @@ UG_MODULE_API int UG_MODULE_INIT(struct ug_module_ops *ops)
 *
 * @return
 */
+int main(int argc, char *argv[])
+{
+	ge_dbgW("UG_MODULE_INIT");
+	struct _ge_ugdata ugd;
+
+
+	ui_app_lifecycle_callback_s ops;
+	int ret = APP_ERROR_NONE;
+	app_event_handler_h hLanguageChangedHandle;
+	app_event_handler_h hRegionFormatChangedHandle;
+	memset(&ops, 0x0, sizeof(ui_app_lifecycle_callback_s));
+	memset(&ugd, 0x0, sizeof(struct _ge_ugdata));
+	ops.create = _ge_create;
+	ops.terminate = _ge_destroy;
+	ops.pause = _ge_pause;
+	ops.resume = _ge_resume;
+	ops.app_control =__ge_get_app_control_data;
+	ret = ui_app_add_event_handler(&hRegionFormatChangedHandle, APP_EVENT_REGION_FORMAT_CHANGED, _ge_lang_update, (void*)&ugd);
+	if (ret != APP_ERROR_NONE) {
+		ge_dbgE("APP_EVENT_REGION_FORMAT_CHANGED ui_app_add_event_handler failed : [%d]!!!", ret);
+		return -1;
+	}
+
+	ret = ui_app_add_event_handler(&hLanguageChangedHandle, APP_EVENT_LANGUAGE_CHANGED, _ge_lang_update, (void*)&ugd);
+	if (ret != APP_ERROR_NONE) {
+		ge_dbgE("APP_EVENT_LANGUAGE_CHANGED ui_app_add_event_handler failed : [%d]!!!", ret);
+		return -1;
+	}
+	return ui_app_main(argc, argv, &ops, &ugd);
+
+}
+
+/**
+* @brief
+*
+* @param ops
+*
+* @return
+*/
+
+#ifdef _UG_UI_CONVERSION
 UG_MODULE_API void UG_MODULE_EXIT(struct ug_module_ops *ops)
 {
 	GE_CHECK(ops);
 	GE_FREEIF(ops->priv);
 	ge_dbgW("UG_MODULE_EXIT");
 }
-
+#endif

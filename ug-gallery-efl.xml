@@ -54,7 +54,7 @@
 		<label xml:lang="fr-ca">Gallery Appcontrol</label>
 	<author email="jiansong.jin@samsung.com" href="www.samsung.com">Jiansong Jin</author>
 	<description>Gallery application</description>
-	<ui-application appid="ug-gallery-efl" exec="/usr/ug/bin/gallery-efl" hw-acceleration="use-GL" nodisplay="true" multiple="true" type="capp"  taskmanage="false" launch_mode="caller" >
+	<ui-application appid="ug-gallery-efl" exec="/usr/apps/org.tizen.gallery-efl/bin/gallery-efl" hw-acceleration="use-GL" nodisplay="true" multiple="true" type="capp"  taskmanage="false" launch_mode="caller" >
 		<icon>/usr/ug/res/images/ug-gallery-efl/ug-gallery-efl.png</icon>
 		<label>Gallery</label>
 		<label xml:lang="hy-am">Պատկերասրահ</label>
