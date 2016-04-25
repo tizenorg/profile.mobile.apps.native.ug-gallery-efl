@@ -43,6 +43,6 @@ int _ge_addhome_image(ge_ugdata *ugd, char *path);
 int _ge_send_result(ge_ugdata *ugd);
 int _ge_atoi(const char *number);
 char *_ge_str(char *str_id);
-
+char *_ge_get_edje_path(void);
 #endif //_GE_UTIL_H_
 

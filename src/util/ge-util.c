@@ -301,18 +301,31 @@ int _ge_send_result(ge_ugdata *ugd)
 		send_success = false;
 		goto GE_SEND_RESULT_FINISHED;
 	}
+	bool reply_requested;
+	app_control_h reply = NULL;
+	app_control_create(&reply);
+	if (!reply) {
+		ge_dbgE("Unable to create reply handle");
+		return -1;
+	}
 	if (sel_cnt <= 0 || !path_array) {
 		ge_dbgE("Invalid selection or paths");
-		app_control_add_extra_data(ugd->service,
+		app_control_add_extra_data(reply,
 		                           GE_FILE_SELECT_RETURN_COUNT, "0");
-		app_control_add_extra_data(ugd->service, GE_FILE_SELECT_RETURN_PATH,
+		app_control_add_extra_data(reply, GE_FILE_SELECT_RETURN_PATH,
 		                           NULL);
-		app_control_add_extra_data(ugd->service, APP_CONTROL_DATA_SELECTED,
+		app_control_add_extra_data(reply, APP_CONTROL_DATA_SELECTED,
 		                           NULL);
-		app_control_add_extra_data(ugd->service, APP_CONTROL_DATA_PATH,
+		app_control_add_extra_data(reply, APP_CONTROL_DATA_PATH,
 		                           NULL);
-		ug_send_result_full(ugd->ug, ugd->service,
-		                    APP_CONTROL_RESULT_FAILED);
+		app_control_is_reply_requested(ugd->service, &reply_requested);
+		if (reply_requested) {
+			ge_sdbg("send reply to caller");
+//			app_control_create(&reply);
+			app_control_reply_to_launch_request(reply, ugd->service, APP_CONTROL_RESULT_FAILED);
+			app_control_destroy(reply);
+		}
+		app_control_destroy(ugd->service);
 	} else {
 		if (ugd->file_select_mode == GE_FILE_SELECT_T_IMFT) {
 			_ge_ext_load_app(ugd, FILETRANSFER, paths, sel_cnt);
@@ -320,17 +333,25 @@ int _ge_send_result(ge_ugdata *ugd)
 			char t_str[32] = { 0, };
 			eina_convert_itoa(sel_cnt, t_str);
 
-			app_control_add_extra_data(ugd->service,
+			app_control_add_extra_data(reply,
 			                           GE_FILE_SELECT_RETURN_COUNT, t_str);
-			app_control_add_extra_data(ugd->service, GE_FILE_SELECT_RETURN_PATH,
+			app_control_add_extra_data(reply, GE_FILE_SELECT_RETURN_PATH,
 			                           paths);
-			app_control_add_extra_data_array(ugd->service, APP_CONTROL_DATA_SELECTED,
+			app_control_add_extra_data_array(reply, APP_CONTROL_DATA_SELECTED,
 			                                 (const char **)path_array, sel_cnt);
-			app_control_add_extra_data_array(ugd->service, APP_CONTROL_DATA_PATH,
+			app_control_add_extra_data_array(reply, APP_CONTROL_DATA_PATH,
 			                                 (const char **)path_array, sel_cnt);
-			ug_send_result_full(ugd->ug, ugd->service, APP_CONTROL_RESULT_SUCCEEDED);
+			app_control_is_reply_requested(ugd->service, &reply_requested);
+			if (reply_requested) {
+				ge_sdbg("send reply to caller");
+
+//				app_control_create(&reply);
+				app_control_reply_to_launch_request(reply, ugd->service, APP_CONTROL_RESULT_SUCCEEDED);
+				app_control_destroy(reply);
+			}
 		}
 		send_success = true;
+		goto GE_SEND_RESULT_FINISHED;
 	}
 
 GE_SEND_RESULT_FINISHED:
@@ -345,6 +366,7 @@ GE_SEND_RESULT_FINISHED:
 		}
 		GE_FREE(path_array);
 	}
+	app_control_destroy(ugd->service);
 	if (send_success == true) {
 		return 0;
 	} else {
@@ -384,5 +406,14 @@ char *_ge_str(char *str_id)
 	} else {
 		return str_id;
 	}
+}
+
+char *_ge_get_edje_path(void)
+{
+	char *path = app_get_resource_path();
+	if (!path) {
+		return NULL;
+	}
+	return path;
 }
 

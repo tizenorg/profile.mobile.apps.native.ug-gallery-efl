@@ -25,7 +25,7 @@ extern "C"
 {
 #endif
 
-int _ge_lang_update(ge_ugdata *ugd);
+void _ge_lang_update(ge_ugdata *ugd);
 
 #ifdef _cplusplus
 }

@@ -24,11 +24,23 @@
 extern "C" {
 #endif /* __cplusplus */
 
+static inline char * ge_get_resource_path() {
+	char * path = app_get_resource_path();
+	return path;
+}
+
+static inline char* full_path(char *str1, char *str2) {
+	char path[1024] = {};
+	snprintf(path, 1024, "%s%s", str1, str2);
+	char *full_path = strdup(path);
+	return full_path;
+}
+
 #define GALLERY_APP_ICON_DIR "/usr/share/icons/default/small/"
-#define GE_UG_RES_DIR PREFIX"/res/"
-#define GE_IMAGES_DIR GE_UG_RES_DIR"images/"PACKAGE"/images/"
-#define GE_EDJ_DIR GE_UG_RES_DIR"edje/"PACKAGE"/"
-#define GE_EDJ_FILE GE_EDJ_DIR"gallery-efl.edj"
+#define GE_UG_RES_DIR ge_get_resource_path()
+#define GE_IMAGES_DIR full_path(GE_UG_RES_DIR, "edje/images/")
+#define GE_EDJ_DIR full_path(GE_UG_RES_DIR, "edje/")
+#define GE_EDJ_FILE full_path(GE_EDJ_DIR, "gallery-efl.edj")
 #ifdef _USE_CUSTOMIZED_GENGRID_STYLE
 #define GE_GENGRID_STYLE_GALLERY "gallery_efl"
 #endif

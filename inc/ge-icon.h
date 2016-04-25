@@ -20,7 +20,7 @@
 
 #include "gallery-efl.h"
 
-#define GE_IMAGES_EDJ_FILE GE_EDJ_DIR"/gallery-efl-images.edj"
+#define GE_IMAGES_EDJ_FILE full_path(GE_EDJ_DIR, "/gallery-efl-images.edj")
 
 #define GE_DEFAULT_APP_ICON GALLERY_APP_ICON_DIR"org.tizen.gallery.png"
 #define GE_ALBUM_ICON_CAMERA "T01_album_icon_camera.png"
@@ -37,8 +37,8 @@
 #define GE_ICON_TITLE_SELECT_NOT_OK "T01_album_edit_check_off.png"
 #define GE_ICON_SOUND_SHOT "T01_icon_sound_shot.png"
 #define GE_ICON_PANORAMA "T01_icon_panorama.png"
-#define GE_ICON_NO_THUMBNAIL GE_IMAGES_DIR"No_thumbnail_351X261.png"
-#define GE_ICON_CONTENTS_BROKEN GE_IMAGES_DIR"Contents_broken_351X261.png"
+#define GE_ICON_NO_THUMBNAIL full_path(GE_IMAGES_DIR, "No_thumbnail_351X261.png")
+#define GE_ICON_CONTENTS_BROKEN full_path(GE_IMAGES_DIR, "Contents_broken_351X261.png")
 
 #endif //__GE_ICON_H__
 

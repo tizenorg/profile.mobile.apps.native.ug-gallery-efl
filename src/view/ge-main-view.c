@@ -30,7 +30,7 @@ static void __ge_main_done_cb(void *data, Evas_Object *obj, void *ei)
 	ge_ugdata *ugd = (ge_ugdata *)data;
 	elm_object_item_disabled_set((Elm_Object_Item *)ei, EINA_TRUE);
 	_ge_send_result(ugd);
-	ug_destroy_me(ugd->ug);
+	app_control_destroy(ugd->service);
 }
 
 static void __ge_main_cancel_cb(void *data, Evas_Object *obj, void *ei)
@@ -82,9 +82,18 @@ static Eina_Bool __ge_main_back_cb(void *data, Elm_Object_Item *it)
 	app_control_add_extra_data(ugd->service, GE_FILE_SELECT_RETURN_COUNT, "0");
 	app_control_add_extra_data(ugd->service, GE_FILE_SELECT_RETURN_PATH, NULL);
 	app_control_add_extra_data(ugd->service, APP_CONTROL_DATA_SELECTED, NULL);
-	ug_send_result_full(ugd->ug, ugd->service, APP_CONTROL_RESULT_FAILED);
+
+	bool reply_requested;
+	app_control_is_reply_requested(ugd->service, &reply_requested);
+	if (reply_requested) {
+		ge_sdbg("send reply to caller");
+		app_control_h reply = NULL;
+		app_control_create(&reply);
+		app_control_reply_to_launch_request(reply, ugd->service, APP_CONTROL_RESULT_FAILED);
+		app_control_destroy(reply);
+	}
+	app_control_destroy(ugd->service);
 	//elm_naviframe_item_pop(it);
-	ug_destroy_me(ugd->ug);
 	ge_dbg("ug_destroy_me");
 	/*If return ture, ug will pop naviframe first.*/
 	return EINA_FALSE;

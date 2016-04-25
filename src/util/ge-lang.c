@@ -22,15 +22,17 @@
 #include "ge-gridview.h"
 #include "ge-main-view.h"
 
-int _ge_lang_update(ge_ugdata *ugd)
+void _ge_lang_update(ge_ugdata *ugd)
 {
-	GE_CHECK_VAL(ugd, -1);
+	GE_CHECK(ugd);
 	int view_m = _ge_get_view_mode(ugd);
 	ge_dbg("view: %d", view_m);
 
 	if (view_m == GE_VIEW_THUMBS || view_m == GE_VIEW_THUMBS_EDIT) {
 		_ge_grid_update_lang(ugd);
 	}
+#ifdef _UG_UI_CONVERSION
 	return 0;
+#endif
 }
 
