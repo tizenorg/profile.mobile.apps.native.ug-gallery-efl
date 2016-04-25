@@ -49,10 +49,13 @@ static Eina_Bool __ge_popup_timeout_cb(void *data)
 	/* Used for adding shortcut failed */
 	if (ugd->popup_mode == GE_POPUP_EXIT) {
 		ge_dbgW("Terminate me!");
+#ifdef _UG_UI_CONVERSION
 		if (!ugd->is_attach_panel) {
 			ug_destroy_me(ugd->ug);
 			ugd->ug = NULL;
 		}
+#endif
+		app_control_destroy(ugd->service);
 	}
 
 	GE_IF_DEL_OBJ(ugd->popup);

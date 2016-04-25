@@ -170,11 +170,22 @@ static int __ge_albums_open_album(ge_cluster *album)
 		                           GE_ALBUM_SELECT_RETURN_PATH,
 		                           album->cluster->path);
 		ge_dbg("return folder-path: %s", album->cluster->path);
+#ifdef _UG_UI_CONVERSION
 		ug_send_result_full(ugd->ug, ugd->service, APP_CONTROL_RESULT_SUCCEEDED);
 		if (!ugd->is_attach_panel) {
 			ug_destroy_me(ugd->ug);
 			ugd->ug = NULL;
+#endif
+		bool reply_requested;
+		app_control_is_reply_requested(ugd->service, &reply_requested);
+		if (reply_requested) {
+			ge_sdbg("send reply to caller");
+			app_control_h reply = NULL;
+			app_control_create(&reply);
+			app_control_reply_to_launch_request(reply, ugd->service, APP_CONTROL_RESULT_SUCCEEDED);
+			app_control_destroy(reply);
 		}
+		app_control_destroy(ugd->service);
 		return 0;
 	}
 
@@ -206,10 +217,13 @@ static Eina_Bool __ge_albums_sel_idler_cb(void *data)
 	GE_CHECK_FALSE(album_item->cluster);
 	GE_CHECK_FALSE(album_item->ugd);
 	ge_ugdata *ugd = album_item->ugd;
+
+#ifdef _UG_UI_CONVERSION
 	if (ugd->ug == NULL) {
 		ge_dbg("UG already destroyed, return!");
 		goto GE_ALBUMS_DONE;
 	}
+#endif
 
 	if (album_item->cover) {
 		_ge_data_util_free_item(album_item->cover);
@@ -218,7 +232,7 @@ static Eina_Bool __ge_albums_sel_idler_cb(void *data)
 
 	__ge_albums_open_album(album_item);
 
-GE_ALBUMS_DONE:
+//GE_ALBUMS_DONE:
 
 	ecore_idler_del(ugd->sel_album_idler);
 	ugd->sel_album_idler = NULL;
@@ -234,17 +248,20 @@ static Eina_Bool __ge_split_albums_sel_idler_cb(void *data)
 	GE_CHECK_FALSE(album_item->cluster);
 	GE_CHECK_FALSE(album_item->ugd);
 	ge_ugdata *ugd = album_item->ugd;
+
+#ifdef _UG_UI_CONVERSION
 	if (ugd->ug == NULL) {
 		ge_dbg("UG already destroyed, return!");
 		goto GE_ALBUMS_DONE;
 	}
+#endif
 	if (album_item->cover) {
 		_ge_data_util_free_item(album_item->cover);
 		album_item->cover = NULL;
 	}
 	__ge_split_albums_open_album(album_item);
 
-GE_ALBUMS_DONE:
+//GE_ALBUMS_DONE:
 	ecore_idler_del(ugd->sel_album_idler);
 	ugd->sel_album_idler = NULL;
 	ge_dbg("Select album +++");
@@ -258,10 +275,14 @@ static void __ge_albums_sel_cb(void *data, Evas_Object *obj, void *ei)
 	GE_CHECK(album_item->cluster);
 	GE_CHECK(album_item->ugd);
 	ge_ugdata *ugd = album_item->ugd;
+
+#ifdef _UG_UI_CONVERSION
 	if (ugd->ug == NULL) {
 		ge_dbg("UG already destroyed, return!");
 		return;
 	}
+#endif
+
 	ugd->album_item = album_item;
 	ge_dbg("");
 	if (ugd->sel_album_idler) {
@@ -285,10 +306,12 @@ static void __ge_split_albums_sel_cb(void *data, Evas_Object *obj, void *ei)
 	GE_CHECK(album_item->cluster);
 	GE_CHECK(album_item->ugd);
 	ge_ugdata *ugd = album_item->ugd;
+#ifdef _UG_UI_CONVERSION
 	if (ugd->ug == NULL) {
 		ge_dbg("UG already destroyed, return!");
 		return;
 	}
+#endif
 	ugd->album_item = album_item;
 	ge_dbg("");
 	if (ugd->sel_album_idler) {
@@ -965,7 +988,7 @@ static void _ge_grid_move_stop_cb(void *data, Evas_Object *obj, void *ei)
 		} else {
 			app_control_add_extra_data(app_control, ATTACH_PANEL_FLICK_MODE_KEY, ATTACH_PANEL_FLICK_MODE_DISABLE);
 		}
-		ret = ug_send_result_full(ugd->ug, app_control, APP_CONTROL_RESULT_SUCCEEDED);
+			app_control_reply_to_launch_request(app_control, ugd->service, APP_CONTROL_RESULT_SUCCEEDED);
 	}
 	app_control_destroy(app_control);
 }
@@ -1081,12 +1104,19 @@ static Eina_Bool __ge_main_back_cb(void *data, Elm_Object_Item *it)
 	app_control_add_extra_data(ugd->service, GE_FILE_SELECT_RETURN_COUNT, "0");
 	app_control_add_extra_data(ugd->service, GE_FILE_SELECT_RETURN_PATH, NULL);
 	app_control_add_extra_data(ugd->service, APP_CONTROL_DATA_SELECTED, NULL);
-	ug_send_result_full(ugd->ug, ugd->service, APP_CONTROL_RESULT_FAILED);
-	//elm_naviframe_item_pop(it);
-	if (!ugd->is_attach_panel) {
-		ug_destroy_me(ugd->ug);
-		ge_dbg("ug_destroy_me");
+
+	bool reply_requested;
+	app_control_is_reply_requested(ugd->service, &reply_requested);
+	if (reply_requested) {
+		ge_sdbg("send reply to caller");
+		app_control_h reply = NULL;
+		app_control_create(&reply);
+		app_control_reply_to_launch_request(reply, ugd->service, APP_CONTROL_RESULT_FAILED);
+		app_control_destroy(reply);
 	}
+	ge_dbg("Destroying handle");
+	app_control_destroy(ugd->service);
+	//elm_naviframe_item_pop(it);
 	/*If return ture, ug will pop naviframe first.*/
 	return EINA_FALSE;
 }

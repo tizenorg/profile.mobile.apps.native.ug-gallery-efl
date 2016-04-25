@@ -334,6 +334,7 @@ int _ge_grid_sel_one(ge_ugdata *ugd, char *file_url)
 	if (ret != APP_CONTROL_ERROR_NONE) {
 		ge_dbgW("Add selected path failed!");
 	}
+#ifdef _UG_UI_CONVERSION
 	ret = ug_send_result_full(ugd->ug, ugd->service,
 	                          APP_CONTROL_RESULT_SUCCEEDED);
 	if (ret != 0) {
@@ -342,6 +343,17 @@ int _ge_grid_sel_one(ge_ugdata *ugd, char *file_url)
 	if (!ugd->is_attach_panel) {
 		ug_destroy_me(ugd->ug);
 	}
+#endif
+	bool reply_requested;
+	app_control_is_reply_requested(ugd->service, &reply_requested);
+	if (reply_requested) {
+		ge_sdbg("send reply to caller");
+		app_control_h reply = NULL;
+		app_control_create(&reply);
+		app_control_reply_to_launch_request(reply, ugd->service, APP_CONTROL_RESULT_FAILED);
+		app_control_destroy(reply);
+	}
+	app_control_destroy(ugd->service);
 
 	GE_FREEIF(path_array[0]);
 	GE_FREEIF(path_array);
@@ -967,22 +979,27 @@ static Eina_Bool __ge_grid_back_cb(void *data, Elm_Object_Item *it)
 	ge_ugdata *ugd = (ge_ugdata *)data;
 
 	if (ugd->file_select_mode == GE_FILE_SELECT_T_SLIDESHOW) {
-		ug_send_result_full(ugd->ug, ugd->service,
-		                    APP_CONTROL_RESULT_FAILED);
-		//ug_destroy_me(ugd->ug);
+		bool reply_requested;
+		app_control_is_reply_requested(ugd->service, &reply_requested);
+		if (reply_requested) {
+			ge_sdbg("send reply to caller");
+			app_control_h reply = NULL;
+			app_control_create(&reply);
+			app_control_reply_to_launch_request(reply, ugd->service, APP_CONTROL_RESULT_FAILED);
+			app_control_destroy(reply);
+		}
 		ge_dbg("ug_destroy_me");
+		app_control_destroy(ugd->service);
 		/*If return ture, ug will pop naviframe first.*/
 		return EINA_FALSE;
 	}
 
 	else {
-		//ug_destroy_me(ugd->ug);
 		ge_dbgW("ug_destroy_me ug destroyed in the else part");
 	}
 	/* Reset view mode */
 	ge_dbgW("To update albums view!");
 	_ge_albums_update_view(data);
-	//ug_destroy_me(ugd->ug);
 
 	return EINA_TRUE;
 }
@@ -1009,7 +1026,6 @@ static void __ge_grid_done_cb(void *data, Evas_Object *obj, void *ei)
 	}
 
 	_ge_send_result(ugd);
-	ug_destroy_me(ugd->ug);
 }
 
 static void __ge_grid_cancel_cb(void *data, Evas_Object *obj, void *ei)
@@ -1179,17 +1195,13 @@ static void __ge_grid_done_cb(void *data, Evas_Object *obj, void *ei)
 				ge_dbgE("if part fun will be called ");
 //				__ge_main_done_cb(ugd, NULL, NULL);
 				_ge_send_result(ugd);
-				if (!ugd->is_attach_panel) {
-					ug_destroy_me(ugd->ug);
-				}
+				app_control_destroy(ugd->service);
 				//__ge_grid_append_sel_item(ugd, gitem);
 			} else {
 				ge_dbgE("else part fun will be called ");
 //				__ge_main_done_cb(ugd, NULL, NULL);
 				_ge_send_result(ugd);
-				if (!ugd->is_attach_panel) {
-					ug_destroy_me(ugd->ug);
-				}
+				app_control_destroy(ugd->service);
 				//__ge_grid_remove_sel_item(ugd, gitem);
 			}
 		} else {
@@ -1290,12 +1302,18 @@ static Eina_Bool __ge_main_back_cb(void *data, Elm_Object_Item *it)
 	app_control_add_extra_data(ugd->service, GE_FILE_SELECT_RETURN_COUNT, "0");
 	app_control_add_extra_data(ugd->service, GE_FILE_SELECT_RETURN_PATH, NULL);
 	app_control_add_extra_data(ugd->service, APP_CONTROL_DATA_SELECTED, NULL);
-	ug_send_result_full(ugd->ug, ugd->service, APP_CONTROL_RESULT_FAILED);
-	//elm_naviframe_item_pop(it);
-	if (!ugd->is_attach_panel) {
-		ug_destroy_me(ugd->ug);
-		ge_dbg("ug_destroy_me");
+	bool reply_requested;
+	app_control_is_reply_requested(ugd->service, &reply_requested);
+	if (reply_requested) {
+		ge_sdbg("send reply to caller");
+		app_control_h reply = NULL;
+		app_control_create(&reply);
+		app_control_reply_to_launch_request(reply, ugd->service, APP_CONTROL_RESULT_FAILED);
+		app_control_destroy(reply);
 	}
+	ge_dbg("ug_destroy_me");
+	app_control_destroy(ugd->service);
+	//elm_naviframe_item_pop(it);
 	/*If return ture, ug will pop naviframe first.*/
 	return EINA_FALSE;
 }
@@ -1323,7 +1341,7 @@ void _my_custom_keydown_cb(void* data, int type, void* event)
 				ret = app_control_create(&app_control);
 				if (ret == APP_CONTROL_ERROR_NONE) {
 					app_control_add_extra_data(app_control, ATTACH_PANEL_FLICK_MODE_KEY, ATTACH_PANEL_FLICK_MODE_ENABLE);
-					ret = ug_send_result_full(app_data->ug, app_control, APP_CONTROL_RESULT_SUCCEEDED);
+					app_control_reply_to_launch_request(app_control, app_data->service, APP_CONTROL_RESULT_SUCCEEDED);
 				}
 				app_control_destroy(app_control);
 			}
@@ -1415,7 +1433,7 @@ static void __ge_albums_detail_cancel_cb(void *data, Evas_Object *obj, void *ei)
 			ret = app_control_create(&app_control);
 			if (ret == APP_CONTROL_ERROR_NONE) {
 				app_control_add_extra_data(app_control, ATTACH_PANEL_FLICK_MODE_KEY, ATTACH_PANEL_FLICK_MODE_ENABLE);
-				ret = ug_send_result_full(app_data->ug, app_control, APP_CONTROL_RESULT_SUCCEEDED);
+				app_control_reply_to_launch_request(app_control, app_data->service, APP_CONTROL_RESULT_SUCCEEDED);
 			}
 			app_control_destroy(app_control);
 		}
@@ -1525,7 +1543,7 @@ static void _ge_detail_view_grid_move_stop_cb(void *data, Evas_Object *obj, void
 		} else {
 			app_control_add_extra_data(app_control, ATTACH_PANEL_FLICK_MODE_KEY, ATTACH_PANEL_FLICK_MODE_DISABLE);
 		}
-		ret = ug_send_result_full(ugd->ug, app_control, APP_CONTROL_RESULT_SUCCEEDED);
+		app_control_reply_to_launch_request(app_control, ugd->service, APP_CONTROL_RESULT_SUCCEEDED);
 	}
 	app_control_destroy(app_control);
 }
