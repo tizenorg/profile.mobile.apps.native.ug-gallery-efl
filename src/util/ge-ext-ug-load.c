@@ -23,7 +23,7 @@
 #include "ge-gridview.h"
 #include "ge-data.h"
 
-#define GE_IV_UG_NAME "image-viewer-efl"
+#define GE_IV_UG_NAME "org.tizen.image-viewer"
 #define GE_IV_STR_LEN_MAX 32
 #define GE_VIEW_MODE "View Mode"
 #define GE_SETAS_TYPE "Setas type"
