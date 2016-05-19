@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns="http://tizen.org/ns/packages" api-version="3.0" package="org.tizen.ug-gallery-efl" version="0.3.42">
-	<label>Homescreen setting</label>
+	<label>UG Gallery AppControl</label>
 	<description>UG Gallery AppControl</description>
 	<ui-application appid="org.tizen.ug-gallery-efl" exec="/usr/apps/org.tizen.ug-gallery-efl/bin/ug-gallery-efl" launch_mode="caller" nodisplay="true" multiple="false" type="capp" taskmanage="false" hw-acceleration="use-GL">
 		<icon>/usr/share/icons/default/small/ug-gallery-efl.png</icon>
