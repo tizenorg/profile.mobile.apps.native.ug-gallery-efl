@@ -9,13 +9,13 @@ type = app
 profile = mobile-3.0
 
 # C Sources
-USER_SRCS = src/data/ge-data.c src/widget/ge-rotate-bg.c src/util/ge-util.c src/util/ge-debug.c src/view/ge-gridview.c src/data/ge-local-data.c src/view/ge-albums.c src/data/ge-data-util.c src/widget/ge-button.c src/gallery-efl.c src/widget/ge-tile.c src/util/ge-file-util.c src/util/ge-ext-exec.c src/data/ge-data-type.c src/widget/ge-thumb.c src/util/ge-ui-util.c src/widget/ge-nocontent.c src/util/ge-ext-ug-load.c src/util/ge-exif.c src/util/ge-lang.c src/util/ge-db-update.c src/view/ge-main-view.c 
+USER_SRCS = src/gallery-efl.c src/data/ge-data-util.c src/data/ge-data-type.c src/view/ge-albums.c src/util/ge-util.c src/util/ge-ext-exec.c src/util/ge-ext-ug-load.c src/util/ge-ui-util.c src/data/ge-data.c src/widget/ge-rotate-bg.c src/widget/ge-thumb.c src/util/ge-db-update.c src/util/ge-file-util.c src/view/ge-main-view.c src/widget/ge-tile.c src/widget/ge-nocontent.c src/widget/ge-button.c src/util/ge-exif.c src/data/ge-local-data.c src/view/ge-gridview.c src/util/ge-lang.c src/util/ge-debug.c 
 
 # EDC Sources
 USER_EDCS =  
 
 # PO Sources
-USER_POS = res/po/zh_TW.po res/po/fr.po res/po/ro.po res/po/pt_BR.po res/po/or.po res/po/mk.po res/po/hy.po res/po/ca.po res/po/en.po res/po/ka.po res/po/nb.po res/po/zh_HK.po res/po/sk.po res/po/ml.po res/po/pl.po res/po/tr_TR.po res/po/gl.po res/po/nl.po res/po/ru_RU.po res/po/bn.po res/po/el_GR.po res/po/et.po res/po/sl.po res/po/kn.po res/po/en_PH.po res/po/eu.po res/po/it_IT.po res/po/sr.po res/po/mr.po res/po/de.po res/po/is.po res/po/pa.po res/po/te.po res/po/bg.po res/po/lv.po res/po/gu.po res/po/uk.po res/po/fi.po res/po/cs.po res/po/uz.po res/po/en_US.po res/po/ja_JP.po res/po/zh_CN.po res/po/hr.po res/po/hu.po res/po/ga.po res/po/si.po res/po/ko_KR.po res/po/da.po res/po/pt_PT.po res/po/fr_CA.po res/po/lt.po res/po/es_ES.po res/po/hi.po res/po/mn_MN.po res/po/es_US.po res/po/az.po res/po/sv.po res/po/ar.po res/po/kk.po res/po/ta.po 
+USER_POS = res/po/es_US.po res/po/bn.po res/po/es_ES.po res/po/zh_CN.po res/po/te.po res/po/hy.po res/po/gl.po res/po/ml.po res/po/fi.po res/po/zh_HK.po res/po/tr_TR.po res/po/pt_PT.po res/po/ko_KR.po res/po/is.po res/po/nb.po res/po/mk.po res/po/gu.po res/po/uz.po res/po/sv.po res/po/zh_TW.po res/po/hr.po res/po/cs.po res/po/kk.po res/po/eu.po res/po/ru_RU.po res/po/it_IT.po res/po/et.po res/po/fr.po res/po/pa.po res/po/az.po res/po/si.po res/po/hi.po res/po/en.po res/po/da.po res/po/ja_JP.po res/po/mr.po res/po/kn.po res/po/bg.po res/po/mn_MN.po res/po/fr_CA.po res/po/en_US.po res/po/nl.po res/po/ca.po res/po/sr.po res/po/ta.po res/po/hu.po res/po/ar.po res/po/ro.po res/po/ka.po res/po/sl.po res/po/lt.po res/po/en_PH.po res/po/el_GR.po res/po/pt_BR.po res/po/uk.po res/po/pl.po res/po/de.po res/po/sk.po res/po/or.po res/po/lv.po res/po/ga.po 
 
 # User Defines
 USER_DEFS = PREFIX='"/home/owner/apps_rw/org.tizen.ug-gallery-efl"' _USE_SECURE_LOG_ _USE_DLOG_ 
@@ -45,7 +45,7 @@ USER_CPP_INC_FILES =
 USER_CPP_INC_FILES_ABS = 
 
 # User Library Path
-USER_LIB_DIRS = lib 
+USER_LIB_DIRS = 
 USER_LIB_DIRS_ABS = 
 
 # EDC Resource Path
@@ -59,7 +59,7 @@ USER_EDCS_FONT_DIRS_ABS =
 # EDC Flags
 USER_EXT_EDC_KEYS = EDC0 
 
-USER_EXT_EDC0_EDCS = res/edje/images/gallery-efl-images.edc res/edje/gallery-efl.edc 
+USER_EXT_EDC0_EDCS = res/edje/gallery-efl.edc res/edje/images/gallery-efl-images.edc 
 USER_EXT_EDC0_EDCS_IMAGE_DIRS = res/edje/images 
 USER_EXT_EDC0_EDCS_IMAGE_DIRS_ABS = 
 USER_EXT_EDC0_EDCS_SOUND_DIRS = res/edje/sounds 

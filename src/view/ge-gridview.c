@@ -389,8 +389,7 @@ static int __ge_grid_change_check(void *data, Elm_Object_Item *it)
 	ck = elm_object_item_part_content_get(it, GE_GRID_CHECKBOX);
 	GE_CHECK_VAL(ck, -1);
 	bool currentCheckState = elm_check_state_get(ck);
-
-	if (!strcmp(gitem->item->thumb_url, DEFAULT_THUMB)) {
+	if (gitem->item->thumb_url && !strcmp(gitem->item->thumb_url, DEFAULT_THUMB)) {
 		char *warning_str = g_strdup_printf(
 		                        GE_STR_UNSUPPORTED_FILE);
 		notification_status_message_post(warning_str);
@@ -499,7 +498,7 @@ static void __ge_grid_check_changed(void *data, Evas_Object *obj, void *ei)
 	Eina_Bool checked = elm_check_state_get(obj);
 	bool b_disabled = false;
 
-	if (!strcmp(gitem->item->thumb_url, DEFAULT_THUMB)) {
+	if (gitem->item->thumb_url && !strcmp(gitem->item->thumb_url, DEFAULT_THUMB)) {
 		elm_check_state_set(obj, EINA_FALSE);
 		char *warning_str = g_strdup_printf(
 		                        GE_STR_UNSUPPORTED_FILE);

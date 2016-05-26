@@ -534,9 +534,12 @@ void _ge_create(void *priv)
 //	ugd->ly_parent = elm_layout_add(ugd->win);
 //	GE_CHECK(ugd->ly_parent);
 	/* Bind text domain for internalization */
+	char locale[1024] = {0};
 	char * path = app_get_resource_path();
 	ge_dbgW("Gallery UG start...and resource path is : %s", path);
-	bindtextdomain("ug-gallery-efl" , "/usr/ug/res/locale");
+	snprintf(locale, 1024, "%s%s", path, "locale");
+	bindtextdomain("ug-gallery-efl" , locale);
+	free(path);
 	/* Reset inited flag, it would be set as TRUE if albums view created */
 	_ge_ui_get_indicator_state(ugd);
 #ifdef _USE_HIDE_INDICATOR
