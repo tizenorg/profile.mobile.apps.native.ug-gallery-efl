@@ -350,10 +350,15 @@ int _ge_grid_sel_one(ge_ugdata *ugd, char *file_url)
 		ge_sdbg("send reply to caller");
 		app_control_h reply = NULL;
 		app_control_create(&reply);
-		app_control_reply_to_launch_request(reply, ugd->service, APP_CONTROL_RESULT_FAILED);
+		ret = app_control_add_extra_data_array(reply, APP_CONTROL_DATA_SELECTED,
+		                                       (const char **)path_array, 1);
+		ret = app_control_add_extra_data_array(reply, APP_CONTROL_DATA_PATH,
+		                                       (const char **)path_array, 1);
+		app_control_reply_to_launch_request(reply, ugd->service, APP_CONTROL_RESULT_SUCCEEDED);
 		app_control_destroy(reply);
 	}
 	app_control_destroy(ugd->service);
+	ui_app_exit();
 
 	GE_FREEIF(path_array[0]);
 	GE_FREEIF(path_array);
@@ -1195,12 +1200,14 @@ static void __ge_grid_done_cb(void *data, Evas_Object *obj, void *ei)
 //				__ge_main_done_cb(ugd, NULL, NULL);
 				_ge_send_result(ugd);
 				app_control_destroy(ugd->service);
+				ui_app_exit();
 				//__ge_grid_append_sel_item(ugd, gitem);
 			} else {
 				ge_dbgE("else part fun will be called ");
 //				__ge_main_done_cb(ugd, NULL, NULL);
 				_ge_send_result(ugd);
 				app_control_destroy(ugd->service);
+				ui_app_exit();
 				//__ge_grid_remove_sel_item(ugd, gitem);
 			}
 		} else {
@@ -1312,7 +1319,7 @@ static Eina_Bool __ge_main_back_cb(void *data, Elm_Object_Item *it)
 	}
 	ge_dbg("ug_destroy_me");
 	app_control_destroy(ugd->service);
-	//elm_naviframe_item_pop(it);
+	ui_app_exit();
 	/*If return ture, ug will pop naviframe first.*/
 	return EINA_FALSE;
 }

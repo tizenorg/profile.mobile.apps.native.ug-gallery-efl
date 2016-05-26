@@ -222,6 +222,7 @@ static void _ge_ext_destroy_me(ge_ugdata *ugd)
 		ge_dbg("Setting is appllied, destroy gallery UG.");
 		ugd->b_destroy_me = false;
 		app_control_destroy(ugd->service);
+		ui_app_exit();
 		/* Destroy self */
 #ifdef _UG_UI_CONVERSION
 		if (!ugd->is_attach_panel) {

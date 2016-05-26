@@ -223,6 +223,7 @@ static int _ge_close_view(ge_ugdata *ugd)
 	_ge_db_update_finalize(ugd);
 	/* Disconnet with libmedia-info */
 	_ge_data_finalize(ugd);
+	ui_app_exit();
 	return 0;
 }
 
@@ -771,6 +772,7 @@ void __ge_get_app_control_data( app_control_h app_control,void *data)
 				app_control_destroy(reply);
 			}
 			app_control_destroy(ugd->service);
+			ui_app_exit();
 			return;
 		}
 		if ((ugd->file_select_mode != GE_FILE_SELECT_T_NONE) ||

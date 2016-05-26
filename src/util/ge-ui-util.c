@@ -56,6 +56,7 @@ static Eina_Bool __ge_popup_timeout_cb(void *data)
 		}
 #endif
 		app_control_destroy(ugd->service);
+		ui_app_exit();
 	}
 
 	GE_IF_DEL_OBJ(ugd->popup);
