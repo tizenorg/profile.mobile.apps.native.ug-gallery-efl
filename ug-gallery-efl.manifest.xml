@@ -5,5 +5,21 @@
 	<ui-application appid="org.tizen.ug-gallery-efl" exec="/usr/apps/org.tizen.ug-gallery-efl/bin/ug-gallery-efl" launch_mode="caller" nodisplay="true" multiple="false" type="capp" taskmanage="false" hw-acceleration="use-GL">
 		<icon>/usr/share/icons/default/small/ug-gallery-efl.png</icon>
 		<label>ug-gallery-efl</label>
+		<app-control>
+			<operation name="http://tizen.org/appcontrol/operation/pick"/>
+		</app-control>
+		<app-control>
+			<operation name="http://tizen.org/appcontrol/operation/pick"/>
+			<mime name="image/*"/>
+			<mime name="video/*"/>
+		</app-control>
 	</ui-application>
+	<privileges>
+        	<privilege>http://tizen.org/privilege/packagemanager.info</privilege>
+        	<privilege>http://tizen.org/privilege/datasharing</privilege>
+        	<privilege>http://tizen.org/privilege/mediastorage</privilege>
+        	<privilege>http://tizen.org/privilege/appmanager.launch</privilege>
+        	<privilege>http://tizen.org/privilege/content.write</privilege>
+        	<privilege>http://tizen.org/privilege/externalstorage</privilege>
+    	</privileges>
 </manifest>
