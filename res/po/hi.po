@@ -1,29 +1,45 @@
 msgid "IDS_GALLERY_BUTTON_CAMERA"
 msgstr "कैमरा"
+msgid "IDS_COM_SK_OK"
+msgstr "ओके"
 
 msgid "IDS_MEDIABR_IOPT3_PLACES"
 msgstr "स्थान"
+msgid "IDS_COM_SK_CANCEL"
+msgstr "रद्द"
 
 msgid "IDS_MEDIABR_SK2_ADD_TO_HOME"
 msgstr "होम में जोड़े"
+msgid "IDS_COM_SK_DONE"
+msgstr "पूर्ण"
 
 msgid "IDS_MEDIABR_BODY_TAGS"
 msgstr "टैग्‍स"
+msgid "IDS_COM_BODY_NO_ITEMS"
+msgstr "कोई मदें नहीं"
 
 msgid "IDS_MEDIABR_BODY_ALL_ALBUMS"
 msgstr "सभी एलबम्‍स"
+msgid "IDS_COM_BODY_UNKNOWN"
+msgstr "अज्ञात"
 
 msgid "IDS_MEDIABR_BODY_FACEBOOK_WEB_ALBUM"
 msgstr "फ़ेसबुक वेब एल्बम"
+msgid "IDS_COM_SK_BACK"
+msgstr "पीछे"
 
 msgid "IDS_MEDIABR_BODY_PICASA_WEB_ALBUM"
 msgstr "पिकासा वेब एल्बम"
 
 msgid "IDS_MEDIABR_HEADER_NEARBY_DEVICES"
 msgstr "निकटवर्ती डिवाइसें"
+msgid "IDS_COM_POP_SELECTED"
+msgstr "चयनित।"
 
 msgid "IDS_MF_BODY_DOWNLOADS"
 msgstr "डाउनलोड्स"
+msgid "IDS_COM_BODY_NO_VIDEOS"
+msgstr "कोई वीडियो नहीं"
 
 msgid "IDS_MF_POP_NOT_ENOUGH_MEMORY_DELETE_SOME_ITEMS"
 msgstr "पर्याप्त मेमोरी नहीं। कुछ मदें हटाएँ।"
@@ -651,4 +667,6 @@ msgstr "अधिकतम फ़ाइल आकार (%d MB) पार हु
 
 msgid "IDS_IM_POP_MAXIMUM_SIZE_OF_FILES_EXCEEDED"
 msgstr "फाइलों का अधिकतम आकार पार कर गया है।"
+msgid "IDS_COM_BODY_NO_IMAGES"
+msgstr "कोई छवि नहीं"
 

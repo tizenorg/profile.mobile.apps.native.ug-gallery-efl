@@ -1,29 +1,45 @@
 msgid "IDS_GALLERY_BUTTON_CAMERA"
 msgstr "Fotoaparát"
+msgid "IDS_COM_SK_OK"
+msgstr "OK"
 
+msgid "IDS_COM_SK_CANCEL"
+msgstr "Zrušit"
 msgid "IDS_MUSIC_POP_DELETE_PD_ALBUMS_Q"
 msgstr "Odstranit %d alb?"
 
 msgid "IDS_MEDIABR_IOPT3_PLACES"
 msgstr "Místa"
+msgid "IDS_COM_SK_DONE"
+msgstr "Hotovo"
 
 msgid "IDS_MEDIABR_SK2_ADD_TO_HOME"
 msgstr "Přidat do domů"
+msgid "IDS_COM_BODY_NO_ITEMS"
+msgstr "Žádné položky"
 
 msgid "IDS_MEDIABR_BODY_TAGS"
 msgstr "Značky"
+msgid "IDS_COM_BODY_UNKNOWN"
+msgstr "Neznámé"
 
 msgid "IDS_MEDIABR_BODY_ALL_ALBUMS"
 msgstr "Všechna alba"
+msgid "IDS_COM_SK_BACK"
+msgstr "Zpět"
 
 msgid "IDS_MEDIABR_BODY_FACEBOOK_WEB_ALBUM"
 msgstr "Webové album na Facebooku"
 
 msgid "IDS_MEDIABR_BODY_PICASA_WEB_ALBUM"
 msgstr "Webové album Picasa"
+msgid "IDS_COM_POP_SELECTED"
+msgstr "Vybráno."
 
 msgid "IDS_MEDIABR_HEADER_NEARBY_DEVICES"
 msgstr "Nedaleká zařízení"
+msgid "IDS_COM_BODY_NO_VIDEOS"
+msgstr "Žádné videoklipy"
 
 msgid "IDS_ASEML_BODY_PAST_PD_MONTHS"
 msgstr "Minulých %d měsíců"
@@ -930,4 +946,6 @@ msgstr "Byla překročena maximální velikost souborů (%d MB)."
 
 msgid "IDS_IM_POP_MAXIMUM_SIZE_OF_FILES_EXCEEDED"
 msgstr "Byla překročena maximální velikost souborů."
+msgid "IDS_COM_BODY_NO_IMAGES"
+msgstr "Žádné obrázky"
 

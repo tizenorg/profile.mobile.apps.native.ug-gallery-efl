@@ -1,5 +1,7 @@
 msgid "IDS_GALLERY_BUTTON_CAMERA"
 msgstr "Camera"
+msgid "IDS_COM_SK_OK"
+msgstr "OK"
 
 msgid "IDS_MUSIC_POP_DELETE_PD_ALBUMS_Q"
 msgstr "Eliminare %d album?"
@@ -397,26 +399,41 @@ msgstr "Persone"
 msgid "IDS_MEDIABR_BUTTON_CANCEL_ABB"
 msgstr "Annulla"
 
+msgid "IDS_COM_SK_CANCEL"
+msgstr "Annulla"
+
 msgid "IDS_IV_BODY_DONT_ASK_AGAIN"
 msgstr "Non chiedere più"
+msgid "IDS_COM_SK_DONE"
+msgstr "Fatto"
 
 msgid "IDS_HELP_BODY_SELECT_PICTURES_THEN_TAP_PS_TO_ADD_THEM_TO_AN_ALBUM"
 msgstr "Selezionate delle immagini, quindi toccate %s per aggiungerle a un album."
+msgid "IDS_COM_BODY_NO_ITEMS"
+msgstr "Nessun elemento"
 
 msgid "IDS_HELP_BODY_OPEN_PS_GALLERY"
 msgstr "Aprite Galleria %s."
+msgid "IDS_COM_BODY_UNKNOWN"
+msgstr "Sconosciuto"
 
 msgid "IDS_PBR_OPT_SHOW_HIDDEN_ITEMS"
 msgstr "Mostra elementi nascosti"
+msgid "IDS_COM_SK_BACK"
+msgstr "Indietro"
 
 msgid "IDS_IV_OPT_HIDDEN_ITEMS"
 msgstr "Elementi nascosti"
 
 msgid "IDS_IV_OPT_SHOW_ITEMS"
 msgstr "Mostra elementi"
+msgid "IDS_COM_POP_SELECTED"
+msgstr "Selezionato."
 
 msgid "IDS_MF_POP_REMOVED"
 msgstr "Rimosso."
+msgid "IDS_COM_BODY_NO_VIDEOS"
+msgstr "Nessun video"
 
 msgid "IDS_HELP_BODY_GALLERY"
 msgstr "Galleria"
@@ -930,4 +947,6 @@ msgstr "La dimensione massima del file (%d MB) è stata superata."
 
 msgid "IDS_IM_POP_MAXIMUM_SIZE_OF_FILES_EXCEEDED"
 msgstr "Dimensioni massime dei file superate."
+msgid "IDS_COM_BODY_NO_IMAGES"
+msgstr "Nessuna immagine"
 

@@ -397,26 +397,41 @@ msgstr "Ljudje"
 msgid "IDS_MEDIABR_BUTTON_CANCEL_ABB"
 msgstr "Prekliči"
 
+msgid "IDS_COM_SK_CANCEL"
+msgstr "Prekliči"
+
 msgid "IDS_IV_BODY_DONT_ASK_AGAIN"
 msgstr "Ne vprašaj znova"
+msgid "IDS_COM_SK_DONE"
+msgstr "Končano"
 
 msgid "IDS_HELP_BODY_SELECT_PICTURES_THEN_TAP_PS_TO_ADD_THEM_TO_AN_ALBUM"
 msgstr "Izberite slike in pritisnite %s, da jih dodate v album."
+msgid "IDS_COM_BODY_NO_ITEMS"
+msgstr "Ni predmetov"
 
 msgid "IDS_HELP_BODY_OPEN_PS_GALLERY"
 msgstr "Odpiranje Galerije %s."
+msgid "IDS_COM_BODY_UNKNOWN"
+msgstr "Neznano"
 
 msgid "IDS_PBR_OPT_SHOW_HIDDEN_ITEMS"
 msgstr "Pokaži skrite elemente"
+msgid "IDS_COM_SK_BACK"
+msgstr "Nazaj"
 
 msgid "IDS_IV_OPT_HIDDEN_ITEMS"
 msgstr "Skriti elementi"
 
 msgid "IDS_IV_OPT_SHOW_ITEMS"
 msgstr "Pokaži elemente"
+msgid "IDS_COM_POP_SELECTED"
+msgstr "Izbrano."
 
 msgid "IDS_MF_POP_REMOVED"
 msgstr "Odstranjeno."
+msgid "IDS_COM_BODY_NO_VIDEOS"
+msgstr "Ni videoposnetkov"
 
 msgid "IDS_HELP_BODY_GALLERY"
 msgstr "Galerija"
@@ -930,4 +945,6 @@ msgstr "Največja dovoljena velikost datoteke (%d MB) je presežena."
 
 msgid "IDS_IM_POP_MAXIMUM_SIZE_OF_FILES_EXCEEDED"
 msgstr "Največja dovoljena velikost datotek je presežena."
+msgid "IDS_COM_BODY_NO_IMAGES"
+msgstr "Ni slik"
 

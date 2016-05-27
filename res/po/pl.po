@@ -1,5 +1,7 @@
 msgid "IDS_GALLERY_BUTTON_CAMERA"
 msgstr "Aparat"
+msgid "IDS_COM_SK_OK"
+msgstr "OK"
 
 msgid "IDS_MUSIC_POP_DELETE_PD_ALBUMS_Q"
 msgstr "Usunąć albumy: %d?"
@@ -397,27 +399,44 @@ msgstr "Osoby"
 msgid "IDS_MEDIABR_BUTTON_CANCEL_ABB"
 msgstr "Anuluj"
 
+msgid "IDS_COM_SK_CANCEL"
+msgstr "Anuluj"
+
 msgid "IDS_IV_BODY_DONT_ASK_AGAIN"
 msgstr "Nie pytaj ponownie"
+msgid "IDS_COM_SK_DONE"
+msgstr "Gotowe"
 
 msgid "IDS_HELP_BODY_SELECT_PICTURES_THEN_TAP_PS_TO_ADD_THEM_TO_AN_ALBUM"
 msgstr "Wybierz obrazy, a następnie dotknij opcji %s, aby dodać je do albumu."
+msgid "IDS_COM_BODY_NO_ITEMS"
+msgstr "Brak elementów"
 
+msgid "IDS_COM_BODY_UNKNOWN"
+msgstr "Nieznane"
 msgid "IDS_HELP_BODY_OPEN_PS_GALLERY"
 msgstr "Otwórz Galerię %s."
 
 msgid "IDS_PBR_OPT_SHOW_HIDDEN_ITEMS"
 msgstr "Pokaż ukryte elementy"
+msgid "IDS_COM_SK_BACK"
+msgstr "Wstecz"
 
 msgid "IDS_IV_OPT_HIDDEN_ITEMS"
 msgstr "Ukryte elementy"
 
 msgid "IDS_IV_OPT_SHOW_ITEMS"
 msgstr "Pokaż elementy"
+msgid "IDS_COM_POP_SELECTED"
+msgstr "Wybrane."
 
 msgid "IDS_MF_POP_REMOVED"
 msgstr "Usunięto."
+msgid "IDS_COM_BODY_NO_VIDEOS"
+msgstr "Brak filmów wideo"
 
+msgid "IDS_COM_BODY_NO_IMAGES"
+msgstr "Brak obrazów"
 msgid "IDS_HELP_BODY_GALLERY"
 msgstr "Galeria"
 

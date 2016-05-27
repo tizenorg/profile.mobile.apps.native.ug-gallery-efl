@@ -1,5 +1,10 @@
 msgid "IDS_GALLERY_BUTTON_CAMERA"
 msgstr "الكاميرا"
+msgid "IDS_COM_SK_OK"
+msgstr "موافق"
+
+msgid "IDS_COM_SK_CANCEL"
+msgstr "إلغاء"
 
 msgid "IDS_MUSIC_POP_DELETE_PD_ALBUMS_Q"
 msgstr "هل تريد حذف %d من الألبومات؟"
@@ -399,24 +404,34 @@ msgstr "إلغاء"
 
 msgid "IDS_IV_BODY_DONT_ASK_AGAIN"
 msgstr "عدم السؤال مرة أخرى"
+msgid "IDS_COM_SK_DONE"
+msgstr "تمت"
 
 msgid "IDS_HELP_BODY_SELECT_PICTURES_THEN_TAP_PS_TO_ADD_THEM_TO_AN_ALBUM"
 msgstr "حدد الصور، ثم انقر فوق %s لإضافتها إلى أحد الألبومات."
+msgid "IDS_COM_BODY_NO_ITEMS"
+msgstr "لا توجد عناصر"
 
 msgid "IDS_HELP_BODY_OPEN_PS_GALLERY"
 msgstr "فتح المعرض %s."
 
 msgid "IDS_PBR_OPT_SHOW_HIDDEN_ITEMS"
 msgstr "عرض العناصر المخفية"
+msgid "IDS_COM_SK_BACK"
+msgstr "رجوع"
 
 msgid "IDS_IV_OPT_HIDDEN_ITEMS"
 msgstr "العناصر المخفية"
 
 msgid "IDS_IV_OPT_SHOW_ITEMS"
 msgstr "عرض العناصر"
+msgid "IDS_COM_POP_SELECTED"
+msgstr "تم التحديد."
 
 msgid "IDS_MF_POP_REMOVED"
 msgstr "تم الحذف."
+msgid "IDS_COM_BODY_NO_VIDEOS"
+msgstr "لا توجد لقطات فيديو"
 
 msgid "IDS_HELP_BODY_GALLERY"
 msgstr "استوديو"
@@ -930,4 +945,6 @@ msgstr "تم تجاوز الحد الأقصى لحجم الملف (%d ميجا�
 
 msgid "IDS_IM_POP_MAXIMUM_SIZE_OF_FILES_EXCEEDED"
 msgstr "تم تجاوز الحد الأقصى لحجم الملفات."
+msgid "IDS_COM_BODY_NO_IMAGES"
+msgstr "لا توجد صور"
 

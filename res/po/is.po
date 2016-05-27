@@ -1,5 +1,7 @@
 msgid "IDS_GALLERY_BUTTON_CAMERA"
 msgstr "Myndavél"
+msgid "IDS_COM_SK_OK"
+msgstr "Í lagi"
 
 msgid "IDS_MUSIC_POP_DELETE_PD_ALBUMS_Q"
 msgstr "Viltu eyða %d albúmum?"
@@ -397,26 +399,41 @@ msgstr "Fólk"
 msgid "IDS_MEDIABR_BUTTON_CANCEL_ABB"
 msgstr "Hætta við"
 
+msgid "IDS_COM_SK_CANCEL"
+msgstr "Hætta við"
+
 msgid "IDS_IV_BODY_DONT_ASK_AGAIN"
 msgstr "Ekki spyrja aftur"
+msgid "IDS_COM_SK_DONE"
+msgstr "Lokið"
 
+msgid "IDS_COM_BODY_NO_ITEMS"
+msgstr "Engin atriði"
 msgid "IDS_HELP_BODY_SELECT_PICTURES_THEN_TAP_PS_TO_ADD_THEM_TO_AN_ALBUM"
 msgstr "Veldu myndir og pikkaðu síðan á %s til að setja þær í albúm."
 
 msgid "IDS_HELP_BODY_OPEN_PS_GALLERY"
 msgstr "Opna %s gallerí."
+msgid "IDS_COM_BODY_UNKNOWN"
+msgstr "Óþekkt"
 
 msgid "IDS_PBR_OPT_SHOW_HIDDEN_ITEMS"
 msgstr "Sýna falin atriði"
+msgid "IDS_COM_SK_BACK"
+msgstr "Bakka"
 
 msgid "IDS_IV_OPT_HIDDEN_ITEMS"
 msgstr "Falin atriði"
 
 msgid "IDS_IV_OPT_SHOW_ITEMS"
 msgstr "Sýna atriði"
+msgid "IDS_COM_POP_SELECTED"
+msgstr "Valið."
 
 msgid "IDS_MF_POP_REMOVED"
 msgstr "Fjarlægt."
+msgid "IDS_COM_BODY_NO_VIDEOS"
+msgstr "Engin myndskeið"
 
 msgid "IDS_HELP_BODY_GALLERY"
 msgstr "Gallerí"
@@ -930,4 +947,6 @@ msgstr "Hámarksstærð skráar (%d MB) hefur verið náð."
 
 msgid "IDS_IM_POP_MAXIMUM_SIZE_OF_FILES_EXCEEDED"
 msgstr "Hámarksstærð skráa er náð."
+msgid "IDS_COM_BODY_NO_IMAGES"
+msgstr "Engar myndir"
 

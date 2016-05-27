@@ -371,9 +371,6 @@ int _ge_ui_set_translate_str(Evas_Object *obj, const char *str)
 	GE_CHECK_VAL(str, -1);
 	GE_CHECK_VAL(obj, -1);
 	char *domain = GE_STR_DOMAIN_LOCAL;
-	if (strstr(str, "IDS_COM")) {
-		domain = GE_STR_DOMAIN_SYS;
-	}
 	elm_object_domain_translatable_text_set(obj, domain, str);
 	return 0;
 }
@@ -383,9 +380,6 @@ int _ge_ui_set_translatable_item(Elm_Object_Item *nf_it, const char *str)
 	GE_CHECK_VAL(str, -1);
 	GE_CHECK_VAL(nf_it, -1);
 	char *domain = GE_STR_DOMAIN_LOCAL;
-	if (strstr(str, "IDS_COM")) {
-		domain = GE_STR_DOMAIN_SYS;
-	}
 	elm_object_item_domain_text_translatable_set(nf_it, domain, EINA_TRUE);
 	return 0;
 }

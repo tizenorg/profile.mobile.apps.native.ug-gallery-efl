@@ -1,29 +1,45 @@
 msgid "IDS_GALLERY_BUTTON_CAMERA"
 msgstr "Камера"
+msgid "IDS_COM_SK_OK"
+msgstr "OK"
 
+msgid "IDS_COM_SK_CANCEL"
+msgstr "Отмени"
 msgid "IDS_MUSIC_POP_DELETE_PD_ALBUMS_Q"
 msgstr "Изтривате ли %d албума?"
 
 msgid "IDS_MEDIABR_IOPT3_PLACES"
 msgstr "Места"
+msgid "IDS_COM_SK_DONE"
+msgstr "Готово"
 
 msgid "IDS_MEDIABR_SK2_ADD_TO_HOME"
 msgstr "Добави към дом."
+msgid "IDS_COM_BODY_NO_ITEMS"
+msgstr "Няма елементи"
 
 msgid "IDS_MEDIABR_BODY_TAGS"
 msgstr "Тагове"
+msgid "IDS_COM_BODY_UNKNOWN"
+msgstr "Няма информация"
 
 msgid "IDS_MEDIABR_BODY_ALL_ALBUMS"
 msgstr "Всички албуми"
+msgid "IDS_COM_SK_BACK"
+msgstr "Назад"
 
 msgid "IDS_MEDIABR_BODY_FACEBOOK_WEB_ALBUM"
 msgstr "Уеб албум във Facebook"
 
 msgid "IDS_MEDIABR_BODY_PICASA_WEB_ALBUM"
 msgstr "Уеб албум в Picasa"
+msgid "IDS_COM_POP_SELECTED"
+msgstr "Избран."
 
 msgid "IDS_MEDIABR_HEADER_NEARBY_DEVICES"
 msgstr "Устройства наблизо"
+msgid "IDS_COM_BODY_NO_VIDEOS"
+msgstr "Няма видео"
 
 msgid "IDS_ASEML_BODY_PAST_PD_MONTHS"
 msgstr "Последните %d месеца"
@@ -930,4 +946,6 @@ msgstr "Надвишен е максималният размер на файл�
 
 msgid "IDS_IM_POP_MAXIMUM_SIZE_OF_FILES_EXCEEDED"
 msgstr "Максималният размер на файловете е надхвърлен."
+msgid "IDS_COM_BODY_NO_IMAGES"
+msgstr "Няма изображения"
 

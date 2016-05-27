@@ -1,29 +1,45 @@
 msgid "IDS_GALLERY_BUTTON_CAMERA"
 msgstr "ക്യാമറ"
+msgid "IDS_COM_SK_OK"
+msgstr "ശരി"
 
 msgid "IDS_MEDIABR_IOPT3_PLACES"
 msgstr "സ്ഥലങ്ങള്‍"
+msgid "IDS_COM_SK_CANCEL"
+msgstr "റദ്ദാക്കു."
 
 msgid "IDS_MEDIABR_SK2_ADD_TO_HOME"
 msgstr "ഹോമിലേക്ക് ചേര്‍ക്കുക"
+msgid "IDS_COM_SK_DONE"
+msgstr "ചെയ്‌."
 
 msgid "IDS_MEDIABR_BODY_TAGS"
 msgstr "ടാഗുകള്‍"
+msgid "IDS_COM_BODY_NO_ITEMS"
+msgstr "ഇനങ്ങള്‍  ഒന്നുമില്ല"
 
 msgid "IDS_MEDIABR_BODY_ALL_ALBUMS"
 msgstr "എല്ലാ ആല്‍ബങ്ങളും"
+msgid "IDS_COM_BODY_UNKNOWN"
+msgstr "അജ്ഞാതം"
 
 msgid "IDS_MEDIABR_BODY_FACEBOOK_WEB_ALBUM"
 msgstr "ഫെയ്സ്ബുക്ക് വെബ് ആല്‍ബം"
+msgid "IDS_COM_SK_BACK"
+msgstr "പിന്നോ.."
 
 msgid "IDS_MEDIABR_BODY_PICASA_WEB_ALBUM"
 msgstr "പിക്കാസ വെബ് ആല്‍ബം"
 
 msgid "IDS_MEDIABR_HEADER_NEARBY_DEVICES"
 msgstr "സീമപസ്ഥ സാമഗ്രികള്‍"
+msgid "IDS_COM_POP_SELECTED"
+msgstr "തിരഞ്ഞെടുത്തു."
 
 msgid "IDS_MF_BODY_DOWNLOADS"
 msgstr "ഡൌണ്‍‌ലോഡു."
+msgid "IDS_COM_BODY_NO_VIDEOS"
+msgstr "വീഡിയോകള്‍ ഇല്ല"
 
 msgid "IDS_MF_POP_NOT_ENOUGH_MEMORY_DELETE_SOME_ITEMS"
 msgstr "മതിയായ മെമ്മറിയില്ല. ചില ഇനങ്ങള്‍  ഇല്ലാതാക്കുക."
@@ -646,4 +662,6 @@ msgstr "പരമാവധി ഫയല്‍ വലുപ്പം (%d MB) ക�
 
 msgid "IDS_IM_POP_MAXIMUM_SIZE_OF_FILES_EXCEEDED"
 msgstr "ഫയലുകളുടെ പരമാവധി വലിപ്പം അതികരിച്ചു."
+msgid "IDS_COM_BODY_NO_IMAGES"
+msgstr "ഇമേജുകള്‍‌ ഇല്ല"
 

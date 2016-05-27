@@ -1,5 +1,10 @@
 msgid "IDS_GALLERY_BUTTON_CAMERA"
 msgstr "ক্যামেরা"
+msgid "IDS_COM_SK_OK"
+msgstr "ওকে"
+
+msgid "IDS_COM_SK_CANCEL"
+msgstr "বাতিল"
 
 msgid "IDS_MEDIABR_IOPT3_PLACES"
 msgstr "স্থান"
@@ -357,24 +362,36 @@ msgstr "বাতিল"
 
 msgid "IDS_IV_BODY_DONT_ASK_AGAIN"
 msgstr "আর জিজ্ঞাসা করবেন না"
+msgid "IDS_COM_SK_DONE"
+msgstr "সম্পন্ন"
 
 msgid "IDS_HELP_BODY_SELECT_PICTURES_THEN_TAP_PS_TO_ADD_THEM_TO_AN_ALBUM"
 msgstr "ছবিগুলি নির্বাচন করুন এবং কোনও অ্যালবামে সেগুলি যোগ করতে %s ট্যাপ করুন৷"
+msgid "IDS_COM_BODY_NO_ITEMS"
+msgstr "কোনও আইটেম নেই"
 
 msgid "IDS_HELP_BODY_OPEN_PS_GALLERY"
 msgstr "%s গ্যালারী খুলুন৷"
+msgid "IDS_COM_BODY_UNKNOWN"
+msgstr "অজানা"
 
 msgid "IDS_PBR_OPT_SHOW_HIDDEN_ITEMS"
 msgstr "লুকানো আইটেমগুলি দেখান"
+msgid "IDS_COM_SK_BACK"
+msgstr "ব্যাক"
 
 msgid "IDS_IV_OPT_HIDDEN_ITEMS"
 msgstr "লুকানো আইটেমগুলি"
 
 msgid "IDS_IV_OPT_SHOW_ITEMS"
 msgstr "আইটেমগুলি দেখান"
+msgid "IDS_COM_POP_SELECTED"
+msgstr "নির্বাচিত।"
 
 msgid "IDS_MF_POP_REMOVED"
 msgstr "অপসারিত।"
+msgid "IDS_COM_BODY_NO_VIDEOS"
+msgstr "কোনও ভিডিও নেই"
 
 msgid "IDS_HELP_BODY_GALLERY"
 msgstr "গ্যালারি"
@@ -645,4 +662,6 @@ msgstr "সর্বাধিক ফাইলের আকার (%d MB) অত�
 
 msgid "IDS_IM_POP_MAXIMUM_SIZE_OF_FILES_EXCEEDED"
 msgstr "ফাইলের সর্বাধিক আকারের সীমা অতিক্রান্ত।"
+msgid "IDS_COM_BODY_NO_IMAGES"
+msgstr "কোনও চিত্র নেই"
 

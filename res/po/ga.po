@@ -1,5 +1,7 @@
 msgid "IDS_GALLERY_BUTTON_CAMERA"
 msgstr "Ceamara"
+msgid "IDS_COM_SK_OK"
+msgstr "OK"
 
 msgid "IDS_MUSIC_POP_DELETE_PD_ALBUMS_Q"
 msgstr "Scrios %d albam?"
@@ -397,26 +399,41 @@ msgstr "Daoine"
 msgid "IDS_MEDIABR_BUTTON_CANCEL_ABB"
 msgstr "Cuir ar ceal"
 
+msgid "IDS_COM_SK_CANCEL"
+msgstr "Cuir ar ceal"
+
 msgid "IDS_IV_BODY_DONT_ASK_AGAIN"
 msgstr "Ná hiarr arís"
+msgid "IDS_COM_SK_DONE"
+msgstr "Déanta"
 
 msgid "IDS_HELP_BODY_SELECT_PICTURES_THEN_TAP_PS_TO_ADD_THEM_TO_AN_ALBUM"
 msgstr "Roghnaigh pictiúir, ansin tapáil %s lena gcur le halbam."
+msgid "IDS_COM_BODY_NO_ITEMS"
+msgstr "Níl míreanna ann"
 
 msgid "IDS_HELP_BODY_OPEN_PS_GALLERY"
 msgstr "Oscail %s Gailearaí."
+msgid "IDS_COM_BODY_UNKNOWN"
+msgstr "Anaithnid"
 
 msgid "IDS_PBR_OPT_SHOW_HIDDEN_ITEMS"
 msgstr "Taispeáin míreanna folaithe"
+msgid "IDS_COM_SK_BACK"
+msgstr "Siar"
 
 msgid "IDS_IV_OPT_HIDDEN_ITEMS"
 msgstr "Míreanna folaithe"
 
 msgid "IDS_IV_OPT_SHOW_ITEMS"
 msgstr "Taispeáin míreanna"
+msgid "IDS_COM_POP_SELECTED"
+msgstr "Roghnaithe."
 
 msgid "IDS_MF_POP_REMOVED"
 msgstr "Bainte."
+msgid "IDS_COM_BODY_NO_VIDEOS"
+msgstr "Níl físeáin ann"
 
 msgid "IDS_HELP_BODY_GALLERY"
 msgstr "Gailearaí"
@@ -930,4 +947,6 @@ msgstr "Uasmhéid an chomhaid (%d MB) sáraithe."
 
 msgid "IDS_IM_POP_MAXIMUM_SIZE_OF_FILES_EXCEEDED"
 msgstr "Uasmhéid na gcomhad sáraithe."
+msgid "IDS_COM_BODY_NO_IMAGES"
+msgstr "Níl íomhanna ann"
 

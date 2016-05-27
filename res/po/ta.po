@@ -1,5 +1,7 @@
 msgid "IDS_GALLERY_BUTTON_CAMERA"
 msgstr "கேமரா"
+msgid "IDS_COM_SK_OK"
+msgstr "சரி"
 
 msgid "IDS_MEDIABR_IOPT3_PLACES"
 msgstr "இடங்கள்"
@@ -355,26 +357,41 @@ msgstr "மக்கள்"
 msgid "IDS_MEDIABR_BUTTON_CANCEL_ABB"
 msgstr "ரத்து"
 
+msgid "IDS_COM_SK_CANCEL"
+msgstr "ரத்து"
+
 msgid "IDS_IV_BODY_DONT_ASK_AGAIN"
 msgstr "மீண்டும் கேட்காதே"
+msgid "IDS_COM_SK_DONE"
+msgstr "முடிந்தது"
 
 msgid "IDS_HELP_BODY_SELECT_PICTURES_THEN_TAP_PS_TO_ADD_THEM_TO_AN_ALBUM"
 msgstr "படங்களைத் தேர்வு செய்யவும் பின்னர் ஓர் தொகுப்பில் அதனை சேர்க்க %s டேப் செய்க."
+msgid "IDS_COM_BODY_NO_ITEMS"
+msgstr "உருப்படிகள் இல்லை"
 
 msgid "IDS_HELP_BODY_OPEN_PS_GALLERY"
 msgstr "%s கேலரி திறக்கவும்."
+msgid "IDS_COM_BODY_UNKNOWN"
+msgstr "தெரியாத"
 
 msgid "IDS_PBR_OPT_SHOW_HIDDEN_ITEMS"
 msgstr "மறைக்கப்பட்ட உருப்படிகளைக் காண்பிக்கவும்"
+msgid "IDS_COM_SK_BACK"
+msgstr "பின்"
 
 msgid "IDS_IV_OPT_HIDDEN_ITEMS"
 msgstr "மறைக்கப்பட்ட உருப்படிகள்"
 
 msgid "IDS_IV_OPT_SHOW_ITEMS"
 msgstr "உருப்படிகள் காண்பி"
+msgid "IDS_COM_POP_SELECTED"
+msgstr "தேர்ந்தெடுக்கப்பட்டது."
 
 msgid "IDS_MF_POP_REMOVED"
 msgstr "நீக்கப்பட்டது."
+msgid "IDS_COM_BODY_NO_VIDEOS"
+msgstr "நிகழ்படங்கள் இல்லை"
 
 msgid "IDS_HELP_BODY_GALLERY"
 msgstr "கேலரி"
@@ -646,4 +663,6 @@ msgstr "அதிகபட்ச கோப்பளவு (%d MB) கடந்�
 
 msgid "IDS_IM_POP_MAXIMUM_SIZE_OF_FILES_EXCEEDED"
 msgstr "அதிகபட்ச கோப்புகளின் அளவை தாண்டியது."
+msgid "IDS_COM_BODY_NO_IMAGES"
+msgstr "படிமங்கள் இல்லை"
 

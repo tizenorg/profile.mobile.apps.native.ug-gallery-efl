@@ -1,5 +1,10 @@
 msgid "IDS_GALLERY_BUTTON_CAMERA"
 msgstr "照相机"
+msgid "IDS_COM_SK_OK"
+msgstr "确定"
+
+msgid "IDS_COM_SK_CANCEL"
+msgstr "取消"
 
 msgid "IDS_MUSIC_POP_DELETE_PD_ALBUMS_Q"
 msgstr "是否删除 %d 本相册？"
@@ -397,26 +402,38 @@ msgstr "人物"
 msgid "IDS_MEDIABR_BUTTON_CANCEL_ABB"
 msgstr "取消"
 
+msgid "IDS_COM_SK_DONE"
+msgstr "完成"
 msgid "IDS_IV_BODY_DONT_ASK_AGAIN"
 msgstr "不再询问"
 
 msgid "IDS_HELP_BODY_SELECT_PICTURES_THEN_TAP_PS_TO_ADD_THEM_TO_AN_ALBUM"
 msgstr "选择照片，然后轻敲 %s 以将其添加至相册。"
+msgid "IDS_COM_BODY_NO_ITEMS"
+msgstr "没有内容"
 
+msgid "IDS_COM_BODY_UNKNOWN"
+msgstr "未知"
 msgid "IDS_HELP_BODY_OPEN_PS_GALLERY"
 msgstr "打开 %s 相册。"
 
 msgid "IDS_PBR_OPT_SHOW_HIDDEN_ITEMS"
 msgstr "显示隐藏项目"
+msgid "IDS_COM_SK_BACK"
+msgstr "返回"
 
 msgid "IDS_IV_OPT_HIDDEN_ITEMS"
 msgstr "隐藏的项目"
 
 msgid "IDS_IV_OPT_SHOW_ITEMS"
 msgstr "显示项目"
+msgid "IDS_COM_POP_SELECTED"
+msgstr "已选择"
 
 msgid "IDS_MF_POP_REMOVED"
 msgstr "已移除"
+msgid "IDS_COM_BODY_NO_VIDEOS"
+msgstr "无视频"
 
 msgid "IDS_HELP_BODY_GALLERY"
 msgstr "相册"
@@ -930,4 +947,6 @@ msgstr "已超过最大文件大小（%d MB）。"
 
 msgid "IDS_IM_POP_MAXIMUM_SIZE_OF_FILES_EXCEEDED"
 msgstr "已达到文件最大尺寸。"
+msgid "IDS_COM_BODY_NO_IMAGES"
+msgstr "没有图片"
 

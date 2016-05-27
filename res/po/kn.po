@@ -1,5 +1,7 @@
 msgid "IDS_GALLERY_BUTTON_CAMERA"
 msgstr "ಕ್ಯಾಮರಾ"
+msgid "IDS_COM_SK_OK"
+msgstr "ಸರಿ"
 
 msgid "IDS_MEDIABR_IOPT3_PLACES"
 msgstr "ಸ್ಥಳಗಳು"
@@ -355,26 +357,41 @@ msgstr "ಜನ"
 msgid "IDS_MEDIABR_BUTTON_CANCEL_ABB"
 msgstr "ರದ್ದು"
 
+msgid "IDS_COM_SK_CANCEL"
+msgstr "ರದ್ದು"
+
 msgid "IDS_IV_BODY_DONT_ASK_AGAIN"
 msgstr "ಮತ್ತೊಮ್ಮೆ ಕೇಳಬೇಡಿ"
+msgid "IDS_COM_SK_DONE"
+msgstr "ಮುಗಿದಿದೆ"
 
 msgid "IDS_HELP_BODY_SELECT_PICTURES_THEN_TAP_PS_TO_ADD_THEM_TO_AN_ALBUM"
 msgstr "ಚಿತ್ರಗಳನ್ನು ಆಯ್ಕೆಮಾಡಿ, ನಂತರ ಅವುಗಳನ್ನು ಆಲ್ಬಂಗೆ ಸೇರಿಸಲು %s ಒತ್ತಿ."
+msgid "IDS_COM_BODY_NO_ITEMS"
+msgstr "ಅಂಶಗಳಿಲ್ಲ"
 
 msgid "IDS_HELP_BODY_OPEN_PS_GALLERY"
 msgstr "%s ಗ್ಯಾಲರಿ ತೆರೆಯಿರಿ."
+msgid "IDS_COM_BODY_UNKNOWN"
+msgstr "ತಿಳಿಯದ"
 
 msgid "IDS_PBR_OPT_SHOW_HIDDEN_ITEMS"
 msgstr "ಅಡಗಿಸಿದ ಅಂಶಗಳನ್ನು ತೋರಿಸಿ"
+msgid "IDS_COM_SK_BACK"
+msgstr "ಹಿಂದೆ"
 
 msgid "IDS_IV_OPT_HIDDEN_ITEMS"
 msgstr "ಅಡಗಿಸಿದ ಅಂಶಗಳು"
 
 msgid "IDS_IV_OPT_SHOW_ITEMS"
 msgstr "ಅಂಶಗಳನ್ನು ತೋರಿಸಿ"
+msgid "IDS_COM_POP_SELECTED"
+msgstr "ಆಯ್ಕೆಮಾಡಲಾಗಿದೆ."
 
 msgid "IDS_MF_POP_REMOVED"
 msgstr "ತೆಗೆಯಲಾಗಿದೆ."
+msgid "IDS_COM_BODY_NO_VIDEOS"
+msgstr "ವೀಡಿಯೊಗಳು ಇಲ್ಲ"
 
 msgid "IDS_HELP_BODY_GALLERY"
 msgstr "ಗ್ಯಾಲರಿ"
@@ -646,4 +663,6 @@ msgstr "ಗರಿಷ್ಠ ಫೈಲ್ ಗಾತ್ರ (%d MB) ಮೀರಿದ�
 
 msgid "IDS_IM_POP_MAXIMUM_SIZE_OF_FILES_EXCEEDED"
 msgstr "ಫೈಲ್‌ಗಳ ಗರಿಷ್ಠ ಗಾತ್ರ ಮೀರಿದೆ."
+msgid "IDS_COM_BODY_NO_IMAGES"
+msgstr "ಯಾವುದೇ ಚಿತ್ರಗಳಿಲ್ಲ"
 

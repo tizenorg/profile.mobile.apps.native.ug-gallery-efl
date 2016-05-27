@@ -1,29 +1,45 @@
 msgid "IDS_GALLERY_BUTTON_CAMERA"
 msgstr "Kamera"
+msgid "IDS_COM_SK_OK"
+msgstr "Ados"
 
 msgid "IDS_MUSIC_POP_DELETE_PD_ALBUMS_Q"
 msgstr "Ezabatu %d album?"
+msgid "IDS_COM_SK_CANCEL"
+msgstr "Ezeztatu"
 
 msgid "IDS_MEDIABR_IOPT3_PLACES"
 msgstr "Tokiak"
+msgid "IDS_COM_SK_DONE"
+msgstr "Amaituta"
 
 msgid "IDS_MEDIABR_SK2_ADD_TO_HOME"
 msgstr "Gehitu nagusira"
+msgid "IDS_COM_BODY_NO_ITEMS"
+msgstr "Elementurik ez"
 
 msgid "IDS_MEDIABR_BODY_TAGS"
 msgstr "Etiketak"
+msgid "IDS_COM_BODY_UNKNOWN"
+msgstr "Ezezaguna"
 
 msgid "IDS_MEDIABR_BODY_ALL_ALBUMS"
 msgstr "Album guztiak"
+msgid "IDS_COM_SK_BACK"
+msgstr "Atzera"
 
 msgid "IDS_MEDIABR_BODY_FACEBOOK_WEB_ALBUM"
 msgstr "Facebook Web albuma"
 
 msgid "IDS_MEDIABR_BODY_PICASA_WEB_ALBUM"
 msgstr "Picasa Web albuma"
+msgid "IDS_COM_POP_SELECTED"
+msgstr "Aukeratutakoa(k)"
 
 msgid "IDS_MEDIABR_HEADER_NEARBY_DEVICES"
 msgstr "Gertuko gailuak"
+msgid "IDS_COM_BODY_NO_VIDEOS"
+msgstr "Bideorik ez"
 
 msgid "IDS_ASEML_BODY_PAST_PD_MONTHS"
 msgstr "Duela %d hilabete"
@@ -930,4 +946,6 @@ msgstr "Fitxategiaren gehieneko neurria (%d MB) gaindituta"
 
 msgid "IDS_IM_POP_MAXIMUM_SIZE_OF_FILES_EXCEEDED"
 msgstr "Fitxategien gehienezko neurria gaindituta"
+msgid "IDS_COM_BODY_NO_IMAGES"
+msgstr "Irudirik ez"
 

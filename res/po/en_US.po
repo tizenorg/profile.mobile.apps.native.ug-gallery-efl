@@ -1,5 +1,10 @@
 msgid "IDS_GALLERY_BUTTON_CAMERA"
 msgstr "Camera"
+msgid "IDS_COM_SK_OK"
+msgstr "OK"
+
+msgid "IDS_COM_SK_CANCEL"
+msgstr "Cancel"
 
 msgid "IDS_MEDIABR_IOPT3_PLACES"
 msgstr "Places"
@@ -357,24 +362,36 @@ msgstr "Cancel"
 
 msgid "IDS_IV_BODY_DONT_ASK_AGAIN"
 msgstr "Don't ask again"
+msgid "IDS_COM_SK_DONE"
+msgstr "Done"
 
 msgid "IDS_HELP_BODY_SELECT_PICTURES_THEN_TAP_PS_TO_ADD_THEM_TO_AN_ALBUM"
 msgstr "Select pictures, then tap %s to add them to an album."
+msgid "IDS_COM_BODY_NO_ITEMS"
+msgstr "No items"
 
 msgid "IDS_HELP_BODY_OPEN_PS_GALLERY"
 msgstr "Open %s Gallery."
+msgid "IDS_COM_BODY_UNKNOWN"
+msgstr "Unknown"
 
 msgid "IDS_PBR_OPT_SHOW_HIDDEN_ITEMS"
 msgstr "Show hidden items"
+msgid "IDS_COM_SK_BACK"
+msgstr "Back"
 
 msgid "IDS_IV_OPT_HIDDEN_ITEMS"
 msgstr "Hidden items"
 
 msgid "IDS_IV_OPT_SHOW_ITEMS"
 msgstr "Show items"
+msgid "IDS_COM_POP_SELECTED"
+msgstr "Selected."
 
 msgid "IDS_MF_POP_REMOVED"
 msgstr "Removed."
+msgid "IDS_COM_BODY_NO_VIDEOS"
+msgstr "No videos"
 
 msgid "IDS_HELP_BODY_GALLERY"
 msgstr "Gallery"
@@ -651,4 +668,6 @@ msgstr "Maximum %d MB file size has been exceeded."
 
 msgid "IDS_IM_POP_MAXIMUM_SIZE_OF_FILES_EXCEEDED"
 msgstr "Maximum size of files exceeded."
+msgid "IDS_COM_BODY_NO_IMAGES"
+msgstr "No images"
 

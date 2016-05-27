@@ -25,7 +25,7 @@ extern "C" {
 #define GE_STR_DOMAIN_SYS "sys_string"
 #define GE_STR_DOMAIN_LOCAL "ug-gallery-efl"
 
-#define _GE_GETSYSTEMSTR(ID) dgettext(GE_STR_DOMAIN_SYS, (ID))
+#define _GE_GETSYSTEMSTR(ID) dgettext(GE_STR_DOMAIN_LOCAL, (ID))
 #define _GE_GETLOCALSTR(ID) dgettext(GE_STR_DOMAIN_LOCAL, (ID))
 /* hard code strings */
 #define GE_ALBUM_CAMERA_NAME	_("Camera")

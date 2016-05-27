@@ -1,5 +1,7 @@
 msgid "IDS_GALLERY_BUTTON_CAMERA"
 msgstr "相機"
+msgid "IDS_COM_SK_OK"
+msgstr "確定"
 
 msgid "IDS_MUSIC_POP_DELETE_PD_ALBUMS_Q"
 msgstr "刪除 %d 張專輯嗎？"
@@ -397,27 +399,44 @@ msgstr "聯絡人"
 msgid "IDS_MEDIABR_BUTTON_CANCEL_ABB"
 msgstr "取消"
 
+msgid "IDS_COM_SK_CANCEL"
+msgstr "取消"
+
 msgid "IDS_IV_BODY_DONT_ASK_AGAIN"
 msgstr "不要再詢問"
+msgid "IDS_COM_SK_DONE"
+msgstr "完成"
 
 msgid "IDS_HELP_BODY_SELECT_PICTURES_THEN_TAP_PS_TO_ADD_THEM_TO_AN_ALBUM"
 msgstr "選擇圖片，然後輕觸 %s 來新增至相簿。"
+msgid "IDS_COM_BODY_NO_ITEMS"
+msgstr "無項目"
 
 msgid "IDS_HELP_BODY_OPEN_PS_GALLERY"
 msgstr "開啟 %s 媒體瀏覽器。"
+msgid "IDS_COM_BODY_UNKNOWN"
+msgstr "未知"
 
 msgid "IDS_PBR_OPT_SHOW_HIDDEN_ITEMS"
 msgstr "顯示隱藏項目"
+msgid "IDS_COM_SK_BACK"
+msgstr "返回"
 
 msgid "IDS_IV_OPT_HIDDEN_ITEMS"
 msgstr "隱藏的項目"
 
 msgid "IDS_IV_OPT_SHOW_ITEMS"
 msgstr "顯示項目"
+msgid "IDS_COM_POP_SELECTED"
+msgstr "已選擇"
 
+msgid "IDS_COM_BODY_NO_VIDEOS"
+msgstr "無影片"
 msgid "IDS_MF_POP_REMOVED"
 msgstr "已移除。"
 
+msgid "IDS_COM_BODY_NO_IMAGES"
+msgstr "無影像"
 msgid "IDS_HELP_BODY_GALLERY"
 msgstr "媒體瀏覽器"
 

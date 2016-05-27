@@ -1,5 +1,7 @@
 msgid "IDS_GALLERY_BUTTON_CAMERA"
 msgstr "Kamera"
+msgid "IDS_COM_SK_OK"
+msgstr "OK"
 
 msgid "IDS_MUSIC_POP_DELETE_PD_ALBUMS_Q"
 msgstr "Vil du slette %d album?"
@@ -397,26 +399,41 @@ msgstr "Mennesker"
 msgid "IDS_MEDIABR_BUTTON_CANCEL_ABB"
 msgstr "Avbryt"
 
+msgid "IDS_COM_SK_CANCEL"
+msgstr "Avbryt"
+
 msgid "IDS_IV_BODY_DONT_ASK_AGAIN"
 msgstr "Ikke spør på nytt"
+msgid "IDS_COM_SK_DONE"
+msgstr "OK"
 
 msgid "IDS_HELP_BODY_SELECT_PICTURES_THEN_TAP_PS_TO_ADD_THEM_TO_AN_ALBUM"
 msgstr "Velg bilder, og trykk deretter på %s for å legge dem til i et album."
+msgid "IDS_COM_BODY_NO_ITEMS"
+msgstr "Ingen elementer"
 
 msgid "IDS_HELP_BODY_OPEN_PS_GALLERY"
 msgstr "Åpne %s galleri."
+msgid "IDS_COM_BODY_UNKNOWN"
+msgstr "Ukjent"
 
 msgid "IDS_PBR_OPT_SHOW_HIDDEN_ITEMS"
 msgstr "Vis skjulte elementer"
+msgid "IDS_COM_SK_BACK"
+msgstr "Tilbake"
 
 msgid "IDS_IV_OPT_HIDDEN_ITEMS"
 msgstr "Skjulte elementer"
 
 msgid "IDS_IV_OPT_SHOW_ITEMS"
 msgstr "Vis elementer"
+msgid "IDS_COM_POP_SELECTED"
+msgstr "Valgt."
 
 msgid "IDS_MF_POP_REMOVED"
 msgstr "Fjernet."
+msgid "IDS_COM_BODY_NO_VIDEOS"
+msgstr "Ingen videoer"
 
 msgid "IDS_HELP_BODY_GALLERY"
 msgstr "Galleri"
@@ -930,4 +947,6 @@ msgstr "Maksimal filstørrelse (%d MB) overskredet."
 
 msgid "IDS_IM_POP_MAXIMUM_SIZE_OF_FILES_EXCEEDED"
 msgstr "Maksimal filstørrelse oversteget."
+msgid "IDS_COM_BODY_NO_IMAGES"
+msgstr "Ingen bilder"
 

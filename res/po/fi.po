@@ -1,5 +1,10 @@
 msgid "IDS_GALLERY_BUTTON_CAMERA"
 msgstr "Kamera"
+msgid "IDS_COM_SK_OK"
+msgstr "OK"
+
+msgid "IDS_COM_SK_CANCEL"
+msgstr "Peruuta"
 
 msgid "IDS_MUSIC_POP_DELETE_PD_ALBUMS_Q"
 msgstr "Poistetaanko %d albumia?"
@@ -139,23 +144,36 @@ msgstr "Tiedostonsiirto"
 msgid "IDS_MEDIABR_POP_COMPLETED"
 msgstr "Valmis"
 
+msgid "IDS_COM_SK_DONE"
+msgstr "Valmis"
+
 msgid "IDS_MEDIABR_POP_LOADING_ALBUMS_ING"
 msgstr "Ladataan albumeita..."
+msgid "IDS_COM_BODY_NO_ITEMS"
+msgstr "Ei kohteita"
 
 msgid "IDS_MEDIABR_HEADER_SELECT_ACCOUNT"
 msgstr "Valitse tili"
+msgid "IDS_COM_BODY_UNKNOWN"
+msgstr "Tuntematon"
 
 msgid "IDS_MEDIABR_HEADER_SELECT_ITEM"
 msgstr "Valitse kohde"
+msgid "IDS_COM_SK_BACK"
+msgstr "Takaisin"
 
 msgid "IDS_MEDIABR_HEADER_SELECT_ALBUM"
 msgstr "Valitse albumi"
 
 msgid "IDS_MEDIABR_POP_ANOTHER_DOWNLOAD_IS_IN_PROGRESS_PLEASE_WAIT"
 msgstr "Toinen lataus on käynnissä. Odota."
+msgid "IDS_COM_POP_SELECTED"
+msgstr "Valittu."
 
 msgid "IDS_MEDIABR_POP_IMPORT"
 msgstr "Tuo"
+msgid "IDS_COM_BODY_NO_VIDEOS"
+msgstr "Ei videoita"
 
 msgid "IDS_MEDIABR_POP_IMPORTED"
 msgstr "Tuotu."
@@ -930,4 +948,6 @@ msgstr "Tiedoston enimmäiskoko (%d Mt) on ylitetty."
 
 msgid "IDS_IM_POP_MAXIMUM_SIZE_OF_FILES_EXCEEDED"
 msgstr "Tiedostojen enimmäiskoko on saavutettu."
+msgid "IDS_COM_BODY_NO_IMAGES"
+msgstr "Ei kuvia"
 
