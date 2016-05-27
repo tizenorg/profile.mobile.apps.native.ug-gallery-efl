@@ -1,5 +1,7 @@
 msgid "IDS_GALLERY_BUTTON_CAMERA"
 msgstr "Kaamera"
+msgid "IDS_COM_SK_OK"
+msgstr "OK"
 
 msgid "IDS_MUSIC_POP_DELETE_PD_ALBUMS_Q"
 msgstr "Kas kustutada %d albumit?"
@@ -397,26 +399,41 @@ msgstr "Inimesed"
 msgid "IDS_MEDIABR_BUTTON_CANCEL_ABB"
 msgstr "Tühista"
 
+msgid "IDS_COM_SK_CANCEL"
+msgstr "Tühista"
+
 msgid "IDS_IV_BODY_DONT_ASK_AGAIN"
 msgstr "Ära küsi enam"
+msgid "IDS_COM_SK_DONE"
+msgstr "Valmis"
 
 msgid "IDS_HELP_BODY_SELECT_PICTURES_THEN_TAP_PS_TO_ADD_THEM_TO_AN_ALBUM"
 msgstr "Valige pildid ning toksake ikooni %s, et lisada neid albumisse."
+msgid "IDS_COM_BODY_NO_ITEMS"
+msgstr "Üksusi ei ole"
 
 msgid "IDS_HELP_BODY_OPEN_PS_GALLERY"
 msgstr "Avage %s Galerii."
+msgid "IDS_COM_BODY_UNKNOWN"
+msgstr "Tundmatu"
 
 msgid "IDS_PBR_OPT_SHOW_HIDDEN_ITEMS"
 msgstr "Näita peidetud üksusi"
+msgid "IDS_COM_SK_BACK"
+msgstr "Tagasi"
 
 msgid "IDS_IV_OPT_HIDDEN_ITEMS"
 msgstr "Peidetud üksused"
 
 msgid "IDS_IV_OPT_SHOW_ITEMS"
 msgstr "Näita üksusi"
+msgid "IDS_COM_POP_SELECTED"
+msgstr "Valitud."
 
 msgid "IDS_MF_POP_REMOVED"
 msgstr "Eemaldatud."
+msgid "IDS_COM_BODY_NO_VIDEOS"
+msgstr "Videoid pole"
 
 msgid "IDS_HELP_BODY_GALLERY"
 msgstr "Galerii"
@@ -930,4 +947,6 @@ msgstr "Faili maksimaalne suurus (%d MB) on ületatud."
 
 msgid "IDS_IM_POP_MAXIMUM_SIZE_OF_FILES_EXCEEDED"
 msgstr "Maksimaalne failide suurus on ületatud."
+msgid "IDS_COM_BODY_NO_IMAGES"
+msgstr "Pilte pole"
 

@@ -1,3 +1,5 @@
+msgid "IDS_COM_SK_OK"
+msgstr "సరే"
 msgid "IDS_GALLERY_BUTTON_CAMERA"
 msgstr "కెమెరా"
 
@@ -355,27 +357,44 @@ msgstr "వ్యక్తులు"
 msgid "IDS_MEDIABR_BUTTON_CANCEL_ABB"
 msgstr "రద్దు"
 
+msgid "IDS_COM_SK_CANCEL"
+msgstr "రద్దు"
+
+msgid "IDS_COM_SK_DONE"
+msgstr "పూర్తయింది"
 msgid "IDS_IV_BODY_DONT_ASK_AGAIN"
 msgstr "మళ్లీ అడగవద్దు"
 
+msgid "IDS_COM_BODY_NO_ITEMS"
+msgstr "ఐటమ్‌లు లేవు"
 msgid "IDS_HELP_BODY_SELECT_PICTURES_THEN_TAP_PS_TO_ADD_THEM_TO_AN_ALBUM"
 msgstr "చిత్రాలను ఎంచుకుని, ఆపై ఆల్బమ్‌కు వాటిని జోడించడానికి %sని ట్యాప్ చేయండి."
 
+msgid "IDS_COM_BODY_UNKNOWN"
+msgstr "తెలియని"
 msgid "IDS_HELP_BODY_OPEN_PS_GALLERY"
 msgstr "%s గ్యాలరీని తెరవండి."
 
+msgid "IDS_COM_SK_BACK"
+msgstr "వెనుకకు"
 msgid "IDS_PBR_OPT_SHOW_HIDDEN_ITEMS"
 msgstr "దాచిన ఐటెమ్‌లను చూపు"
 
 msgid "IDS_IV_OPT_HIDDEN_ITEMS"
 msgstr "దాచిన ఐటెమ్‌లు"
 
+msgid "IDS_COM_POP_SELECTED"
+msgstr "ఎంపికైంది."
 msgid "IDS_IV_OPT_SHOW_ITEMS"
 msgstr "ఐటెమ్‌లను చూపు"
 
+msgid "IDS_COM_BODY_NO_VIDEOS"
+msgstr "వీడియోలు లేవు"
 msgid "IDS_MF_POP_REMOVED"
 msgstr "తొలగించబడినది."
 
+msgid "IDS_COM_BODY_NO_IMAGES"
+msgstr "చిత్రాలు లేవు"
 msgid "IDS_HELP_BODY_GALLERY"
 msgstr "గేలరీ"
 

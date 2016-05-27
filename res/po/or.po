@@ -1,5 +1,7 @@
 msgid "IDS_GALLERY_BUTTON_CAMERA"
 msgstr "କ୍ୟାମେରା"
+msgid "IDS_COM_SK_OK"
+msgstr "ଓକେ"
 
 msgid "IDS_MEDIABR_IOPT3_PLACES"
 msgstr "ସ୍ଥାନଗୁଡିକ"
@@ -355,27 +357,44 @@ msgstr "ଲୋକମାନେ"
 msgid "IDS_MEDIABR_BUTTON_CANCEL_ABB"
 msgstr "ବାତିଲ୍"
 
+msgid "IDS_COM_SK_CANCEL"
+msgstr "ବାତିଲ୍"
+
+msgid "IDS_COM_SK_DONE"
+msgstr "ସମାପ୍ତ"
 msgid "IDS_IV_BODY_DONT_ASK_AGAIN"
 msgstr "ପୁଣି ପଚାରନ୍ତୁ ନାହିଁ"
 
+msgid "IDS_COM_BODY_NO_ITEMS"
+msgstr "କୌଣସି ଆଇଟମ୍ ନାହିଁ"
 msgid "IDS_HELP_BODY_SELECT_PICTURES_THEN_TAP_PS_TO_ADD_THEM_TO_AN_ALBUM"
 msgstr "ଛବି ଚୟନ କରନ୍ତୁ, ତାପରେ ଏକ ଆଲବମ୍‌ରେ ସେଗୁଡିକ ଯୋଡିବାକୁ %s ଟ୍ୟାପ୍ କରନ୍ତୁ।"
 
+msgid "IDS_COM_BODY_UNKNOWN"
+msgstr "ଅଜଣା"
 msgid "IDS_HELP_BODY_OPEN_PS_GALLERY"
 msgstr "%s ଗ୍ୟାଲେରୀ ଖୋଲନ୍ତୁ।"
 
+msgid "IDS_COM_SK_BACK"
+msgstr "ପଛକୁ"
 msgid "IDS_PBR_OPT_SHOW_HIDDEN_ITEMS"
 msgstr "ଲୁକ୍କାୟିତ ଆଇଟମ୍ ଦେଖାନ୍ତୁ"
 
 msgid "IDS_IV_OPT_HIDDEN_ITEMS"
 msgstr "ଲୁକ୍କାୟିତ ଆଇଟମ୍‌ଗୁଡିକ"
 
+msgid "IDS_COM_POP_SELECTED"
+msgstr "ଚୟନ ହୋଇଅଛି।"
 msgid "IDS_IV_OPT_SHOW_ITEMS"
 msgstr "ଆଇଟମ୍‌ଗୁଡିକ ଦେଖାନ୍ତୁ"
 
 msgid "IDS_MF_POP_REMOVED"
 msgstr "ଅପସାରିତ ହେଲା।"
+msgid "IDS_COM_BODY_NO_VIDEOS"
+msgstr "କୌଣସି ଭିଡିଓ ନାହିଁ"
 
+msgid "IDS_COM_BODY_NO_IMAGES"
+msgstr "ଫଟୋ ନାହିଁ"
 msgid "IDS_HELP_BODY_GALLERY"
 msgstr "ଗ୍ୟାଲେରୀ"
 

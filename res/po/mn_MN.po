@@ -1,5 +1,7 @@
 msgid "IDS_GALLERY_BUTTON_CAMERA"
 msgstr "Камер"
+msgid "IDS_COM_SK_OK"
+msgstr "Батлах"
 
 msgid "IDS_MUSIC_POP_DELETE_PD_ALBUMS_Q"
 msgstr "%d цомог устгах уу?"
@@ -397,24 +399,39 @@ msgstr "Хүмүүс"
 msgid "IDS_MEDIABR_BUTTON_CANCEL_ABB"
 msgstr "Цуцлах"
 
+msgid "IDS_COM_SK_CANCEL"
+msgstr "Цуцлах"
+
 msgid "IDS_IV_BODY_DONT_ASK_AGAIN"
 msgstr "Дахин бүү асуу"
+msgid "IDS_COM_SK_DONE"
+msgstr "Дууслаа"
 
 msgid "IDS_HELP_BODY_SELECT_PICTURES_THEN_TAP_PS_TO_ADD_THEM_TO_AN_ALBUM"
 msgstr "Зургууд сонгоод, дараа нь тэдгээрийг цомогт нэмэхийн тулд %s-г товш."
+msgid "IDS_COM_BODY_NO_ITEMS"
+msgstr "Зүйл алга"
 
 msgid "IDS_HELP_BODY_OPEN_PS_GALLERY"
 msgstr "%s Галерей нээх."
+msgid "IDS_COM_BODY_UNKNOWN"
+msgstr "Мэдэхгүй"
 
 msgid "IDS_PBR_OPT_SHOW_HIDDEN_ITEMS"
 msgstr "Нуусан зүйлсийг харуулах"
+msgid "IDS_COM_SK_BACK"
+msgstr "Буцах"
 
 msgid "IDS_IV_OPT_HIDDEN_ITEMS"
 msgstr "Нуусан зүйлс"
 
 msgid "IDS_IV_OPT_SHOW_ITEMS"
 msgstr "Зүйлс харуулах"
+msgid "IDS_COM_POP_SELECTED"
+msgstr "Сонгогдсон"
 
+msgid "IDS_COM_BODY_NO_VIDEOS"
+msgstr "Видео алга"
 msgid "IDS_MF_POP_REMOVED"
 msgstr "Устгагдсан"
 
@@ -918,4 +935,6 @@ msgstr "Файлын байж болох хамгийн их хэмжээ (%d MB
 
 msgid "IDS_IM_POP_MAXIMUM_SIZE_OF_FILES_EXCEEDED"
 msgstr "Файлын хэмжээний дээд хязгаараас хэтэрсэн"
+msgid "IDS_COM_BODY_NO_IMAGES"
+msgstr "Дүрс алга"
 

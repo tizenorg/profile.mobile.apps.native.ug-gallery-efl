@@ -1,29 +1,45 @@
 msgid "IDS_GALLERY_BUTTON_CAMERA"
 msgstr "Камера"
+msgid "IDS_COM_SK_OK"
+msgstr "OK"
 
 msgid "IDS_MUSIC_POP_DELETE_PD_ALBUMS_Q"
 msgstr "%d альбомды жою керек пе?"
+msgid "IDS_COM_SK_CANCEL"
+msgstr "Тоқтату"
 
 msgid "IDS_MEDIABR_IOPT3_PLACES"
 msgstr "Орындар"
+msgid "IDS_COM_SK_DONE"
+msgstr "Дайын"
 
 msgid "IDS_MEDIABR_SK2_ADD_TO_HOME"
 msgstr "Бастапқы бетке қосу"
+msgid "IDS_COM_BODY_NO_ITEMS"
+msgstr "Баптар жоқ"
 
 msgid "IDS_MEDIABR_BODY_TAGS"
 msgstr "Белгілер"
+msgid "IDS_COM_BODY_UNKNOWN"
+msgstr "Белгісіз"
 
 msgid "IDS_MEDIABR_BODY_ALL_ALBUMS"
 msgstr "Барлық альбомдар"
+msgid "IDS_COM_SK_BACK"
+msgstr "Aртқа"
 
 msgid "IDS_MEDIABR_BODY_FACEBOOK_WEB_ALBUM"
 msgstr "Facebook веб-альбомы"
 
 msgid "IDS_MEDIABR_BODY_PICASA_WEB_ALBUM"
 msgstr "Picasa веб-альбомы"
+msgid "IDS_COM_POP_SELECTED"
+msgstr "Таңдалған"
 
 msgid "IDS_MEDIABR_HEADER_NEARBY_DEVICES"
 msgstr "Жақын құрылғылар"
+msgid "IDS_COM_BODY_NO_VIDEOS"
+msgstr "Бейнелер жоқ"
 
 msgid "IDS_ASEML_BODY_PAST_PD_MONTHS"
 msgstr "Өткен %d ай"
@@ -930,4 +946,6 @@ msgstr "Ең үлкен файл өлшемінен (%d МБ) асып кетт�
 
 msgid "IDS_IM_POP_MAXIMUM_SIZE_OF_FILES_EXCEEDED"
 msgstr "Файлдардың ең үлкен өлшемінен асып кетті."
+msgid "IDS_COM_BODY_NO_IMAGES"
+msgstr "Суреттер жоқ"
 

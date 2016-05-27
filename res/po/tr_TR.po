@@ -1,5 +1,7 @@
 msgid "IDS_GALLERY_BUTTON_CAMERA"
 msgstr "Kamera"
+msgid "IDS_COM_SK_OK"
+msgstr "Tamam"
 
 msgid "IDS_MUSIC_POP_DELETE_PD_ALBUMS_Q"
 msgstr "%d albüm silinsin mi?"
@@ -397,27 +399,44 @@ msgstr "Kişi"
 msgid "IDS_MEDIABR_BUTTON_CANCEL_ABB"
 msgstr "İptal"
 
+msgid "IDS_COM_SK_CANCEL"
+msgstr "İptal"
+
 msgid "IDS_IV_BODY_DONT_ASK_AGAIN"
 msgstr "Tekrar sorma"
+msgid "IDS_COM_SK_DONE"
+msgstr "Tamam"
 
+msgid "IDS_COM_BODY_NO_ITEMS"
+msgstr "Öğe yok"
 msgid "IDS_HELP_BODY_SELECT_PICTURES_THEN_TAP_PS_TO_ADD_THEM_TO_AN_ALBUM"
 msgstr "Resimleri seçin ve sonra onları bir albüme eklemek için %s simgesine dokunun."
 
+msgid "IDS_COM_BODY_UNKNOWN"
+msgstr "Bilinmeyen"
 msgid "IDS_HELP_BODY_OPEN_PS_GALLERY"
 msgstr "%s Galerisini aç."
 
+msgid "IDS_COM_SK_BACK"
+msgstr "Geri"
 msgid "IDS_PBR_OPT_SHOW_HIDDEN_ITEMS"
 msgstr "Gizli öğeleri göster"
 
 msgid "IDS_IV_OPT_HIDDEN_ITEMS"
 msgstr "Saklı öğeler"
 
+msgid "IDS_COM_POP_SELECTED"
+msgstr "Seçildi."
 msgid "IDS_IV_OPT_SHOW_ITEMS"
 msgstr "Öğeleri göster"
 
+msgid "IDS_COM_BODY_NO_VIDEOS"
+msgstr "Video yok"
 msgid "IDS_MF_POP_REMOVED"
 msgstr "Kaldırıldı."
 
+msgid "IDS_COM_BODY_NO_IMAGES"
+msgstr "Resim yok"
 msgid "IDS_HELP_BODY_GALLERY"
 msgstr "Galeri"
 

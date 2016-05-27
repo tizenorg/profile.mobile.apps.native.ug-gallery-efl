@@ -1,29 +1,45 @@
 msgid "IDS_GALLERY_BUTTON_CAMERA"
 msgstr "カメラ"
+msgid "IDS_COM_SK_OK"
+msgstr "OK"
 
 msgid "IDS_MUSIC_POP_DELETE_PD_ALBUMS_Q"
 msgstr "%d件のアルバムを削除しますか？"
+msgid "IDS_COM_SK_CANCEL"
+msgstr "キャンセル"
 
 msgid "IDS_MEDIABR_IOPT3_PLACES"
 msgstr "場所"
+msgid "IDS_COM_SK_DONE"
+msgstr "完了"
 
 msgid "IDS_MEDIABR_SK2_ADD_TO_HOME"
 msgstr "ホームに追加"
+msgid "IDS_COM_BODY_NO_ITEMS"
+msgstr "アイテムがありません"
 
 msgid "IDS_MEDIABR_BODY_TAGS"
 msgstr "タグ"
+msgid "IDS_COM_BODY_UNKNOWN"
+msgstr "不明"
 
 msgid "IDS_MEDIABR_BODY_ALL_ALBUMS"
 msgstr "全てのアルバム"
+msgid "IDS_COM_SK_BACK"
+msgstr "戻る"
 
 msgid "IDS_MEDIABR_BODY_FACEBOOK_WEB_ALBUM"
 msgstr "Facebookアルバム"
 
 msgid "IDS_MEDIABR_BODY_PICASA_WEB_ALBUM"
 msgstr "PicasaWebアルバム"
+msgid "IDS_COM_POP_SELECTED"
+msgstr "選択しました。"
 
 msgid "IDS_MEDIABR_HEADER_NEARBY_DEVICES"
 msgstr "近くの​デバイス"
+msgid "IDS_COM_BODY_NO_VIDEOS"
+msgstr "動画がありません。"
 
 msgid "IDS_ASEML_BODY_PAST_PD_MONTHS"
 msgstr "過去%dか月"
@@ -930,4 +946,6 @@ msgstr "最大ファイルサイズ(%dMB)を超えました。"
 
 msgid "IDS_IM_POP_MAXIMUM_SIZE_OF_FILES_EXCEEDED"
 msgstr "ファイルの最大サイズを超えました。"
+msgid "IDS_COM_BODY_NO_IMAGES"
+msgstr "画像がありません。"
 

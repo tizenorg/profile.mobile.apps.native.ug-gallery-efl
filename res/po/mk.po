@@ -1,5 +1,7 @@
 msgid "IDS_GALLERY_BUTTON_CAMERA"
 msgstr "Камера"
+msgid "IDS_COM_SK_OK"
+msgstr "OK"
 
 msgid "IDS_MUSIC_POP_DELETE_PD_ALBUMS_Q"
 msgstr "Да се избришат %d албуми?"
@@ -397,26 +399,41 @@ msgstr "Луѓе"
 msgid "IDS_MEDIABR_BUTTON_CANCEL_ABB"
 msgstr "Откажи"
 
+msgid "IDS_COM_SK_CANCEL"
+msgstr "Откажи"
+
 msgid "IDS_IV_BODY_DONT_ASK_AGAIN"
 msgstr "Не прашувај повторно"
+msgid "IDS_COM_SK_DONE"
+msgstr "Готово"
 
 msgid "IDS_HELP_BODY_SELECT_PICTURES_THEN_TAP_PS_TO_ADD_THEM_TO_AN_ALBUM"
 msgstr "Изберете слики, па допрете %s за да ги додадете во албум."
+msgid "IDS_COM_BODY_NO_ITEMS"
+msgstr "Нема записи"
 
 msgid "IDS_HELP_BODY_OPEN_PS_GALLERY"
 msgstr "Отвори галерија %s."
+msgid "IDS_COM_BODY_UNKNOWN"
+msgstr "Непознато"
 
 msgid "IDS_PBR_OPT_SHOW_HIDDEN_ITEMS"
 msgstr "Прикажи скриени записи"
+msgid "IDS_COM_SK_BACK"
+msgstr "Назад"
 
 msgid "IDS_IV_OPT_HIDDEN_ITEMS"
 msgstr "Скриени записи"
 
 msgid "IDS_IV_OPT_SHOW_ITEMS"
 msgstr "Покажи записи"
+msgid "IDS_COM_POP_SELECTED"
+msgstr "Избрано."
 
 msgid "IDS_MF_POP_REMOVED"
 msgstr "Отстрането."
+msgid "IDS_COM_BODY_NO_VIDEOS"
+msgstr "Нема видеа"
 
 msgid "IDS_HELP_BODY_GALLERY"
 msgstr "Галерија"
@@ -930,4 +947,6 @@ msgstr "Надмината е максималната големина за ф�
 
 msgid "IDS_IM_POP_MAXIMUM_SIZE_OF_FILES_EXCEEDED"
 msgstr "Надмината е максималната големина за фајловите."
+msgid "IDS_COM_BODY_NO_IMAGES"
+msgstr "Нема слики"
 

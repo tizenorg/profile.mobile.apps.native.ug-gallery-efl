@@ -1,8 +1,12 @@
 msgid "IDS_GALLERY_BUTTON_CAMERA"
 msgstr "Kamera"
+msgid "IDS_COM_SK_OK"
+msgstr "OK"
 
 msgid "IDS_MUSIC_POP_DELETE_PD_ALBUMS_Q"
 msgstr "Töröl %d albumot?"
+msgid "IDS_COM_SK_CANCEL"
+msgstr "Mégse"
 
 msgid "IDS_MEDIABR_IOPT3_PLACES"
 msgstr "Helyek"
@@ -139,23 +143,36 @@ msgstr "Fájlátvitel"
 msgid "IDS_MEDIABR_POP_COMPLETED"
 msgstr "Kész"
 
+msgid "IDS_COM_SK_DONE"
+msgstr "Kész"
+
 msgid "IDS_MEDIABR_POP_LOADING_ALBUMS_ING"
 msgstr "Albumok betöltése..."
+msgid "IDS_COM_BODY_NO_ITEMS"
+msgstr "Nincs tétel"
 
 msgid "IDS_MEDIABR_HEADER_SELECT_ACCOUNT"
 msgstr "Fiók kiválasztása"
+msgid "IDS_COM_BODY_UNKNOWN"
+msgstr "Ismeretlen"
 
 msgid "IDS_MEDIABR_HEADER_SELECT_ITEM"
 msgstr "Elem kiválasztása"
+msgid "IDS_COM_SK_BACK"
+msgstr "Vissza"
 
 msgid "IDS_MEDIABR_HEADER_SELECT_ALBUM"
 msgstr "Album kiválasztása"
 
 msgid "IDS_MEDIABR_POP_ANOTHER_DOWNLOAD_IS_IN_PROGRESS_PLEASE_WAIT"
 msgstr "Folyamatban van egy másik letöltés. Kis türelmet."
+msgid "IDS_COM_POP_SELECTED"
+msgstr "Kiválasztva."
 
 msgid "IDS_MEDIABR_POP_IMPORT"
 msgstr "Importálás"
+msgid "IDS_COM_BODY_NO_VIDEOS"
+msgstr "Nincs videó"
 
 msgid "IDS_MEDIABR_POP_IMPORTED"
 msgstr "Importálva."
@@ -930,4 +947,6 @@ msgstr "Túllépte a maximális fájlméretet (%d MB)."
 
 msgid "IDS_IM_POP_MAXIMUM_SIZE_OF_FILES_EXCEEDED"
 msgstr "Túllépte a maximális fájlméretet."
+msgid "IDS_COM_BODY_NO_IMAGES"
+msgstr "Nincsenek képek"
 

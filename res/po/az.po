@@ -1,5 +1,10 @@
 msgid "IDS_GALLERY_BUTTON_CAMERA"
 msgstr "Kamera"
+msgid "IDS_COM_SK_OK"
+msgstr "OK"
+
+msgid "IDS_COM_SK_CANCEL"
+msgstr "Ləğv et"
 
 msgid "IDS_MUSIC_POP_DELETE_PD_ALBUMS_Q"
 msgstr "%d albomlar silinsin?"
@@ -399,22 +404,34 @@ msgstr "Ləğv et"
 
 msgid "IDS_IV_BODY_DONT_ASK_AGAIN"
 msgstr "Təkrar soruşma"
+msgid "IDS_COM_SK_DONE"
+msgstr "Bitdi"
 
 msgid "IDS_HELP_BODY_SELECT_PICTURES_THEN_TAP_PS_TO_ADD_THEM_TO_AN_ALBUM"
 msgstr "Şəkilləri seç, sonra onları alboma əlavə etmək üçün %s vur."
+msgid "IDS_COM_BODY_NO_ITEMS"
+msgstr "Elementlər yoxdur"
 
 msgid "IDS_HELP_BODY_OPEN_PS_GALLERY"
 msgstr "%s Qalereya açın."
+msgid "IDS_COM_BODY_UNKNOWN"
+msgstr "Naməlum"
 
 msgid "IDS_PBR_OPT_SHOW_HIDDEN_ITEMS"
 msgstr "Gizli elementləri göstər"
+msgid "IDS_COM_SK_BACK"
+msgstr "Geriyə"
 
 msgid "IDS_IV_OPT_HIDDEN_ITEMS"
 msgstr "Gizli elementlər"
 
 msgid "IDS_IV_OPT_SHOW_ITEMS"
 msgstr "Elementləri göstər"
+msgid "IDS_COM_POP_SELECTED"
+msgstr "Seçildi."
 
+msgid "IDS_COM_BODY_NO_VIDEOS"
+msgstr "Video yoxdur"
 msgid "IDS_MF_POP_REMOVED"
 msgstr "Silindi."
 
@@ -930,4 +947,6 @@ msgstr "Fayl ölçüsü (%d MB) maksimumu keçib."
 
 msgid "IDS_IM_POP_MAXIMUM_SIZE_OF_FILES_EXCEEDED"
 msgstr "Faylların maksimum sayını keçib."
+msgid "IDS_COM_BODY_NO_IMAGES"
+msgstr "Şəkil yoxdur"
 

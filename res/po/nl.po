@@ -1,5 +1,7 @@
 msgid "IDS_GALLERY_BUTTON_CAMERA"
 msgstr "Camera"
+msgid "IDS_COM_SK_OK"
+msgstr "OK"
 
 msgid "IDS_MUSIC_POP_DELETE_PD_ALBUMS_Q"
 msgstr "%d albums verwijderen?"
@@ -397,15 +399,26 @@ msgstr "Mensen"
 msgid "IDS_MEDIABR_BUTTON_CANCEL_ABB"
 msgstr "Annuleren"
 
+msgid "IDS_COM_SK_CANCEL"
+msgstr "Annuleren"
+
 msgid "IDS_IV_BODY_DONT_ASK_AGAIN"
 msgstr "Niet meer vragen"
+msgid "IDS_COM_SK_DONE"
+msgstr "Gereed"
 
+msgid "IDS_COM_BODY_NO_ITEMS"
+msgstr "Geen items"
 msgid "IDS_HELP_BODY_SELECT_PICTURES_THEN_TAP_PS_TO_ADD_THEM_TO_AN_ALBUM"
 msgstr "Selecteer foto´s en tik op %s om ze aan een album toe te voegen."
 
 msgid "IDS_HELP_BODY_OPEN_PS_GALLERY"
 msgstr "Open %s Galerij."
+msgid "IDS_COM_BODY_UNKNOWN"
+msgstr "Onbekend"
 
+msgid "IDS_COM_SK_BACK"
+msgstr "Terug"
 msgid "IDS_PBR_OPT_SHOW_HIDDEN_ITEMS"
 msgstr "Verborgen items weergeven"
 
@@ -414,9 +427,13 @@ msgstr "Verborgen items"
 
 msgid "IDS_IV_OPT_SHOW_ITEMS"
 msgstr "Items weergeven"
+msgid "IDS_COM_POP_SELECTED"
+msgstr "Geselecteerd."
 
 msgid "IDS_MF_POP_REMOVED"
 msgstr "Verwijderd."
+msgid "IDS_COM_BODY_NO_VIDEOS"
+msgstr "Geen video's"
 
 msgid "IDS_HELP_BODY_GALLERY"
 msgstr "Galerij"
@@ -930,4 +947,6 @@ msgstr "Maximale bestandsgrootte (%d MB) overschreden."
 
 msgid "IDS_IM_POP_MAXIMUM_SIZE_OF_FILES_EXCEEDED"
 msgstr "Maximumgrootte van bestanden overschreden."
+msgid "IDS_COM_BODY_NO_IMAGES"
+msgstr "Geen afbeeldingen"
 

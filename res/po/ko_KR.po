@@ -1,5 +1,7 @@
 msgid "IDS_GALLERY_BUTTON_CAMERA"
 msgstr "카메라"
+msgid "IDS_COM_SK_OK"
+msgstr "확인"
 
 msgid "IDS_MEDIABR_IOPT3_PLACES"
 msgstr "장소"
@@ -355,26 +357,41 @@ msgstr "사람"
 msgid "IDS_MEDIABR_BUTTON_CANCEL_ABB"
 msgstr "취소"
 
+msgid "IDS_COM_SK_CANCEL"
+msgstr "취소"
+
 msgid "IDS_IV_BODY_DONT_ASK_AGAIN"
 msgstr "다시 묻지 않기"
+msgid "IDS_COM_SK_DONE"
+msgstr "완료"
 
 msgid "IDS_HELP_BODY_SELECT_PICTURES_THEN_TAP_PS_TO_ADD_THEM_TO_AN_ALBUM"
 msgstr "사진을 선택한 후 %s을(를) 눌러 앨범에 추가하세요."
+msgid "IDS_COM_BODY_NO_ITEMS"
+msgstr "항목이 없습니다"
 
 msgid "IDS_HELP_BODY_OPEN_PS_GALLERY"
 msgstr "%s 갤러리를 실행하세요."
+msgid "IDS_COM_BODY_UNKNOWN"
+msgstr "알 수 없음"
 
 msgid "IDS_PBR_OPT_SHOW_HIDDEN_ITEMS"
 msgstr "숨긴 항목 표시"
+msgid "IDS_COM_SK_BACK"
+msgstr "뒤로가기"
 
 msgid "IDS_IV_OPT_HIDDEN_ITEMS"
 msgstr "숨겨진 항목"
 
 msgid "IDS_IV_OPT_SHOW_ITEMS"
 msgstr "항목 표시"
+msgid "IDS_COM_POP_SELECTED"
+msgstr "선택하였습니다."
 
 msgid "IDS_MF_POP_REMOVED"
 msgstr "제거되었습니다."
+msgid "IDS_COM_BODY_NO_VIDEOS"
+msgstr "동영상 없음"
 
 msgid "IDS_HELP_BODY_GALLERY"
 msgstr "갤러리"
@@ -651,4 +668,6 @@ msgstr "최대 파일 크기 %dMB를 초과하였습니다."
 
 msgid "IDS_IM_POP_MAXIMUM_SIZE_OF_FILES_EXCEEDED"
 msgstr "최대 파일 크기를 초과하였습니다."
+msgid "IDS_COM_BODY_NO_IMAGES"
+msgstr "이미지가 없습니다"
 

@@ -1,5 +1,7 @@
 msgid "IDS_GALLERY_BUTTON_CAMERA"
 msgstr "ਕੈਮਰਾ"
+msgid "IDS_COM_SK_OK"
+msgstr "ਓਕੇ"
 
 msgid "IDS_MEDIABR_IOPT3_PLACES"
 msgstr "ਸਥਾਨ"
@@ -355,24 +357,39 @@ msgstr "ਲੋਕ"
 msgid "IDS_MEDIABR_BUTTON_CANCEL_ABB"
 msgstr "ਰੱਦ ਕਰੋ"
 
+msgid "IDS_COM_SK_CANCEL"
+msgstr "ਰੱਦ ਕਰੋ"
+
+msgid "IDS_COM_SK_DONE"
+msgstr "ਪੂਰਨ"
 msgid "IDS_IV_BODY_DONT_ASK_AGAIN"
 msgstr "ਦੁਬਾਰਾ ਨਾ ਪੁੱਛੋ"
 
 msgid "IDS_HELP_BODY_SELECT_PICTURES_THEN_TAP_PS_TO_ADD_THEM_TO_AN_ALBUM"
 msgstr "ਤਸਵੀਰਾਂ ਚੁਣੋ, ਫਿਰ ਉਹਨਾਂ ਨੂੰ ਐਲਬਮ ਵਿੱਚ ਜੋੜਨ ਲਈ %s ਟੈਪ ਕਰੋ।"
+msgid "IDS_COM_BODY_NO_ITEMS"
+msgstr "ਕੋਈ ਆਈਟਮਸ ਨਹੀਂ"
 
+msgid "IDS_COM_BODY_UNKNOWN"
+msgstr "ਅਗਿਆਤ"
 msgid "IDS_HELP_BODY_OPEN_PS_GALLERY"
 msgstr "%s ਗੈਲਰੀ ਖੋਲ੍ਹੋ।"
 
 msgid "IDS_PBR_OPT_SHOW_HIDDEN_ITEMS"
 msgstr "ਲੁਕੀਆਂ ਆਈਟਮਾਂ ਦਿਖਾਓ"
+msgid "IDS_COM_SK_BACK"
+msgstr "ਵਾਪਸ"
 
 msgid "IDS_IV_OPT_HIDDEN_ITEMS"
 msgstr "ਲੁਕੀਆਂ ਆਈਟਮਾਂ"
 
 msgid "IDS_IV_OPT_SHOW_ITEMS"
 msgstr "ਆਈਟਮ ਦਿਖਾਓ"
+msgid "IDS_COM_POP_SELECTED"
+msgstr "ਚੁਣਿਆ।"
 
+msgid "IDS_COM_BODY_NO_VIDEOS"
+msgstr "ਕੋਈ ਵੀਡਿਓਜ਼ ਨਹੀਂ"
 msgid "IDS_MF_POP_REMOVED"
 msgstr "ਹਟਾਇਆ।"
 
@@ -646,4 +663,6 @@ msgstr "ਅਧਿਕਤਮ ਫਾਈਲ ਆਕਾਰ (%d MB) ਵਧਾਇਆ ਗ
 
 msgid "IDS_IM_POP_MAXIMUM_SIZE_OF_FILES_EXCEEDED"
 msgstr "ਫਾਇਲਾਂ ਦਾ ਅਧਿਕਤਮ ਆਕਾਰ ਜ਼ਿਆਦਾ ਹੋ ਗਿਆ ਹੈ।"
+msgid "IDS_COM_BODY_NO_IMAGES"
+msgstr "ਕੋਈ ਚਿੱਤਰ ਨਹੀਂ"
 

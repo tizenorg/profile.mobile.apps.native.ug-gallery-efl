@@ -1,29 +1,45 @@
 msgid "IDS_GALLERY_BUTTON_CAMERA"
 msgstr "Κάμερα"
+msgid "IDS_COM_SK_OK"
+msgstr "OK"
 
+msgid "IDS_COM_SK_CANCEL"
+msgstr "Άκυρο"
 msgid "IDS_MUSIC_POP_DELETE_PD_ALBUMS_Q"
 msgstr "Να διαγραφούν %d άλμπουμ;"
 
 msgid "IDS_MEDIABR_IOPT3_PLACES"
 msgstr "Τοποθεσίες"
+msgid "IDS_COM_SK_DONE"
+msgstr "Ok"
 
 msgid "IDS_MEDIABR_SK2_ADD_TO_HOME"
 msgstr "Προσθήκη σε αρχική σελίδα"
+msgid "IDS_COM_BODY_NO_ITEMS"
+msgstr "Κανένα στοιχείο"
 
 msgid "IDS_MEDIABR_BODY_TAGS"
 msgstr "Ετικέτες"
+msgid "IDS_COM_BODY_UNKNOWN"
+msgstr "Άγνωστο"
 
 msgid "IDS_MEDIABR_BODY_ALL_ALBUMS"
 msgstr "Όλα τα άλμπουμ"
+msgid "IDS_COM_SK_BACK"
+msgstr "Πίσω"
 
 msgid "IDS_MEDIABR_BODY_FACEBOOK_WEB_ALBUM"
 msgstr "Άλμπουμ Web Facebook"
 
 msgid "IDS_MEDIABR_BODY_PICASA_WEB_ALBUM"
 msgstr "Λεύκωμα Ιστού Picasa"
+msgid "IDS_COM_POP_SELECTED"
+msgstr "Επιλεγμένο."
 
 msgid "IDS_MEDIABR_HEADER_NEARBY_DEVICES"
 msgstr "Κοντινές συσκευές"
+msgid "IDS_COM_BODY_NO_VIDEOS"
+msgstr "Δεν βρέθηκαν βίντεο"
 
 msgid "IDS_ASEML_BODY_PAST_PD_MONTHS"
 msgstr "%d μήνες πριν"
@@ -930,4 +946,6 @@ msgstr "Υπέρβαση μέγιστου μεγέθους αρχείων (%d MB
 
 msgid "IDS_IM_POP_MAXIMUM_SIZE_OF_FILES_EXCEEDED"
 msgstr "Υπέρβαση μέγιστου μεγέθους αρχείων."
+msgid "IDS_COM_BODY_NO_IMAGES"
+msgstr "Δεν υπάρχουν εικόνες"
 

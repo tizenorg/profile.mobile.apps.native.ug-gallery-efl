@@ -1,5 +1,7 @@
 msgid "IDS_GALLERY_BUTTON_CAMERA"
 msgstr "Kamera"
+msgid "IDS_COM_SK_OK"
+msgstr "OK"
 
 msgid "IDS_MUSIC_POP_DELETE_PD_ALBUMS_Q"
 msgstr "Ta bort %d album?"
@@ -397,26 +399,41 @@ msgstr "Personer"
 msgid "IDS_MEDIABR_BUTTON_CANCEL_ABB"
 msgstr "Avbryt"
 
+msgid "IDS_COM_SK_CANCEL"
+msgstr "Avbryt"
+
 msgid "IDS_IV_BODY_DONT_ASK_AGAIN"
 msgstr "Fråga inte igen"
+msgid "IDS_COM_SK_DONE"
+msgstr "Klar"
 
 msgid "IDS_HELP_BODY_SELECT_PICTURES_THEN_TAP_PS_TO_ADD_THEM_TO_AN_ALBUM"
 msgstr "Välj bilder och tryck på %s för att lägga till dem i ett album."
+msgid "IDS_COM_BODY_NO_ITEMS"
+msgstr "Inga objekt"
 
 msgid "IDS_HELP_BODY_OPEN_PS_GALLERY"
 msgstr "Öppna %s galleri."
+msgid "IDS_COM_BODY_UNKNOWN"
+msgstr "Okänd"
 
 msgid "IDS_PBR_OPT_SHOW_HIDDEN_ITEMS"
 msgstr "Visa dolda objekt"
+msgid "IDS_COM_SK_BACK"
+msgstr "Åter"
 
 msgid "IDS_IV_OPT_HIDDEN_ITEMS"
 msgstr "Dolda objekt"
 
 msgid "IDS_IV_OPT_SHOW_ITEMS"
 msgstr "Visa objekt"
+msgid "IDS_COM_POP_SELECTED"
+msgstr "Vald."
 
 msgid "IDS_MF_POP_REMOVED"
 msgstr "Borttagen."
+msgid "IDS_COM_BODY_NO_VIDEOS"
+msgstr "Ingen video"
 
 msgid "IDS_HELP_BODY_GALLERY"
 msgstr "Galleri"
@@ -930,4 +947,6 @@ msgstr "Högsta tillåtna filstorlek (%d MB) har överskridits."
 
 msgid "IDS_IM_POP_MAXIMUM_SIZE_OF_FILES_EXCEEDED"
 msgstr "Högsta filstorlek överskreds."
+msgid "IDS_COM_BODY_NO_IMAGES"
+msgstr "Inga bilder"
 

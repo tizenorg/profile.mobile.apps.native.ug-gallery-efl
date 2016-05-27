@@ -1,5 +1,7 @@
 msgid "IDS_GALLERY_BUTTON_CAMERA"
 msgstr "კამერა"
+msgid "IDS_COM_SK_OK"
+msgstr "კი"
 
 msgid "IDS_MUSIC_POP_DELETE_PD_ALBUMS_Q"
 msgstr "წაიშალოს %d ალბომი?"
@@ -397,26 +399,41 @@ msgstr "ხალხი"
 msgid "IDS_MEDIABR_BUTTON_CANCEL_ABB"
 msgstr "გაუქმება"
 
+msgid "IDS_COM_SK_CANCEL"
+msgstr "გაუქმება"
+
 msgid "IDS_IV_BODY_DONT_ASK_AGAIN"
 msgstr "აღარ მკითხო"
+msgid "IDS_COM_SK_DONE"
+msgstr "შესრულდა"
 
+msgid "IDS_COM_BODY_NO_ITEMS"
+msgstr "ელემენტები არ არის"
 msgid "IDS_HELP_BODY_SELECT_PICTURES_THEN_TAP_PS_TO_ADD_THEM_TO_AN_ALBUM"
 msgstr "აირჩიეთ სურათები, შემდეგ შეეხეთ ნიშანს %s და დაამატეთ ისინი ალბომში."
 
+msgid "IDS_COM_BODY_UNKNOWN"
+msgstr "უცნობი"
 msgid "IDS_HELP_BODY_OPEN_PS_GALLERY"
 msgstr "გახსენით გალერეა %s."
 
 msgid "IDS_PBR_OPT_SHOW_HIDDEN_ITEMS"
 msgstr "დამალული ელემენტების ჩვენება"
+msgid "IDS_COM_SK_BACK"
+msgstr "უკან"
 
 msgid "IDS_IV_OPT_HIDDEN_ITEMS"
 msgstr "დამალული ელემენტები"
 
 msgid "IDS_IV_OPT_SHOW_ITEMS"
 msgstr "ელემენტების ჩვენება"
+msgid "IDS_COM_POP_SELECTED"
+msgstr "შერჩეულია."
 
 msgid "IDS_MF_POP_REMOVED"
 msgstr "წაშლილია."
+msgid "IDS_COM_BODY_NO_VIDEOS"
+msgstr "ვიდეო არ არის"
 
 msgid "IDS_HELP_BODY_GALLERY"
 msgstr "გალერეა"
@@ -930,4 +947,6 @@ msgstr "გადაჭარბებულია ფაილის მაქ�
 
 msgid "IDS_IM_POP_MAXIMUM_SIZE_OF_FILES_EXCEEDED"
 msgstr "გადაჭარბებულია ფაილების მაქსიმალური ზომა."
+msgid "IDS_COM_BODY_NO_IMAGES"
+msgstr "სურათები არ არის"
 

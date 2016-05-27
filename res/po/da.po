@@ -1,29 +1,45 @@
 msgid "IDS_GALLERY_BUTTON_CAMERA"
 msgstr "Kamera"
+msgid "IDS_COM_SK_OK"
+msgstr "OK"
 
+msgid "IDS_COM_SK_CANCEL"
+msgstr "Annuller"
 msgid "IDS_MUSIC_POP_DELETE_PD_ALBUMS_Q"
 msgstr "Slet %d albummer?"
 
+msgid "IDS_COM_SK_DONE"
+msgstr "Udført"
 msgid "IDS_MEDIABR_IOPT3_PLACES"
 msgstr "Steder"
 
 msgid "IDS_MEDIABR_SK2_ADD_TO_HOME"
 msgstr "Føj til start"
+msgid "IDS_COM_BODY_NO_ITEMS"
+msgstr "Ingen elementer"
 
 msgid "IDS_MEDIABR_BODY_TAGS"
 msgstr "Tags"
+msgid "IDS_COM_BODY_UNKNOWN"
+msgstr "Ukendt"
 
 msgid "IDS_MEDIABR_BODY_ALL_ALBUMS"
 msgstr "Alle albummer"
+msgid "IDS_COM_SK_BACK"
+msgstr "Tilbage"
 
 msgid "IDS_MEDIABR_BODY_FACEBOOK_WEB_ALBUM"
 msgstr "Facebook web-album"
 
 msgid "IDS_MEDIABR_BODY_PICASA_WEB_ALBUM"
 msgstr "Picasa webalbum"
+msgid "IDS_COM_POP_SELECTED"
+msgstr "Valgte."
 
 msgid "IDS_MEDIABR_HEADER_NEARBY_DEVICES"
 msgstr "Enheder i nærheden"
+msgid "IDS_COM_BODY_NO_VIDEOS"
+msgstr "Ingen videoer"
 
 msgid "IDS_ASEML_BODY_PAST_PD_MONTHS"
 msgstr "Seneste %d måneder"
@@ -930,4 +946,6 @@ msgstr "Maksimal filstørrelse (%d MB) overskredet."
 
 msgid "IDS_IM_POP_MAXIMUM_SIZE_OF_FILES_EXCEEDED"
 msgstr "Den maksimale filstørrelse overskredet."
+msgid "IDS_COM_BODY_NO_IMAGES"
+msgstr "Ingen billeder"
 

@@ -1,29 +1,45 @@
 msgid "IDS_GALLERY_BUTTON_CAMERA"
 msgstr "Խցիկ"
+msgid "IDS_COM_SK_OK"
+msgstr "Ընդունել"
 
 msgid "IDS_MUSIC_POP_DELETE_PD_ALBUMS_Q"
 msgstr "Վերացնե՞լ %d ալբոմներ:"
+msgid "IDS_COM_SK_CANCEL"
+msgstr "Չեղարկել"
 
 msgid "IDS_MEDIABR_IOPT3_PLACES"
 msgstr "Վայրեր"
+msgid "IDS_COM_SK_DONE"
+msgstr "Պատրաստ"
 
 msgid "IDS_MEDIABR_SK2_ADD_TO_HOME"
 msgstr "Ավելացնել տանը"
+msgid "IDS_COM_BODY_NO_ITEMS"
+msgstr "Տարրեր չկան"
 
 msgid "IDS_MEDIABR_BODY_TAGS"
 msgstr "Հայտանիշեր"
+msgid "IDS_COM_BODY_UNKNOWN"
+msgstr "Անհայտ"
 
 msgid "IDS_MEDIABR_BODY_ALL_ALBUMS"
 msgstr "Բոլոր ալբոմները"
+msgid "IDS_COM_SK_BACK"
+msgstr "Հետ"
 
 msgid "IDS_MEDIABR_BODY_FACEBOOK_WEB_ALBUM"
 msgstr "Facebook Ինտերնետային ալբոմ"
 
 msgid "IDS_MEDIABR_BODY_PICASA_WEB_ALBUM"
 msgstr "Picasa Ինտերնետային ալբոմ"
+msgid "IDS_COM_POP_SELECTED"
+msgstr "Ընտրված"
 
 msgid "IDS_MEDIABR_HEADER_NEARBY_DEVICES"
 msgstr "Մոտակա սարքեր"
+msgid "IDS_COM_BODY_NO_VIDEOS"
+msgstr "Տեսանյութ չկա"
 
 msgid "IDS_ASEML_BODY_PAST_PD_MONTHS"
 msgstr "Անցյալ %d ամիսները"
@@ -930,4 +946,6 @@ msgstr "Ֆայլի առավելագույն չափը (%d ՄԲ) գերազանց�
 
 msgid "IDS_IM_POP_MAXIMUM_SIZE_OF_FILES_EXCEEDED"
 msgstr "Ֆայլերի առավելագույն քանակը գերազանցվել է:"
+msgid "IDS_COM_BODY_NO_IMAGES"
+msgstr "Պատկերներ չկան"
 

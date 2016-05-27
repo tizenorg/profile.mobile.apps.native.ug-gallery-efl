@@ -1,5 +1,7 @@
 msgid "IDS_GALLERY_BUTTON_CAMERA"
 msgstr "Камера"
+msgid "IDS_COM_SK_OK"
+msgstr "OK"
 
 msgid "IDS_MUSIC_POP_DELETE_PD_ALBUMS_Q"
 msgstr "Удалить альбомы (%d)?"
@@ -397,26 +399,41 @@ msgstr "Люди"
 msgid "IDS_MEDIABR_BUTTON_CANCEL_ABB"
 msgstr "Отмена"
 
+msgid "IDS_COM_SK_CANCEL"
+msgstr "Отмена"
+
 msgid "IDS_IV_BODY_DONT_ASK_AGAIN"
 msgstr "Больше не спрашивать"
+msgid "IDS_COM_SK_DONE"
+msgstr "Готово"
 
 msgid "IDS_HELP_BODY_SELECT_PICTURES_THEN_TAP_PS_TO_ADD_THEM_TO_AN_ALBUM"
 msgstr "Выберите фотографии и нажмите %s, чтобы добавить их в альбом."
+msgid "IDS_COM_BODY_NO_ITEMS"
+msgstr "Нет элементов"
 
 msgid "IDS_HELP_BODY_OPEN_PS_GALLERY"
 msgstr "Открытие галереи %s."
+msgid "IDS_COM_BODY_UNKNOWN"
+msgstr "Неизвестно"
 
 msgid "IDS_PBR_OPT_SHOW_HIDDEN_ITEMS"
 msgstr "Показать скрытые файлы"
+msgid "IDS_COM_SK_BACK"
+msgstr "Назад"
 
 msgid "IDS_IV_OPT_HIDDEN_ITEMS"
 msgstr "Скрытые элементы"
 
 msgid "IDS_IV_OPT_SHOW_ITEMS"
 msgstr "Показать элементы"
+msgid "IDS_COM_POP_SELECTED"
+msgstr "Выбрано."
 
 msgid "IDS_MF_POP_REMOVED"
 msgstr "Удалено."
+msgid "IDS_COM_BODY_NO_VIDEOS"
+msgstr "Нет видео"
 
 msgid "IDS_HELP_BODY_GALLERY"
 msgstr "Галерея"
@@ -930,4 +947,6 @@ msgstr "Превышен максимальный размер файла (%d М
 
 msgid "IDS_IM_POP_MAXIMUM_SIZE_OF_FILES_EXCEEDED"
 msgstr "Превышен максимальный размер файлов."
+msgid "IDS_COM_BODY_NO_IMAGES"
+msgstr "Нет изображений"
 

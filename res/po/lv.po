@@ -1,5 +1,7 @@
 msgid "IDS_GALLERY_BUTTON_CAMERA"
 msgstr "Kamera"
+msgid "IDS_COM_SK_OK"
+msgstr "Labi"
 
 msgid "IDS_MUSIC_POP_DELETE_PD_ALBUMS_Q"
 msgstr "Vai izdzēst %d albumus?"
@@ -397,26 +399,41 @@ msgstr "Personas"
 msgid "IDS_MEDIABR_BUTTON_CANCEL_ABB"
 msgstr "Atcelt"
 
+msgid "IDS_COM_SK_CANCEL"
+msgstr "Atcelt"
+
 msgid "IDS_IV_BODY_DONT_ASK_AGAIN"
 msgstr "Vairs nejautāt"
+msgid "IDS_COM_SK_DONE"
+msgstr "Gatavs"
 
 msgid "IDS_HELP_BODY_SELECT_PICTURES_THEN_TAP_PS_TO_ADD_THEM_TO_AN_ALBUM"
 msgstr "Izvēlieties attēlus un pēc tam pieskarieties pie %s, lai pievienotu tos albumam."
+msgid "IDS_COM_BODY_NO_ITEMS"
+msgstr "Nav vienumu"
 
 msgid "IDS_HELP_BODY_OPEN_PS_GALLERY"
 msgstr "Atveriet %s galeriju."
+msgid "IDS_COM_BODY_UNKNOWN"
+msgstr "Nezināms"
 
 msgid "IDS_PBR_OPT_SHOW_HIDDEN_ITEMS"
 msgstr "Rādīt slēptos objektus"
+msgid "IDS_COM_SK_BACK"
+msgstr "Atpakaļ"
 
 msgid "IDS_IV_OPT_HIDDEN_ITEMS"
 msgstr "Paslēptie objekti"
 
 msgid "IDS_IV_OPT_SHOW_ITEMS"
 msgstr "Rādīt objektus"
+msgid "IDS_COM_POP_SELECTED"
+msgstr "Izvēlēts."
 
 msgid "IDS_MF_POP_REMOVED"
 msgstr "Noņemts."
+msgid "IDS_COM_BODY_NO_VIDEOS"
+msgstr "Nav videoklipu"
 
 msgid "IDS_HELP_BODY_GALLERY"
 msgstr "Galerija"
@@ -930,4 +947,6 @@ msgstr "Pārsniegts maksimālais faila lielums (%d MB)."
 
 msgid "IDS_IM_POP_MAXIMUM_SIZE_OF_FILES_EXCEEDED"
 msgstr "Pārsniegts maksimālais failu lielums."
+msgid "IDS_COM_BODY_NO_IMAGES"
+msgstr "Nav attēlu"
 

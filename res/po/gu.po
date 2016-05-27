@@ -1,5 +1,7 @@
 msgid "IDS_GALLERY_BUTTON_CAMERA"
 msgstr "કૅમેરા"
+msgid "IDS_COM_SK_OK"
+msgstr "ઓકે"
 
 msgid "IDS_MEDIABR_IOPT3_PLACES"
 msgstr "સ્થળો"
@@ -355,26 +357,41 @@ msgstr "લોકો"
 msgid "IDS_MEDIABR_BUTTON_CANCEL_ABB"
 msgstr "રદ કરો"
 
+msgid "IDS_COM_SK_CANCEL"
+msgstr "રદ કરો"
+
 msgid "IDS_IV_BODY_DONT_ASK_AGAIN"
 msgstr "ફરીથી પૂછશો નહીં"
+msgid "IDS_COM_SK_DONE"
+msgstr "પૂર્ણ"
 
 msgid "IDS_HELP_BODY_SELECT_PICTURES_THEN_TAP_PS_TO_ADD_THEM_TO_AN_ALBUM"
 msgstr "ચિત્રો પસંદ કરો, પછી તેને કોઈ આલ્બમમાં ઉમેરવા માટે %s ને ટેપ કરો."
+msgid "IDS_COM_BODY_NO_ITEMS"
+msgstr "કોઈ વસ્તુઓ નથી"
 
 msgid "IDS_HELP_BODY_OPEN_PS_GALLERY"
 msgstr "%s ગેલેરી ખોલો."
+msgid "IDS_COM_BODY_UNKNOWN"
+msgstr "અજ્ઞાત"
 
 msgid "IDS_PBR_OPT_SHOW_HIDDEN_ITEMS"
 msgstr "છુપાવેલી વસ્તુઓ બતાવો"
+msgid "IDS_COM_SK_BACK"
+msgstr "પાછળ"
 
 msgid "IDS_IV_OPT_HIDDEN_ITEMS"
 msgstr "છુપાવેલી વસ્તુઓ"
 
 msgid "IDS_IV_OPT_SHOW_ITEMS"
 msgstr "વસ્તુઓ બતાવો"
+msgid "IDS_COM_POP_SELECTED"
+msgstr "પસંદ કરી."
 
 msgid "IDS_MF_POP_REMOVED"
 msgstr "હટાવાયા."
+msgid "IDS_COM_BODY_NO_VIDEOS"
+msgstr "કોઈ વિડિયો નથી"
 
 msgid "IDS_HELP_BODY_GALLERY"
 msgstr "ગેલેરી"
@@ -645,4 +662,6 @@ msgstr "મહત્તમ ફાઇલ કદ (%d MB) વટાવ્યું.
 
 msgid "IDS_IM_POP_MAXIMUM_SIZE_OF_FILES_EXCEEDED"
 msgstr "ફાઇલ્સની મહત્તમ કદ વટાવાઈ ગઈ."
+msgid "IDS_COM_BODY_NO_IMAGES"
+msgstr "કોઈ છબીઓ નથી"
 

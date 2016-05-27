@@ -1,5 +1,7 @@
 msgid "IDS_GALLERY_BUTTON_CAMERA"
 msgstr "Камера"
+msgid "IDS_COM_SK_OK"
+msgstr "ОК"
 
 msgid "IDS_MUSIC_POP_DELETE_PD_ALBUMS_Q"
 msgstr "Видалити %d альбому(-ів)?"
@@ -397,26 +399,41 @@ msgstr "Люди"
 msgid "IDS_MEDIABR_BUTTON_CANCEL_ABB"
 msgstr "Скасувати"
 
+msgid "IDS_COM_SK_CANCEL"
+msgstr "Скасувати"
+
+msgid "IDS_COM_SK_DONE"
+msgstr "Готово"
 msgid "IDS_IV_BODY_DONT_ASK_AGAIN"
 msgstr "Більше не запитувати"
 
 msgid "IDS_HELP_BODY_SELECT_PICTURES_THEN_TAP_PS_TO_ADD_THEM_TO_AN_ALBUM"
 msgstr "Виберіть зображення, а потім натисніть %s, щоб додати їх до альбому."
+msgid "IDS_COM_BODY_NO_ITEMS"
+msgstr "Немає елементів"
 
 msgid "IDS_HELP_BODY_OPEN_PS_GALLERY"
 msgstr "Відкрийте Галерею %s."
+msgid "IDS_COM_BODY_UNKNOWN"
+msgstr "Невідомо"
 
 msgid "IDS_PBR_OPT_SHOW_HIDDEN_ITEMS"
 msgstr "Відображати приховані об'єкти"
+msgid "IDS_COM_SK_BACK"
+msgstr "Назад"
 
 msgid "IDS_IV_OPT_HIDDEN_ITEMS"
 msgstr "Приховані об'єкти"
 
 msgid "IDS_IV_OPT_SHOW_ITEMS"
 msgstr "Показати об'єкти"
+msgid "IDS_COM_POP_SELECTED"
+msgstr "Вибрано."
 
 msgid "IDS_MF_POP_REMOVED"
 msgstr "Видалено."
+msgid "IDS_COM_BODY_NO_VIDEOS"
+msgstr "Немає відео"
 
 msgid "IDS_HELP_BODY_GALLERY"
 msgstr "Галерея"
@@ -930,4 +947,6 @@ msgstr "Перевищено максимальний розмір файла (%
 
 msgid "IDS_IM_POP_MAXIMUM_SIZE_OF_FILES_EXCEEDED"
 msgstr "Перевищено максимальний розмір файлів."
+msgid "IDS_COM_BODY_NO_IMAGES"
+msgstr "Немає зображень"
 

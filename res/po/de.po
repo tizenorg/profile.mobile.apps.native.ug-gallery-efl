@@ -1,5 +1,10 @@
 msgid "IDS_GALLERY_BUTTON_CAMERA"
 msgstr "Kamera"
+msgid "IDS_COM_SK_OK"
+msgstr "OK"
+
+msgid "IDS_COM_SK_CANCEL"
+msgstr "Abbrechen"
 
 msgid "IDS_MUSIC_POP_DELETE_PD_ALBUMS_Q"
 msgstr "%d Alben löschen?"
@@ -399,24 +404,36 @@ msgstr "Abbrechen"
 
 msgid "IDS_IV_BODY_DONT_ASK_AGAIN"
 msgstr "Nicht erneut fragen"
+msgid "IDS_COM_SK_DONE"
+msgstr "Fertig"
 
 msgid "IDS_HELP_BODY_SELECT_PICTURES_THEN_TAP_PS_TO_ADD_THEM_TO_AN_ALBUM"
 msgstr "Wählen Sie “Bilder” aus, und tippen Sie dann auf %s, um diese in ein Album einzufügen."
+msgid "IDS_COM_BODY_NO_ITEMS"
+msgstr "Keine Elemente"
 
 msgid "IDS_HELP_BODY_OPEN_PS_GALLERY"
 msgstr "%s Galerie öffnen."
+msgid "IDS_COM_BODY_UNKNOWN"
+msgstr "Unbekannt"
 
 msgid "IDS_PBR_OPT_SHOW_HIDDEN_ITEMS"
 msgstr "Ausgeblendete Elemente anzeigen"
+msgid "IDS_COM_SK_BACK"
+msgstr "Zurück"
 
 msgid "IDS_IV_OPT_HIDDEN_ITEMS"
 msgstr "Ausgeblendete Elemente"
 
 msgid "IDS_IV_OPT_SHOW_ITEMS"
 msgstr "Elemente anzeigen"
+msgid "IDS_COM_POP_SELECTED"
+msgstr "Ausgewählt"
 
 msgid "IDS_MF_POP_REMOVED"
 msgstr "Entfernt"
+msgid "IDS_COM_BODY_NO_VIDEOS"
+msgstr "Keine Videos"
 
 msgid "IDS_HELP_BODY_GALLERY"
 msgstr "Galerie"
@@ -930,4 +947,6 @@ msgstr "Maximale Dateigröße (%d MB) überschritten"
 
 msgid "IDS_IM_POP_MAXIMUM_SIZE_OF_FILES_EXCEEDED"
 msgstr "Maximale Dateigröße überschritten"
+msgid "IDS_COM_BODY_NO_IMAGES"
+msgstr "Keine Bilder"
 
