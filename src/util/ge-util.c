@@ -20,7 +20,7 @@
 #include <unistd.h>
 #include <stdlib.h>
 #include <math.h>
-#include <storage.h>
+#include <storage/storage.h>
 #include "ge-albums.h"
 #include "ge-gridview.h"
 #include "ge-data.h"

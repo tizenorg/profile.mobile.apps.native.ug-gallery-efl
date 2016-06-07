@@ -739,6 +739,13 @@ __ge_gallery_ug_result_cb(app_control_h request, app_control_h result, app_contr
 		}
 		GE_FREE(error_state);
 	}
+	if (ugd->file_select_setas_mode == 1) {
+		_ge_grid_sel_one(ugd, ugd->file_select_setas_path);
+	}
+
+	if (ugd->b_hide_indicator) {
+		_ge_ui_hide_indicator((ge_ugdata *)data);
+	}
 	_ge_ext_destroy_me((ge_ugdata *)data);
 }
 
