@@ -1092,7 +1092,7 @@ static void __ge_grid_selall_cb(void *data, Evas_Object *obj, void *ei)
 			if (gitem->checked == ugd->ck_state) {
 				continue;
 			}
-			if (!strcmp(gitem->item->thumb_url, DEFAULT_THUMB)) {
+			if (gitem->item->thumb_url && !strcmp(gitem->item->thumb_url, DEFAULT_THUMB)) {
 				continue;
 			}
 			struct stat stFileInfo;
@@ -1121,7 +1121,7 @@ static void __ge_grid_selall_cb(void *data, Evas_Object *obj, void *ei)
 			if (gitem->checked == ugd->ck_state) {
 				continue;
 			}
-			if (!strcmp(gitem->item->thumb_url, DEFAULT_THUMB)) {
+			if (gitem->item->thumb_url && !strcmp(gitem->item->thumb_url, DEFAULT_THUMB)) {
 				continue;
 			}
 			struct stat stFileInfo;
@@ -1140,7 +1140,7 @@ static void __ge_grid_selall_cb(void *data, Evas_Object *obj, void *ei)
 		if (gitem->checked == ugd->ck_state) {
 			continue;
 		}
-		if (!strcmp(gitem->item->thumb_url, DEFAULT_THUMB)) {
+		if (gitem->item->thumb_url &&  !strcmp(gitem->item->thumb_url, DEFAULT_THUMB)) {
 			continue;
 		}
 		gitem->checked = ugd->ck_state;

@@ -56,7 +56,7 @@ static void __ge_appcontrol_select_result_cb(app_control_h request, app_control_
 			if (!data || !data->item) {
 				continue;
 			}
-			if (!strcmp(data->item->thumb_url, DEFAULT_THUMB)) {
+			if (data->item->thumb_url && !strcmp(data->item->thumb_url, DEFAULT_THUMB)) {
 				continue;
 			}
 			in_list = false;
