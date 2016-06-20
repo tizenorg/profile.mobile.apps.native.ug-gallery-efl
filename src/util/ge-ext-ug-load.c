@@ -132,7 +132,7 @@ static void __ge_appcontrol_select_result_cb(app_control_h request, app_control_
 	}
 
 	elm_gengrid_item_update(ugd->thumbs_d->album->griditem);
-
+	elm_gengrid_realized_items_update(ugd->thumbs_d->view);
 	if (select_result) {
 		for (i = 0; i < count; i++) {
 			if (select_result[i]) {
