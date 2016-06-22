@@ -20,7 +20,7 @@
 
 #include "gallery-efl.h"
 
-#define GE_IMAGES_EDJ_FILE full_path(GE_EDJ_DIR, "/gallery-efl-images.edj")
+#define GE_IMAGES_EDJ_FILE full_path(GE_EDJ_DIR, "images/gallery-efl-images.edj")
 
 #define GE_DEFAULT_APP_ICON GALLERY_APP_ICON_DIR"org.tizen.gallery.png"
 #define GE_ALBUM_ICON_CAMERA "T01_album_icon_camera.png"
