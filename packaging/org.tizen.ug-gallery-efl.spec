@@ -1,6 +1,6 @@
 Name:       org.tizen.ug-gallery-efl
 VCS:         profile/mobile/apps/native/ug-gallery-efl#3d3dd4eef9fa890c77a8a0685d4d1aa0931a3d1c
-#RS_Ver:    20160622_2 
+#RS_Ver:    20160623_1 
 Summary:    Gallery UX
 Version:    1.0.0
 Release:    1
