@@ -1,6 +1,6 @@
 Name:       org.tizen.ug-gallery-efl
-VCS:         profile/mobile/apps/native/ug-gallery-efl#3d3dd4eef9fa890c77a8a0685d4d1aa0931a3d1c
-#RS_Ver:    20160623_1 
+#VCS_FROM:   profile/mobile/apps/native/ug-gallery-efl#3d3dd4eef9fa890c77a8a0685d4d1aa0931a3d1c
+#RS_Ver:    20160707_1 
 Summary:    Gallery UX
 Version:    1.0.0
 Release:    1
@@ -26,7 +26,7 @@ Requires(post):  /usr/bin/tpk-backend
 %endif
 
 %description
-#
+profile/mobile/apps/native/ug-gallery-efl#3d3dd4eef9fa890c77a8a0685d4d1aa0931a3d1c
 This is a container package which have preload TPK files
 
 %prep
