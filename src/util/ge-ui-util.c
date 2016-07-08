@@ -55,7 +55,10 @@ static Eina_Bool __ge_popup_timeout_cb(void *data)
 			ugd->ug = NULL;
 		}
 #endif
-		app_control_destroy(ugd->service);
+		if (ugd->service) {
+			app_control_destroy(ugd->service);
+			ugd->service = NULL;
+		}
 		ui_app_exit();
 	}
 

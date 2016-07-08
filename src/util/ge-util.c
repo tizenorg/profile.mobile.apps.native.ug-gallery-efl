@@ -324,7 +324,10 @@ int _ge_send_result(ge_ugdata *ugd)
 			app_control_reply_to_launch_request(reply, ugd->service, APP_CONTROL_RESULT_FAILED);
 			app_control_destroy(reply);
 		}
-		app_control_destroy(ugd->service);
+		if (ugd->service) {
+			app_control_destroy(ugd->service);
+			ugd->service = NULL;
+		}
 		ui_app_exit();
 	} else {
 		if (ugd->file_select_mode == GE_FILE_SELECT_T_IMFT) {
@@ -365,7 +368,10 @@ GE_SEND_RESULT_FINISHED:
 		}
 		GE_FREE(path_array);
 	}
-	app_control_destroy(ugd->service);
+	if (ugd->service) {
+		app_control_destroy(ugd->service);
+		ugd->service = NULL;
+	}
 	ui_app_exit();
 	if (send_success == true) {
 		return 0;

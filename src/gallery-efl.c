@@ -771,7 +771,10 @@ void __ge_get_app_control_data( app_control_h app_control,void *data)
 				app_control_reply_to_launch_request(reply, ugd->service, APP_CONTROL_RESULT_FAILED);
 				app_control_destroy(reply);
 			}
-			app_control_destroy(ugd->service);
+			if (ugd->service) {
+					app_control_destroy(ugd->service);
+					ugd->service = NULL;
+				}
 			ui_app_exit();
 			return;
 		}

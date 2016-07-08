@@ -186,7 +186,10 @@ static int __ge_albums_open_album(ge_cluster *album)
 			app_control_reply_to_launch_request(reply, ugd->service, APP_CONTROL_RESULT_SUCCEEDED);
 			app_control_destroy(reply);
 		}
-		app_control_destroy(ugd->service);
+		if (ugd->service) {
+			app_control_destroy(ugd->service);
+			ugd->service = NULL;
+		}
 		ui_app_exit();
 		return 0;
 	}
@@ -1117,7 +1120,10 @@ static Eina_Bool __ge_main_back_cb(void *data, Elm_Object_Item *it)
 		app_control_destroy(reply);
 	}
 	ge_dbg("Destroying handle");
-	app_control_destroy(ugd->service);
+	if (ugd->service) {
+		app_control_destroy(ugd->service);
+		ugd->service = NULL;
+	}
 	ui_app_exit();
 	/*If return ture, ug will pop naviframe first.*/
 	return EINA_FALSE;
