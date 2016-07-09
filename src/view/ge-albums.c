@@ -468,10 +468,6 @@ static ge_icon_type __ge_albums_set_bg_file(Evas_Object *bg, void *data)
 	ret_val = GE_ICON_NORMAL;
 	if (GE_FILE_EXISTS(git->item->thumb_url)) {
 		bg_path = git->item->thumb_url;
-	} else if (album && (album->cluster->type == GE_MMC ||
-	                     album->cluster->type == GE_PHONE ||
-	                     album->cluster->type == GE_ALL)) {
-		__ge_albums_create_thumb(git, album);
 	} else {
 		ret_val = -1;
 	}
