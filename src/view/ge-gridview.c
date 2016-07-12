@@ -397,7 +397,7 @@ static int __ge_grid_change_check(void *data, Elm_Object_Item *it)
 	ck = elm_object_item_part_content_get(it, GE_GRID_CHECKBOX);
 	GE_CHECK_VAL(ck, -1);
 	bool currentCheckState = elm_check_state_get(ck);
-	if (gitem->item->thumb_url && !strcmp(gitem->item->thumb_url, DEFAULT_THUMB)) {
+	if ((!gitem->item->thumb_url) || !strcmp(gitem->item->thumb_url, DEFAULT_THUMB) || (strlen(gitem->item->thumb_url) == 0)) {
 		char *warning_str = g_strdup_printf(
 		                        GE_STR_UNSUPPORTED_FILE);
 		notification_status_message_post(warning_str);
@@ -506,7 +506,7 @@ static void __ge_grid_check_changed(void *data, Evas_Object *obj, void *ei)
 	Eina_Bool checked = elm_check_state_get(obj);
 	bool b_disabled = false;
 
-	if (gitem->item->thumb_url && !strcmp(gitem->item->thumb_url, DEFAULT_THUMB)) {
+	if ((!gitem->item->thumb_url) || !strcmp(gitem->item->thumb_url, DEFAULT_THUMB) || (strlen(gitem->item->thumb_url) == 0)) {
 		elm_check_state_set(obj, EINA_FALSE);
 		char *warning_str = g_strdup_printf(
 		                        GE_STR_UNSUPPORTED_FILE);
@@ -1095,7 +1095,7 @@ static void __ge_grid_selall_cb(void *data, Evas_Object *obj, void *ei)
 			if (gitem->checked == ugd->ck_state) {
 				continue;
 			}
-			if (gitem->item->thumb_url && !strcmp(gitem->item->thumb_url, DEFAULT_THUMB)) {
+			if ((!gitem->item->thumb_url) || !strcmp(gitem->item->thumb_url, DEFAULT_THUMB) || (strlen(gitem->item->thumb_url) == 0)) {
 				continue;
 			}
 			struct stat stFileInfo;
@@ -1124,7 +1124,7 @@ static void __ge_grid_selall_cb(void *data, Evas_Object *obj, void *ei)
 			if (gitem->checked == ugd->ck_state) {
 				continue;
 			}
-			if (gitem->item->thumb_url && !strcmp(gitem->item->thumb_url, DEFAULT_THUMB)) {
+			if ((!gitem->item->thumb_url) || !strcmp(gitem->item->thumb_url, DEFAULT_THUMB) || (strlen(gitem->item->thumb_url) == 0)) {
 				continue;
 			}
 			struct stat stFileInfo;
@@ -1143,7 +1143,7 @@ static void __ge_grid_selall_cb(void *data, Evas_Object *obj, void *ei)
 		if (gitem->checked == ugd->ck_state) {
 			continue;
 		}
-		if (gitem->item->thumb_url &&  !strcmp(gitem->item->thumb_url, DEFAULT_THUMB)) {
+		if ((!gitem->item->thumb_url) || !strcmp(gitem->item->thumb_url, DEFAULT_THUMB) || (strlen(gitem->item->thumb_url) == 0)) {
 			continue;
 		}
 		gitem->checked = ugd->ck_state;
